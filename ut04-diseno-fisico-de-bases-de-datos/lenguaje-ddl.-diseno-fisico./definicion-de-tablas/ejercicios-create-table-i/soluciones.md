@@ -1,0 +1,34 @@
+# Soluciones
+
+1\.
+
+
+
+```sql
+DROP DATABASE IF EXISTS Ej1;
+
+CREATE DATABASE Ej1;
+
+USE Ej1;
+
+CREATE TABLE Profesor(
+	Dni CHAR(9) PRIMARY KEY,
+	Name VARCHAR(30) NOT NULL,
+	Category VARCHAR(3) NOT NULL,
+	Seniority INT NOT NULL,
+	DepartmentCode CHAR(3) NOT NULL
+);
+
+CREATE TABLE Computer(
+	ComputerId INT PRIMARY KEY AUTO_INCREMENT COMMENT 'Id autogenerado por MySQL',
+	Memory INT DEFAULT 16 COMMENT 'En GB' NOT NULL,
+	Processor VARCHAR(20) NOT NULL,
+	DepartmentCode CHAR(3) NOT NULL
+);
+
+CREATE TABLE Department(
+	DepartmentCode CHAR(3) PRIMARY KEY,
+	Budget NUMERIC(8,2) NOT NULL,
+	Room VARCHAR(4) NOT NULL
+);
+```
