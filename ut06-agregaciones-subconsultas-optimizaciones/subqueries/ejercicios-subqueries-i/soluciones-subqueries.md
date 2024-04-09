@@ -165,8 +165,22 @@ layout:
     ```
 12. Muestra el número de alquileres por tienda, para tiendas que hayan alquilado menos de la media.
 
-    <pre class="language-sql"><code class="lang-sql"><strong>
-    </strong></code></pre>
+    ```sql
+    SELECT s.*, COUNT(r.rental_id) AS store_rentals
+    FROM store s 
+    LEFT JOIN inventory i ON i.store_id =s.store_id 
+    LEFT JOIN rental r ON r.inventory_id = i.inventory_id 
+    GROUP BY s.store_id 
+    HAVING store_rentals > (
+    	SELECT AVG(store_rentals)
+    	FROM (
+    		SELECT COUNT(r.rental_id) AS store_rentals
+    		FROM inventory i 
+    		LEFT JOIN rental r ON i.inventory_id = r.inventory_id
+    		GROUP BY i.store_id
+    	) as store_rentals
+    );
+    ```
 13. Muestra los ingresos por tienda, para tiendas que hayan recibido más pagos que la media.
 
     <pre class="language-sql"><code class="lang-sql"><strong>
