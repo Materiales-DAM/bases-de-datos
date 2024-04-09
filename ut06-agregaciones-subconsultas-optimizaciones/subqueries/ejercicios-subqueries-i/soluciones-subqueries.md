@@ -120,8 +120,17 @@ layout:
     ```
 9.  Calcula la media de ingresos por tienda.
 
-    <pre class="language-sql"><code class="lang-sql"><strong>
-    </strong></code></pre>
+    ```sql
+    SELECT AVG(store_income)
+    FROM (
+    	SELECT SUM(p.amount) as store_income
+    	FROM store s
+    	LEFT JOIN inventory i ON s.store_id = i.store_id
+    	LEFT JOIN rental r ON r.inventory_id = i.inventory_id
+    	LEFT JOIN payment p ON p.rental_id = r.rental_id
+    	GROUP BY s.store_id	
+    ) as stores_income;
+    ```
 10. Muestra las categorías junto con el número de películas de dicha categoría, solo deben aparecer categorías que tengan más películas que la media
 
     <pre class="language-sql"><code class="lang-sql"><strong>
