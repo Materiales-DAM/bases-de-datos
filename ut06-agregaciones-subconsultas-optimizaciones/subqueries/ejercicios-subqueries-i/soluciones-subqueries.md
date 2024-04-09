@@ -108,8 +108,16 @@ layout:
     ```
 8.  Calcula la media de alquileres por tienda.
 
-    <pre class="language-sql"><code class="lang-sql"><strong>
-    </strong></code></pre>
+    ```sql
+    SELECT AVG(rentals)
+    FROM (
+    	SELECT i.store_id, COUNT(*) as rentals
+    	FROM 
+    		rental r 
+    		INNER JOIN inventory i ON i.inventory_id = r.inventory_id 
+    	GROUP BY i.store_id
+    ) as store_rentals;
+    ```
 9.  Calcula la media de ingresos por tienda.
 
     <pre class="language-sql"><code class="lang-sql"><strong>
