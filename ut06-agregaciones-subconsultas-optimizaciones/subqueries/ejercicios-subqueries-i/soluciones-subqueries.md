@@ -183,5 +183,20 @@ layout:
     ```
 13. Muestra los ingresos por tienda, para tiendas que hayan recibido más pagos que la media.
 
-    <pre class="language-sql"><code class="lang-sql"><strong>
-    </strong></code></pre>
+    ```sql
+    SELECT i.store_id , SUM(p.amount) AS income
+    FROM payment p 
+    INNER JOIN rental r ON r.rental_id = p.rental_id 
+    INNER JOIN inventory i ON i.inventory_id = r.inventory_id 
+    GROUP BY i.store_id 
+    HAVING COUNT(*) > (
+    	SELECT AVG(rentals) AS average_rentals
+    	FROM (
+    		SELECT COUNT(*) as rentals
+    		FROM store s 
+    		INNER JOIN inventory i ON s.store_id = i.store_id 
+    		INNER JOIN rental r ON r.inventory_id = i.inventory_id 
+    		GROUP BY s.store_id 
+    	) as store_rentals
+    );
+    ```
