@@ -171,7 +171,7 @@ layout:
     LEFT JOIN inventory i ON i.store_id =s.store_id 
     LEFT JOIN rental r ON r.inventory_id = i.inventory_id 
     GROUP BY s.store_id 
-    HAVING store_rentals > (
+    HAVING store_rentals < (
     	SELECT AVG(store_rentals)
     	FROM (
     		SELECT COUNT(r.rental_id) AS store_rentals
