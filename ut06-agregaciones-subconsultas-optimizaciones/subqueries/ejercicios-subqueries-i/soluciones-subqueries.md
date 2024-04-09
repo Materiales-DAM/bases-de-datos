@@ -133,12 +133,36 @@ layout:
     ```
 10. Muestra las categorías junto con el número de películas de dicha categoría, solo deben aparecer categorías que tengan más películas que la media
 
-    <pre class="language-sql"><code class="lang-sql"><strong>
-    </strong></code></pre>
-11. Muestra el número de pagos por clientes, para clientes que hayan gastado más que la media.
+    ```sql
+    SELECT c.name, COUNT(fc.film_id) AS category_films
+    FROM category c 
+    LEFT JOIN film_category fc ON c.category_id = fc.category_id
+    GROUP BY c.category_id
+    HAVING category_films > (
+    	SELECT AVG(category_films)
+    	FROM (
+    		SELECT COUNT(fc.film_id) as category_films
+    		FROM category c 
+    		LEFT JOIN film_category fc ON c.category_id = fc.category_id
+    		GROUP BY c.category_id
+    	) as category_films
+    );
+    ```
+11. Muestra el número de pagos por cliente, para clientes que hayan gastado más que la media.
 
-    <pre class="language-sql"><code class="lang-sql"><strong>
-    </strong></code></pre>
+    ```sql
+    SELECT p.customer_id, COUNT(*)  as payments
+    FROM payment p 
+    GROUP BY p.customer_id
+    HAVING SUM(p.amount) > (
+    	SELECT AVG(total_amount) as average_amount
+    	FROM (
+    		SELECT SUM(p.amount) AS total_amount
+    		FROM payment p
+    		GROUP BY p.customer_id 
+    	) as customer_amount
+    );
+    ```
 12. Muestra el número de alquileres por tienda, para tiendas que hayan alquilado menos de la media.
 
     <pre class="language-sql"><code class="lang-sql"><strong>
