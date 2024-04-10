@@ -27,6 +27,16 @@ Las subqueries también se pueden utilizar en consultas de modificación de dato
 
 Las subqueries en este tipo de consultas se harán en el WHERE o en el SET
 
+## INSERT con subqueries
+
+Por ejemplo, si queremos duplicar los pagos, cambiando la fecha hoy
+
+```sql
+INSERT INTO rental(rental_date, inventory_id, customer_id, return_date, staff_id, last_update)
+SELECT CURRENT_DATE(), r.inventory_id, r.customer_id, r.return_date, r.staff_id, NOW()
+FROM rental r;
+```
+
 ## DELETE con subqueries
 
 Por ejemplo, si se desean eliminar las películas de Horror
