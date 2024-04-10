@@ -19,7 +19,7 @@ layout:
 
 # Ejercicios joins universidad
 
-La base de datos se puede configurar siguiendo las instrucciones que hay [aquí](../../../../ut07-procedimientos-almacenados-funciones-y-triggers/procedimientos-almacenados.md#universidad)
+La base de datos se puede configurar siguiendo las instrucciones que hay [aquí](../../../../ut07-procedimientos-almacenados-funciones-y-triggers/procedimientos-almacenados/#universidad)
 
 1. Devuelve un listado con los datos de todas las **alumnas** que se han matriculado alguna vez en el grado en `Ingeniería Informática (Plan 2015)`.
 2. Devuelve un listado con todas las asignaturas ofertadas en el grado en `Ingeniería Informática (Plan 2015)`.

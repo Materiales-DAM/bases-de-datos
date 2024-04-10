@@ -162,7 +162,8 @@
 
 ## UT07 - Procedimientos almacenados, funciones y triggers
 
-* [Procedimientos almacenados](ut07-procedimientos-almacenados-funciones-y-triggers/procedimientos-almacenados.md)
+* [Procedimientos almacenados](ut07-procedimientos-almacenados-funciones-y-triggers/procedimientos-almacenados/README.md)
+  * [Ejercicios de procedimientos almacenados](ut07-procedimientos-almacenados-funciones-y-triggers/procedimientos-almacenados/ejercicios-de-procedimientos-almacenados.md)
 * [Funciones](ut07-procedimientos-almacenados-funciones-y-triggers/funciones.md)
 * [Triggers](ut07-procedimientos-almacenados-funciones-y-triggers/triggers.md)
 

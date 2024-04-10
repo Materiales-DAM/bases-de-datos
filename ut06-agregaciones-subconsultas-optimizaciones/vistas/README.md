@@ -27,9 +27,9 @@ Algunas características importantes sobre las vistas:
 2. **Seguridad**: Las vistas pueden utilizarse para restringir el acceso a ciertas columnas o filas de datos. Los usuarios pueden tener acceso solo a las columnas y filas específicas definidas en la vista, en lugar de acceder directamente a las tablas subyacentes.
 3. **Optimización de consultas**: MySQL puede optimizar consultas utilizando vistas. Si una consulta se basa en una vista que ya ha sido calculada y almacenada en caché, MySQL puede ejecutar la consulta más eficientemente utilizando la definición de la vista en lugar de volver a calcular los resultados desde cero.
 4. **Actualización**: En versiones recientes de MySQL, es posible definir vistas actualizables. Esto significa que puedes realizar operaciones de inserción, actualización y eliminación a través de la vista y que los cambios se reflejarán en las tablas subyacentes.
-5. **Vistas materializadas (materialized views)**: Aunque no son nativas en MySQL, las vistas materializadas son un tipo de vista que almacena físicamente los resultados de una consulta. Esto puede mejorar el rendimiento de las consultas que acceden a datos complejos y cambiantes con poca frecuencia.
+5. **Vistas materializadas (materialized views)**: las vistas materializadas son un tipo de vista que almacena físicamente los resultados de una consulta. Esto puede mejorar el rendimiento de las consultas que acceden a datos complejos y cambiantes con poca frecuencia.
 
-Para crear una vista en MySQL, puedes utilizar la siguiente sintaxis:
+Para crear una vista, puedes utilizar la siguiente sintaxis:
 
 ```sql
 CREATE VIEW nombre_vista AS
@@ -44,3 +44,39 @@ Una vez creada la vista, podemos consultarla como si fuera una tabla normal:
 SELECT * FROM nombre_vista;
 
 ```
+
+## Materialized Views
+
+Las vistas materializadas son un tipo de vista que almacena físicamente los resultados de una consulta. Esto puede mejorar el rendimiento de las consultas que acceden a datos complejos y cambiantes con poca frecuencia.
+
+{% tabs %}
+{% tab title="MySQL" %}
+No soportado
+{% endtab %}
+
+{% tab title="PosgreSQL" %}
+```sql
+CREATE MATERIALIZED VIEW nombre_vista AS
+SELECT columnas
+FROM tablas
+WHERE condiciones;
+```
+{% endtab %}
+{% endtabs %}
+
+Podemos hacer que una vista materializada actualice sus datos haciendo un refresh
+
+{% tabs %}
+{% tab title="MySQL" %}
+No soportado
+{% endtab %}
+
+{% tab title="PosgreSQL" %}
+```sql
+REFRESH MATERIALIZED VIEW nombre_vista; 
+```
+{% endtab %}
+{% endtabs %}
+
+Podemos hacer que una vista materializada actualice sus datos haciendo un refresh
+
