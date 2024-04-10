@@ -149,6 +149,7 @@
   * [Agregaciones por grupos](ut06-agregaciones-subconsultas-optimizaciones/agregaciones/agregaciones-por-grupos.md)
   * [Ejercicios agrupaciones](ut06-agregaciones-subconsultas-optimizaciones/agregaciones/ejercicios-agrupaciones/README.md)
     * [Soluciones agrupaciones](ut06-agregaciones-subconsultas-optimizaciones/agregaciones/ejercicios-agrupaciones/soluciones-agrupaciones.md)
+  * [Agrupaciones por varias columnas](ut06-agregaciones-subconsultas-optimizaciones/agregaciones/agrupaciones-por-varias-columnas.md)
   * [Ejercicios fechas](ut06-agregaciones-subconsultas-optimizaciones/agregaciones/ejercicios-fechas/README.md)
     * [Soluciones fechas](ut06-agregaciones-subconsultas-optimizaciones/agregaciones/ejercicios-fechas/soluciones-fechas.md)
 * [Subqueries](ut06-agregaciones-subconsultas-optimizaciones/subqueries/README.md)
