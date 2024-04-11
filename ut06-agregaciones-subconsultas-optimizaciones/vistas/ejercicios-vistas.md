@@ -1,5 +1,5 @@
 ---
-cover: ../../../.gitbook/assets/view-in-sql-server.png
+cover: ../../.gitbook/assets/view-in-sql-server.png
 coverY: 0
 layout:
   cover:

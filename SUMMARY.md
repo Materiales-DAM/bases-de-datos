@@ -159,7 +159,7 @@
   * [DML y subqueries](ut06-agregaciones-subconsultas-optimizaciones/subqueries/dml-y-subqueries/README.md)
     * [Ejercicios DML y subqueries](ut06-agregaciones-subconsultas-optimizaciones/subqueries/dml-y-subqueries/ejercicios-dml-y-subqueries.md)
 * [Vistas](ut06-agregaciones-subconsultas-optimizaciones/vistas/README.md)
-  * [Ejercicios vistas](ut06-agregaciones-subconsultas-optimizaciones/vistas/ejercicios-vistas/README.md)
+  * [Ejercicios vistas](ut06-agregaciones-subconsultas-optimizaciones/vistas/ejercicios-vistas.md)
     * [Soluciones vistas](ut06-agregaciones-subconsultas-optimizaciones/vistas/ejercicios-vistas/soluciones-vistas.md)
 * [Optimización de consultas](ut06-agregaciones-subconsultas-optimizaciones/optimizacion-de-consultas.md)
 
