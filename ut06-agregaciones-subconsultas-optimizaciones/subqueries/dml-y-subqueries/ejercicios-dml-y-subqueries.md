@@ -23,3 +23,4 @@ layout:
 2. Elimina los payments de las tiendas de Woodridge
 3. Haz que el amount de los payment de tiendas de Woodridge sea el doble que el actual
 4. Cambia el apellido de los actores que actuaron en más de dos películas a "Esponja"
+5. Haz una copia de los actores en la base de datos
