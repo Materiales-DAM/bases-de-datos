@@ -162,18 +162,18 @@
   * [Ejercicios vistas](ut06-agregaciones-subconsultas-optimizaciones/vistas/ejercicios-vistas.md)
 * [Optimización de consultas](ut06-agregaciones-subconsultas-optimizaciones/optimizacion-de-consultas.md)
 
-## UT07 - Procedimientos almacenados, funciones y triggers
+## UT07 - Administración de bases de datos
 
-* [Procedimientos almacenados](ut07-procedimientos-almacenados-funciones-y-triggers/procedimientos-almacenados/README.md)
-  * [Ejercicios de procedimientos almacenados](ut07-procedimientos-almacenados-funciones-y-triggers/procedimientos-almacenados/ejercicios-de-procedimientos-almacenados.md)
-* [Funciones](ut07-procedimientos-almacenados-funciones-y-triggers/funciones.md)
-* [Triggers](ut07-procedimientos-almacenados-funciones-y-triggers/triggers.md)
+* [Seguridad de acceso a datos (DCL)](ut07-administracion-de-bases-de-datos/seguridad-de-acceso-a-datos-dcl.md)
+* [Tareas de administración](ut07-administracion-de-bases-de-datos/tareas-de-administracion.md)
+* [Transacciones (TCL)](ut07-administracion-de-bases-de-datos/transacciones-tcl.md)
 
-## UT08 - Administración de bases de datos
+## UT08 - Procedimientos almacenados, funciones y triggers
 
-* [Seguridad de acceso a datos (DCL)](ut08-administracion-de-bases-de-datos/seguridad-de-acceso-a-datos-dcl.md)
-* [Tareas de administración](ut08-administracion-de-bases-de-datos/tareas-de-administracion.md)
-* [Transacciones (TCL)](ut08-administracion-de-bases-de-datos/transacciones-tcl.md)
+* [Procedimientos almacenados](ut08-procedimientos-almacenados-funciones-y-triggers/procedimientos-almacenados/README.md)
+  * [Ejercicios de procedimientos almacenados](ut08-procedimientos-almacenados-funciones-y-triggers/procedimientos-almacenados/ejercicios-de-procedimientos-almacenados.md)
+* [Funciones](ut08-procedimientos-almacenados-funciones-y-triggers/funciones.md)
+* [Triggers](ut08-procedimientos-almacenados-funciones-y-triggers/triggers.md)
 
 ## UT09 - Bases de datos NoSQL
 
