@@ -19,7 +19,7 @@ layout:
 
 # Ejercicios DML y subqueries
 
-1. Elimina los actores que hayan actuado en películas en inglés
+1. Elimina los film\_category de películas que hayan sido protagonizadas por "PENELOPE GUINESS"
 2. Elimina los payments de las tiendas de Woodridge
 3. Haz que el amount de los payment de tiendas de Woodridge sea el doble que el actual
 4. Cambia el apellido de los actores que actuaron en más de dos películas a "Esponja"
