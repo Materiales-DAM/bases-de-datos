@@ -174,6 +174,7 @@
 
 * [Seguridad de acceso a datos (DCL)](ut08-administracion-de-bases-de-datos/seguridad-de-acceso-a-datos-dcl.md)
 * [Tareas de administración](ut08-administracion-de-bases-de-datos/tareas-de-administracion.md)
+* [Transacciones (TCL)](ut08-administracion-de-bases-de-datos/transacciones-tcl.md)
 
 ## UT09 - Bases de datos NoSQL
 
