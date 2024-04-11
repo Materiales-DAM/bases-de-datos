@@ -22,14 +22,23 @@ layout:
 1.  Crea una vista que muestre los nombres y apellidos de todos los actores.
 
     ```sql
+    CREATE VIEW actor_name AS
+    SELECT a.first_name, a.last_name
+    FROM actor a;
     ```
 2.  Crea una vista que muestre los títulos de todas las películas junto con su duración en minutos.
 
     ```sql
+    CREATE VIEW film_length AS
+    SELECT f.title, f.length
+    FROM film f;
     ```
 3.  Crea una vista que muestre los nombres y apellidos de los clientes junto con sus correos electrónicos.
 
     ```sql
+    CREATE VIEW customer_name_email AS
+    SELECT c.first_name, c.last_naem, c.email
+    FROM customer c;
     ```
 4.  Crea una vista  materializada que muestre los nombres de las películas y los nombres de los actores que participaron en cada película.
 
