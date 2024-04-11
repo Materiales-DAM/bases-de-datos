@@ -119,7 +119,6 @@
   * [Eliminación de datos](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/eliminacion-de-datos/README.md)
     * [Ejercicios DELETE](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/eliminacion-de-datos/ejercicios-delete/README.md)
       * [Soluciones](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/eliminacion-de-datos/ejercicios-delete/soluciones.md)
-  * [Transacciones](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/transacciones.md)
 
 ## UT05 - Consultas
 
