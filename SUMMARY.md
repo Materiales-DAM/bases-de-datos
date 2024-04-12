@@ -166,7 +166,8 @@
 
 ## UT07 - Administración de bases de datos
 
-* [Seguridad de acceso a datos (DCL)](ut07-administracion-de-bases-de-datos/seguridad-de-acceso-a-datos-dcl.md)
+* [Seguridad de acceso a datos](ut07-administracion-de-bases-de-datos/seguridad-de-acceso-a-datos/README.md)
+  * [Gestión de usuarios, permisos y roles (DCL)](ut07-administracion-de-bases-de-datos/seguridad-de-acceso-a-datos/gestion-de-usuarios-permisos-y-roles-dcl.md)
 * [Tareas de administración](ut07-administracion-de-bases-de-datos/tareas-de-administracion.md)
 * [Transacciones (TCL)](ut07-administracion-de-bases-de-datos/transacciones-tcl.md)
 

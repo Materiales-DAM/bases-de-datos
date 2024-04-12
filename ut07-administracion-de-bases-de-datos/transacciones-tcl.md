@@ -1,3 +1,22 @@
+---
+cover: ../.gitbook/assets/transaction.png
+coverY: 299.25333333333333
+layout:
+  cover:
+    visible: true
+    size: hero
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Transacciones (TCL)
 
 Una transacción es una secuencia de operaciones que se ejecutan como una unidad indivisible de trabajo. Estas operaciones pueden ser consultas SQL como INSERT, UPDATE, DELETE o cualquier otra operación que modifique los datos en la base de datos. El concepto fundamental detrás de las transacciones es que todas las operaciones dentro de una transacción deben completarse con éxito o ninguna de ellas debe aplicarse en absoluto. Esto se conoce como el principio ACID (Atomicidad, Consistencia, Aislamiento y Durabilidad), que garantiza la integridad de los datos y la fiabilidad de las operaciones en la base de datos.
