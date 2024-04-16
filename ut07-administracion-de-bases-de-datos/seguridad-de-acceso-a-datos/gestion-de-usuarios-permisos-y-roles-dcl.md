@@ -139,28 +139,101 @@ ALTER USER mi_usuario WITH PASSWORD 'Tokio2324';
 {% endtab %}
 {% endtabs %}
 
-## Permisos
+## Gestión de permisos
 
 La gestión de permisos se lleva a cabo a través de los comandos `GRANT` y `REVOKE`. Antes de estudiar dichos comandos hay que explicar los conceptos básicos de los permisos:
 
-1. **Privilegios**: Especifica los privilegios que se están otorgando o revocando. Algunos ejemplos comunes de privilegios son `SELECT`, `INSERT`, `UPDATE`, `DELETE`, `ALL PRIVILEGES`, entre otros.
-2. **Objeto**: Indica sobre qué objeto se están otorgando o revocando los privilegios. Puede ser una base de datos, una tabla, una columna o un conjunto de ellos.
-3. **Usuario o rol**: Especifica a qué usuario o rol se están otorgando o revocando los privilegios.
-4. **Host**: En el caso de usuarios, indica desde qué host pueden conectarse. Puede ser una dirección IP o un nombre de host.
-5. **WITH GRANT OPTION**: Esta opción permite que el usuario al que se le otorgan los privilegios pueda otorgar esos mismos privilegios a otros usuarios.
+### Privilegios
+
+Los privilegios son permisos que se otorgan a los usuarios para realizar operaciones específicas en las bases de datos, tablas o incluso columnas individuales. Los privilegios que se pueden otorgar o revocar a los usuarios son :
+
+1. **SELECT**: Permite al usuario seleccionar datos de una tabla o vista. Este privilegio permite leer datos, pero no modificarlos.
+2. **INSERT**: Permite al usuario insertar nuevos registros en una tabla.
+3. **UPDATE**: Permite al usuario modificar registros existentes en una tabla.
+4. **DELETE**: Permite al usuario eliminar registros de una tabla.
+5. **CREATE**: Permite al usuario crear nuevas tablas, vistas, índices u otros objetos en una base de datos.
+6. **DROP**: Permite al usuario eliminar tablas, vistas, índices u otros objetos de una base de datos.
+7. **ALTER**: Permite al usuario modificar la estructura de una tabla existente, como agregar, eliminar o modificar columnas.
+8. **GRANT OPTION**: Permite al usuario otorgar o revocar los privilegios que él mismo posee a otros usuarios.
+9. **REFERENCES**: Permite al usuario crear una clave externa que haga referencia a una tabla en otra base de datos.
+10. **INDEX**: Permite al usuario crear índices en una tabla.
+11. **ALL PRIVILEGES**: Concede todos los privilegios disponibles en una base de datos o tabla.
+
+### Objecto
+
+Identifica el objeto sobre el que se están otorgando o revocando los privilegios. Puede ser una base de datos, una tabla, una columna o un conjunto de ellos.
+
+{% tabs %}
+{% tab title="MySQL" %}
+Es posible seleccionar todas las tablas de una base de datos usando el comodín \*
+
+`sakila.*`
+{% endtab %}
+
+{% tab title="PostgreSQL" %}
+Es posible seleccionar todas las tablas de una base de datos usando la palabra reservada DATABASE&#x20;
+
+<pre class="language-sql"><code class="lang-sql"><strong>DATABASE sakila
+</strong></code></pre>
+{% endtab %}
+{% endtabs %}
+
+### Usuario o rol
+
+Especifica a qué usuario o rol se están otorgando o revocando los privilegios.
 
 ### GRANT
 
-* **IDENTIFIED BY 'contraseña'**: Especifica la contraseña para el usuario. Esto se utiliza cuando se está creando un nuevo usuario.
-* **TO 'usuario'@'host'**: Indica a qué usuario y desde qué host se están otorgando los privilegios. Esta opción es obligatoria en la sintaxis del comando `GRANT`.
-* **ON objeto**: Especifica sobre qué objeto se están otorgando los privilegios. Puede ser una base de datos, una tabla, una columna, etc.
+El comando GRANT se utiliza para otorgar privilegios a un usuario en una base de datos, tabla o columna específica. La sintaxis básica del comando GRANT es la siguiente:
+
+```sql
+GRANT privilegio1. privilegio2 ON base_de_datos.tabla1 TO <usuario>;
+```
+
+Por ejemplo, si quisiera permitir al usuario employee que pueda leer los datos de todas las tablas de Sakila ejecutaría
+
+{% tabs %}
+{% tab title="MySQL" %}
+```sql
+GRANT SELECT ON sakila.* TO 'employee';
+```
+{% endtab %}
+
+{% tab title="PostgreSQL" %}
+```sql
+GRANT SELECT ON DATABASE sakila TO employee;
+```
+{% endtab %}
+{% endtabs %}
 
 ### REVOKE
 
-* **FROM 'usuario'@'host'**: Indica de qué usuario y desde qué host se están revocando los privilegios. Esta opción es obligatoria en la sintaxis del comando `REVOKE`.
-* **ON objeto**: Especifica sobre qué objeto se están revocando los privilegios. Puede ser una base de datos, una tabla, una columna, etc.
+El comando REVOKE se utiliza para revocar los privilegios previamente otorgados a un usuario en una base de datos, tabla o columna específica. La sintaxis básica del comando REVOKE es la siguiente:
 
-## Roles
+```sql
+REVOKE privilegios ON base_de_datos.tabla FROM <usuario>;
+```
 
+Por ejemplo, si quisiera revocar los privilegios al usuario employee de forma que no pueda leer los datos de ninguna las tablas de Sakila ejecutaría
 
+{% tabs %}
+{% tab title="MySQL" %}
+```sql
+REVOKE SELECT ON sakila.* FROM 'employee';
+```
+{% endtab %}
 
+{% tab title="PostgreSQL" %}
+```sql
+REVOKE ANT SELECT ON DATABASE sakila FROM employee;
+```
+{% endtab %}
+{% endtabs %}
+
+### FLUSH (MySQL)
+
+Después de otorgar o revocar privilegios, es necesario recargarlos para que tengan efecto usando el comando FLUSH
+
+```sql
+FLUSH PRIVILEGES;
+```
