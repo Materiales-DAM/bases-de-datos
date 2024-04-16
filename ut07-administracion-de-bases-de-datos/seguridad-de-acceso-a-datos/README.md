@@ -31,16 +31,3 @@ La seguridad de acceso a bases de datos relacionales es un aspecto crítico en l
 8. **Actualizaciones y parches:** Mantener el software de la base de datos actualizado con los últimos parches de seguridad es crucial para protegerse contra vulnerabilidades conocidas y ataques.
 
 En resumen, la seguridad de acceso a bases de datos relacionales implica una combinación de medidas técnicas, como autenticación, autorización, control de acceso y encriptación, junto con buenas prácticas de administración de usuarios y privilegios, auditoría regular y actualizaciones de seguridad.
-
-## Usuarios
-
-
-
-## Roles
-
-
-
-## Permisos
-
-
-

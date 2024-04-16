@@ -237,3 +237,56 @@ Después de otorgar o revocar privilegios, es necesario recargarlos para que ten
 ```sql
 FLUSH PRIVILEGES;
 ```
+
+## Roles
+
+Los roles son entidades que agrupan conjuntos de permisos y privilegios. Permiten simplificar la administración de permisos al asignar roles específicos a usuarios en lugar de configurar permisos individuales para cada usuario. Esto simplifica la gestión de permisos, especialmente en sistemas con muchos usuarios y complejas estructuras de permisos.
+
+La asignación de permisos a un rol se hace igual que a los usuarios.
+
+### Creación de roles
+
+```sql
+CREATE ROLE '<rolename>'@'<host>';
+```
+
+Por ejemplo, si quiero crear un role llamado employee
+
+```sql
+CREATE ROLE 'employee'@'%';
+```
+
+### Eliminación de roles
+
+```sql
+DROP ROLE <role>;
+```
+
+Por ejemplo, si quiero eliminar un role llamado employee
+
+```sql
+DROP ROLE employee;
+```
+
+### Asignar / desasignar roles a usuarios
+
+Para asignar un role a un usuario se utiliza el comando GRANT de la siguiente manera
+
+```sql
+GRANT <rol_name> TO <username>;
+```
+
+Para quitar un rol a un usuario se utiliza el comando REVOKE
+
+```sql
+REVOKE <rol_name> TO <username>;
+```
+
+Por ejemplo
+
+```sql
+# Añade el role employee al usuario mikel
+GRANT employee TO mikel;
+# Quita el role employee del usuario mikel
+REVOKE employee TO mikel;
+```
