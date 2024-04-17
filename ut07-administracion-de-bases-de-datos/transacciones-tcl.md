@@ -21,8 +21,6 @@ layout:
 
 Una transacción es una secuencia de operaciones que se ejecutan como una unidad indivisible de trabajo. Estas operaciones pueden ser consultas SQL como INSERT, UPDATE, DELETE o cualquier otra operación que modifique los datos en la base de datos. El concepto fundamental detrás de las transacciones es que todas las operaciones dentro de una transacción deben completarse con éxito o ninguna de ellas debe aplicarse en absoluto. Esto se conoce como el principio ACID (Atomicidad, Consistencia, Aislamiento y Durabilidad), que garantiza la integridad de los datos y la fiabilidad de las operaciones en la base de datos.
 
-A continuación se detallan las principales características de las transacciones
-
 ### Atomicidad
 
 La atomicidad garantiza que todas las operaciones dentro de una transacción se realicen como una unidad atómica. Esto significa que o bien todas las operaciones se completan con éxito y se guardan permanentemente en la base de datos, o ninguna de ellas se aplica en absoluto si algo falla. En otras palabras, si una parte de la transacción falla, la base de datos se restaura a su estado original antes de que comenzara la transacción.
@@ -41,10 +39,16 @@ La durabilidad garantiza que los cambios realizados por una transacción se guar
 
 ## Sintaxis
 
+### Commit
+
+`COMMIT` es un comando que confirma y finaliza una transacción en una base de datos. Cuando se emite un `COMMIT`, todas las operaciones realizadas en la transacción se hacen permanentes y se guardan en la base de datos. Después de un `COMMIT`, los cambios realizados en la transacción son visibles para otras transacciones que se están ejecutando en la misma base de datos. Una vez que se ejecuta un `COMMIT`, no se pueden deshacer los cambios realizados en la transacción.
+
+### Rollback
+
+`ROLLBACK` es un comando que revierte una transacción y deshace todas las operaciones realizadas en ella. Cuando se emite un `ROLLBACK`, todas las operaciones dentro de la transacción se eliminan y se revierten al estado que tenían antes de que comenzara la transacción. `ROLLBACK` se utiliza para abortar una transacción que ha fallado o que no se desea confirmar. Después de un `ROLLBACK`, la base de datos vuelve al estado que tenía antes de que comenzara la transacción, y los cambios realizados en la transacción no se reflejan en la base de datos.
+
 {% tabs %}
 {% tab title="MySQL" %}
-
-
 En MySQL, puedes comenzar una transacción con la instrucción `START TRANSACTION`, confirmarla con `COMMIT` o revertirla con `ROLLBACK`. Por defecto, las transacciones se confirman automáticamente a menos que se especifique lo contrario con `SET AUTOCOMMIT = 0`.
 
 Ejemplo de uso de transacciones en MySQL:
@@ -58,8 +62,6 @@ COMMIT;
 {% endtab %}
 
 {% tab title="PostgreSQL" %}
-
-
 En PostgreSQL, al igual que en MySQL, puedes comenzar una transacción con la instrucción `BEGIN`, confirmarla con `COMMIT` o revertirla con `ROLLBACK`. Por defecto, las transacciones se confirman automáticamente, pero puedes deshabilitar esta funcionalidad con la instrucción `SET AUTOCOMMIT = OFF`.
 
 Ejemplo de uso de transacciones en PostgreSQL:
@@ -72,18 +74,3 @@ COMMIT;
 ```
 {% endtab %}
 {% endtabs %}
-
-En resumen, las transacciones en MySQL proporcionan un mecanismo para garantizar la integridad de los datos y la consistencia de las operaciones en la base de datos, lo que permite realizar operaciones complejas de manera segura y confiable.
-
-### Commit
-
-
-
-### Rollback
-
-
-
-## Scripts
-
-
-
