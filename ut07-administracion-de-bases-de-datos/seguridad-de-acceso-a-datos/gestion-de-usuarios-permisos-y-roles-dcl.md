@@ -103,8 +103,6 @@ DROP USER mi_usuario;
 
 {% tabs %}
 {% tab title="MySQL" %}
-
-
 Una vez que hayas iniciado sesión en MySQL, puedes usar el comando `ALTER USER` para modificar el usuario. Aquí está la sintaxis básica:
 
 ```sql
@@ -225,7 +223,7 @@ REVOKE SELECT ON sakila.* FROM 'employee';
 
 {% tab title="PostgreSQL" %}
 ```sql
-REVOKE ANT SELECT ON DATABASE sakila FROM employee;
+REVOKE SELECT ON DATABASE sakila FROM employee;
 ```
 {% endtab %}
 {% endtabs %}
@@ -246,6 +244,8 @@ La asignación de permisos a un rol se hace igual que a los usuarios.
 
 ### Creación de roles
 
+{% tabs %}
+{% tab title="MySQL" %}
 ```sql
 CREATE ROLE '<rolename>'@'<host>';
 ```
@@ -255,11 +255,38 @@ Por ejemplo, si quiero crear un role llamado employee
 ```sql
 CREATE ROLE 'employee'@'%';
 ```
+{% endtab %}
+
+{% tab title="PostgreSQL" %}
+<pre class="language-sql"><code class="lang-sql"><strong>CREATE ROLE &#x3C;rolename>;
+</strong></code></pre>
+
+Por ejemplo, si quiero crear un role llamado employee
+
+```sql
+CREATE ROLE employee;
+```
+{% endtab %}
+{% endtabs %}
 
 ### Eliminación de roles
 
+{% tabs %}
+{% tab title="MySQL" %}
 ```sql
-DROP ROLE <role>;
+DROP ROLE '<rolename>';
+```
+
+Por ejemplo, si quiero eliminar un role llamado employee
+
+```sql
+DROP ROLE 'employee';
+```
+{% endtab %}
+
+{% tab title="PostgreSQL" %}
+```sql
+DROP ROLE <rolename>;
 ```
 
 Por ejemplo, si quiero eliminar un role llamado employee
@@ -267,14 +294,39 @@ Por ejemplo, si quiero eliminar un role llamado employee
 ```sql
 DROP ROLE employee;
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Asignar / desasignar roles a usuarios
 
+{% tabs %}
+{% tab title="MySQL" %}
 Para asignar un role a un usuario se utiliza el comando GRANT de la siguiente manera
 
+<pre class="language-sql"><code class="lang-sql"><strong>GRANT '&#x3C;rol_name>' TO '&#x3C;username>';
+</strong></code></pre>
+
+Para quitar un rol a un usuario se utiliza el comando REVOKE
+
 ```sql
-GRANT <rol_name> TO <username>;
+REVOKE '<rol_name>' TO '<username>';
 ```
+
+Por ejemplo
+
+```sql
+# Añade el role employee al usuario mikel
+GRANT 'employee' TO 'mikel';
+# Quita el role employee del usuario mikel
+REVOKE 'employee' TO 'mikel';
+```
+{% endtab %}
+
+{% tab title="PostgreSQL" %}
+Para asignar un role a un usuario se utiliza el comando GRANT de la siguiente manera
+
+<pre class="language-sql"><code class="lang-sql"><strong>GRANT &#x3C;rol_name> TO &#x3C;username>;
+</strong></code></pre>
 
 Para quitar un rol a un usuario se utiliza el comando REVOKE
 
@@ -290,3 +342,5 @@ GRANT employee TO mikel;
 # Quita el role employee del usuario mikel
 REVOKE employee TO mikel;
 ```
+{% endtab %}
+{% endtabs %}
