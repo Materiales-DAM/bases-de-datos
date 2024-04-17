@@ -168,7 +168,9 @@
 
 * [Seguridad de acceso a datos](ut07-administracion-de-bases-de-datos/seguridad-de-acceso-a-datos/README.md)
   * [Gestión de usuarios, permisos y roles (DCL)](ut07-administracion-de-bases-de-datos/seguridad-de-acceso-a-datos/gestion-de-usuarios-permisos-y-roles-dcl.md)
-* [Tareas de administración](ut07-administracion-de-bases-de-datos/tareas-de-administracion.md)
+  * [Ejercicios seguridad de datos](ut07-administracion-de-bases-de-datos/seguridad-de-acceso-a-datos/ejercicios-seguridad-de-datos.md)
+* [Tareas de administración](ut07-administracion-de-bases-de-datos/tareas-de-administracion/README.md)
+  * [Ejercicios tareas de administración](ut07-administracion-de-bases-de-datos/tareas-de-administracion/ejercicios-tareas-de-administracion.md)
 * [Transacciones (TCL)](ut07-administracion-de-bases-de-datos/transacciones-tcl.md)
 
 ## UT08 - Procedimientos almacenados, funciones y triggers
