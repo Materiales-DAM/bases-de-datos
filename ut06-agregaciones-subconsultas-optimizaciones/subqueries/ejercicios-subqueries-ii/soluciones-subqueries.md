@@ -244,5 +244,22 @@ layout:
     ```
 16. Muestra el número de clientes por país, sólo deben aparecer los países con más clientes que la media por país.
 
-    <pre class="language-sql"><code class="lang-sql"><strong>
-    </strong></code></pre>
+    ```sql
+    SELECT co.country_id, COUNT(c.customer_id) as customers
+    FROM country co
+    LEFT JOIN city ci ON ci.country_id = co.country_id
+    LEFT JOIN address a ON a.city_id = ci.city_id
+    LEFT JOIN customer c ON c.address_id = a.address_id
+    GROUP BY co.country_id
+    HAVING customers > (
+    	SELECT AVG(customers)
+    	FROM (
+    		SELECT COUNT(c.customer_id) as customers
+    		FROM country co
+    		LEFT JOIN city ci ON ci.country_id = co.country_id
+    		LEFT JOIN address a ON a.city_id = ci.city_id
+    		LEFT JOIN customer c ON c.address_id = a.address_id
+    		GROUP BY co.country_id
+    	) as customers_per_country
+    );
+    ```
