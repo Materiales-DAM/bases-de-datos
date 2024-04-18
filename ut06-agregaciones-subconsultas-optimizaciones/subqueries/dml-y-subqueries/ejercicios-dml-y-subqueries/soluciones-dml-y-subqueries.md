@@ -48,6 +48,16 @@ layout:
 3.  Elimina los payments de las tiendas de Woodridge
 
     ```sql
+    DELETE FROM payment p
+    WHERE p.rental_id IN (
+    	SELECT r.rental_id
+    	FROM rental r
+    	INNER JOIN inventory i ON r.inventory_id = i.inventory_id
+    	INNER JOIN store s ON s.store_id=i.store_id
+    	INNER JOIN address a ON s.address_id= a.address_id
+    	INNER JOIN city c ON c.city_id = a.city_id
+    	WHERE c.city = 'Woodridge'
+    );
     ```
 4.  Cambia el apellido de los actores que actuaron en más de dos películas a "Esponja"
 
