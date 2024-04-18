@@ -62,8 +62,19 @@ layout:
 4.  Cambia el apellido de los actores que actuaron en más de dos películas a "Esponja"
 
     ```sql
+    UPDATE actor 
+    SET last_name = 'Esponja'
+    WHERE actor_id IN (
+    	SELECT fa.actor_id 
+    	FROM film_actor fa 
+    	GROUP BY fa.actor_id 
+    	HAVING COUNT(*) > 2
+    );
     ```
 5.  Haz una copia de los actores en la base de datos
 
     ```sql
+    INSERT INTO actor(first_name, last_name, last_update)
+    SELECT a.first_name, a.last_name, NOW()
+    FROM actor a;
     ```
