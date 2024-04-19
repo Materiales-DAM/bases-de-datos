@@ -304,7 +304,8 @@ DROP ROLE employee;
 Para asignar un role a un usuario se utiliza el comando GRANT de la siguiente manera
 
 <pre class="language-sql"><code class="lang-sql"><strong>GRANT '&#x3C;rol_name>' TO '&#x3C;username>';
-</strong></code></pre>
+</strong>set default &#x3C;rol_name> to '&#x3C;username>';
+</code></pre>
 
 Para quitar un rol a un usuario se utiliza el comando REVOKE
 
@@ -317,6 +318,7 @@ Por ejemplo
 ```sql
 # Añade el role employee al usuario mikel
 GRANT 'employee' TO 'mikel';
+set default 'employee' to 'mikel';
 # Quita el role employee del usuario mikel
 REVOKE 'employee' TO 'mikel';
 ```
