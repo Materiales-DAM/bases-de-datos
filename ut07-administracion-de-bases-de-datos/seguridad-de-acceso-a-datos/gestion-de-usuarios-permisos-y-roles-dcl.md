@@ -165,14 +165,17 @@ Identifica el objeto sobre el que se están otorgando o revocando los privilegio
 {% tab title="MySQL" %}
 Es posible seleccionar todas las tablas de una base de datos usando el comodín \*
 
-`sakila.*`
+```sql
+sakila.*
+```
 {% endtab %}
 
 {% tab title="PostgreSQL" %}
-Es posible seleccionar todas las tablas de una base de datos usando la palabra reservada DATABASE&#x20;
+Es posible seleccionar todas las tablas de un schema usando la palabra reservada DATABASE&#x20;
 
-<pre class="language-sql"><code class="lang-sql"><strong>DATABASE sakila
-</strong></code></pre>
+```sql
+ON ALL TABLES IN SCHEMA sakila
+```
 {% endtab %}
 {% endtabs %}
 
@@ -188,7 +191,23 @@ El comando GRANT se utiliza para otorgar privilegios a un usuario en una base de
 GRANT privilegio1. privilegio2 ON base_de_datos.tabla1 TO <usuario>;
 ```
 
-Por ejemplo, si quisiera permitir al usuario employee que pueda leer los datos de todas las tablas de Sakila ejecutaría
+Por ejemplo, si quisiera permitir al usuario employee que pueda leer los datos de la tabla actor de sakila, ejecutaría
+
+{% tabs %}
+{% tab title="MySQL" %}
+```sql
+GRANT SELECT ON sakila.actor TO 'employee';
+```
+{% endtab %}
+
+{% tab title="PostgreSQL" %}
+```sql
+GRANT SELECT ON sakila.actor TO employee;
+```
+{% endtab %}
+{% endtabs %}
+
+Si queremos dar permisos en todas las tablas de una base de datos
 
 {% tabs %}
 {% tab title="MySQL" %}
@@ -199,7 +218,7 @@ GRANT SELECT ON sakila.* TO 'employee';
 
 {% tab title="PostgreSQL" %}
 ```sql
-GRANT SELECT ON DATABASE sakila TO employee;
+GRANT SELECT ON ALL TABLES IN SCHEMA sakila TO employee;
 ```
 {% endtab %}
 {% endtabs %}
@@ -217,13 +236,13 @@ Por ejemplo, si quisiera revocar los privilegios al usuario employee de forma qu
 {% tabs %}
 {% tab title="MySQL" %}
 ```sql
-REVOKE SELECT ON sakila.* FROM 'employee';
+REVOKE SELECT ON sakila.actor FROM 'employee';
 ```
 {% endtab %}
 
 {% tab title="PostgreSQL" %}
 ```sql
-REVOKE SELECT ON DATABASE sakila FROM employee;
+REVOKE SELECT ON sakila.actor FROM employee;
 ```
 {% endtab %}
 {% endtabs %}
@@ -297,11 +316,11 @@ DROP ROLE employee;
 {% endtab %}
 {% endtabs %}
 
-### Asignar / desasignar roles a usuarios
+### Asignar / revocar roles a usuarios
 
 {% tabs %}
 {% tab title="MySQL" %}
-Para asignar un role a un usuario se utiliza el comando GRANT de la siguiente manera
+Para asignar un role a un usuario se utiliza el comando GRANT y después activar el role
 
 <pre class="language-sql"><code class="lang-sql"><strong>GRANT '&#x3C;rol_name>' TO '&#x3C;username>';
 </strong>set default &#x3C;rol_name> to '&#x3C;username>';
