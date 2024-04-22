@@ -1,5 +1,5 @@
 ---
-cover: ../.gitbook/assets/transaction.png
+cover: ../../.gitbook/assets/transaction.png
 coverY: 299.25333333333333
 layout:
   cover:

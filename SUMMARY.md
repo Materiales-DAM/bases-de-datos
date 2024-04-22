@@ -173,7 +173,8 @@
   * [Ejercicios seguridad de datos](ut07-administracion-de-bases-de-datos/seguridad-de-acceso-a-datos/ejercicios-seguridad-de-datos.md)
 * [Tareas de administración](ut07-administracion-de-bases-de-datos/tareas-de-administracion/README.md)
   * [Ejercicios tareas de administración](ut07-administracion-de-bases-de-datos/tareas-de-administracion/ejercicios-tareas-de-administracion.md)
-* [Transacciones (TCL)](ut07-administracion-de-bases-de-datos/transacciones-tcl.md)
+* [Transacciones (TCL)](ut07-administracion-de-bases-de-datos/transacciones-tcl/README.md)
+  * [Ejercicios transacciones](ut07-administracion-de-bases-de-datos/transacciones-tcl/ejercicios-transacciones.md)
 
 ## UT08 - Procedimientos almacenados, funciones y triggers
 
