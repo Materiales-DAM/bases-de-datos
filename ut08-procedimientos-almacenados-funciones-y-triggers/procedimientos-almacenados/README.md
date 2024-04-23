@@ -23,11 +23,9 @@ Un procedimiento almacenado es una secuencia de instrucciones SQL que se almacen
 
 ## Definición de procedimientos almacenados
 
-La sintaxis básica para la creación de procedimientos almacenados en MySQL es la siguiente
-
 {% tabs %}
 {% tab title="MySQL" %}
-En MySQL esta es la sintaxis básica
+La sintaxis básica para la creación de procedimientos almacenados en MySQL es la siguiente
 
 ```plsql
 CREATE
@@ -50,47 +48,22 @@ routine_body:
 {% endtab %}
 
 {% tab title="PostgreSQL" %}
-En PostgreSQL esta es la sintaxis básica
+La sintaxis básica para la creación de procedimientos almacenados en PostgreSQL es la siguiente
 
 ```plsql
-CREATE
-    PROCEDURE [IF NOT EXISTS] sp_name ([proc_parameter[,...]])
-    [characteristic ...] routine_body
-
-proc_parameter:
-    [ IN | OUT | INOUT ] param_name type
-
-characteristic: {
-    COMMENT 'string'
-  | LANGUAGE SQL  | [NOT] DETERMINISTIC
-  | { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA }
-  | SQL SECURITY { DEFINER | INVOKER }
-}
-
-routine_body:
-    SQL routine
+CREATE [ OR REPLACE ] PROCEDURE
+    name ( [ [ argmode ] [ argname ] argtype [ { DEFAULT | = } default_expr ] [, ...] ] )
+  { LANGUAGE lang_name
+    | TRANSFORM { FOR TYPE type_name } [, ... ]
+    | [ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER
+    | SET configuration_parameter { TO value | = value | FROM CURRENT }
+    | AS 'definition'
+    | AS 'obj_file', 'link_symbol'
+    | sql_body
+  } ...
 ```
 {% endtab %}
 {% endtabs %}
-
-```plsql
-CREATE
-    PROCEDURE [IF NOT EXISTS] sp_name ([proc_parameter[,...]])
-    [characteristic ...] routine_body
-
-proc_parameter:
-    [ IN | OUT | INOUT ] param_name type
-
-characteristic: {
-    COMMENT 'string'
-  | LANGUAGE SQL  | [NOT] DETERMINISTIC
-  | { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA }
-  | SQL SECURITY { DEFINER | INVOKER }
-}
-
-routine_body:
-    SQL routine
-```
 
 ### Parámetros
 
@@ -129,6 +102,7 @@ Veamos en detalle:
 {% tab title="PostgreSQL" %}
 En PostgreSQL
 
+{% code lineNumbers="true" %}
 ```plsql
 CREATE OR REPLACE PROCEDURE sakila.list_films(
 	IN category VARCHAR(50), 
@@ -143,11 +117,12 @@ BEGIN
 	  WHERE c.name = category ;
 END;$$
 ```
+{% endcode %}
 
 Veamos en detalle:
 
 * El parámetro de salida category\_films se carga en la query usando INTO
-*
+* Se debe cambiar el valor del delimiter  en la línea 6
 {% endtab %}
 {% endtabs %}
 
@@ -181,8 +156,6 @@ END
 </code></pre>
 
 ## Invocación de un procedimiento almacenado
-
-
 
 Una vez definido un procedimiento, es posible invocarlo de la siguiente manera
 
