@@ -32,3 +32,5 @@ layout:
 8. Abre una conexión a la base de datos con el usuario bob y comprueba que puedes insertar datos en sakila.film y no en sakila.customer
 9. Crea un usuario con el role salika\_admin llamado peppa y el password Sandia4you&#x20;
 10. Abre una conexión a la base de datos con el usuario peppa y comprueba que puedes insertar datos en sakila
+11. Quita a bob el role de informes
+12. Elimina el usuario peppa. Para ello, primero debes revocar todos sus permisos
