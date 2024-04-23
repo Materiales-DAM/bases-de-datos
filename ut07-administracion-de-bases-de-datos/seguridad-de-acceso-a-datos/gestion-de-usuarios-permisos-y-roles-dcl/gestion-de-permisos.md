@@ -81,10 +81,15 @@ GRANT SELECT ON sakila.actor TO 'employee';
 {% endtab %}
 
 {% tab title="PostgreSQL" %}
-<pre class="language-sql"><code class="lang-sql">GRANT USAGE ON SCHEMA sakila TO employee;
+En PostgreSQL, además de los permisos específicos que se dan sobre las tablas de los esquemas, es necesario dar un permiso especial de uso sobre el schema. Sin este permiso, el usuario no podrá acceder a las tablas del esquema, aunque tenga permisos sobre ellas.
 
-<strong>GRANT SELECT ON sakila.actor TO employee;
-</strong></code></pre>
+```sql
+-- Damos permiso para usar sakila
+GRANT USAGE ON SCHEMA sakila TO employee;
+
+-- Damos permiso para leer todas las tablas de sakila
+GRANT SELECT ON ALL TABLES IN SCHEMA sakila TO employee;
+```
 {% endtab %}
 {% endtabs %}
 
@@ -103,18 +108,6 @@ GRANT SELECT ON ALL TABLES IN SCHEMA sakila TO employee;
 ```
 {% endtab %}
 {% endtabs %}
-
-### GRANT USAGE (PostgreSQL)
-
-En PostgreSQL, además de los permisos específicos que se dan sobre las tablas de los esquemas, es necesario dar un permiso especial de uso sobre el schema. Sin este permiso, el usuario no podrá acceder a las tablas del esquema, aunque tenga permisos sobre ellas.
-
-```sql
--- Damos permiso para usar sakila
-GRANT USAGE ON SCHEMA sakila TO employee;
-
--- Damos permiso para leer todas las tablas de sakila
-GRANT SELECT ON ALL TABLES IN SCHEMA sakila TO employee;
-```
 
 ## REVOKE
 
