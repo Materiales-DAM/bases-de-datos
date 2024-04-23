@@ -37,7 +37,7 @@ Los privilegios son permisos que se otorgan a los usuarios para realizar operaci
 10. **INDEX**: Permite al usuario crear índices en una tabla.
 11. **ALL PRIVILEGES**: Concede todos los privilegios disponibles en una base de datos o tabla.
 
-## Objecto
+## Objeto
 
 Identifica el objeto sobre el que se están otorgando o revocando los privilegios. Puede ser una base de datos, una tabla, una columna o un conjunto de ellos.
 
