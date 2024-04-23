@@ -93,7 +93,7 @@ Para asignar un role a un usuario se utiliza el comando GRANT y después activar
 Para quitar un rol a un usuario se utiliza el comando REVOKE
 
 ```sql
-REVOKE '<rol_name>' TO '<username>';
+REVOKE '<rol_name>' FROM '<username>';
 ```
 
 Por ejemplo
@@ -103,7 +103,7 @@ Por ejemplo
 GRANT 'employee' TO 'mikel';
 set default 'employee' to 'mikel';
 # Quita el role employee del usuario mikel
-REVOKE 'employee' TO 'mikel';
+REVOKE 'employee' FROM 'mikel';
 ```
 {% endtab %}
 
@@ -116,7 +116,7 @@ Para asignar un role a un usuario se utiliza el comando GRANT de la siguiente ma
 Para quitar un rol a un usuario se utiliza el comando REVOKE
 
 ```sql
-REVOKE <rol_name> TO <username>;
+REVOKE <rol_name> FROM <username>;
 ```
 
 Por ejemplo
@@ -125,7 +125,7 @@ Por ejemplo
 # Añade el role employee al usuario mikel
 GRANT employee TO mikel;
 # Quita el role employee del usuario mikel
-REVOKE employee TO mikel;
+REVOKE employee FROM mikel;
 ```
 {% endtab %}
 {% endtabs %}
