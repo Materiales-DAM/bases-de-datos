@@ -29,6 +29,6 @@ layout:
 5. Crea un role llamado sakila\_admin
 6. Dale permisos al role sakila\_admin para leer, insertar, modificar y elminar datos de todas las tablas de sakila
 7. Asígnale a bob el role informes
-8. Abre una conexión a la base de datos con el usuario bob y comprueba que no puedes insertar datos en sakila
+8. Abre una conexión a la base de datos con el usuario bob y comprueba que puedes insertar datos en sakila.film y no en sakila.customer
 9. Crea un usuario con el role salika\_admin llamado peppa y el password Sandia4you&#x20;
 10. Abre una conexión a la base de datos con el usuario peppa y comprueba que puedes insertar datos en sakila
