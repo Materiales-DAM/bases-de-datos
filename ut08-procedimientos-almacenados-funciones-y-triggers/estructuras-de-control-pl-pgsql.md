@@ -3,7 +3,7 @@ cover: ../.gitbook/assets/plsql.jpg
 coverY: 0
 ---
 
-# Funciones
+# Estructuras de control PL/pgSQL
 
 Una función es un objeto que encapsula una serie de instrucciones SQL para realizar una tarea específica y **devuelve un único valor**. Las funciones pueden ser definidas por el usuario o pueden ser funciones integradas proporcionadas por el sistema gestor de bases de datos. Las funciones pueden realizar cálculos, manipular datos y realizar diversas operaciones dentro de la base de datos...
 

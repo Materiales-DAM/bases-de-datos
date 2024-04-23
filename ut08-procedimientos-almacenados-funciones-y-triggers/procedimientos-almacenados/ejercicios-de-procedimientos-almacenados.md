@@ -1,10 +1,10 @@
 ---
-cover: ../../.gitbook/assets/stored_procedures.jpg
+cover: ../../.gitbook/assets/plsql.jpg
 coverY: 0
 layout:
   cover:
     visible: true
-    size: hero
+    size: full
   title:
     visible: true
   description:

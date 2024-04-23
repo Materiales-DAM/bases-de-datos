@@ -178,9 +178,11 @@
 
 ## UT08 - Procedimientos almacenados, funciones y triggers
 
+* [Introducción a PL/pgSQL](ut08-procedimientos-almacenados-funciones-y-triggers/introduccion-a-pl-pgsql.md)
 * [Procedimientos almacenados](ut08-procedimientos-almacenados-funciones-y-triggers/procedimientos-almacenados/README.md)
   * [Ejercicios de procedimientos almacenados](ut08-procedimientos-almacenados-funciones-y-triggers/procedimientos-almacenados/ejercicios-de-procedimientos-almacenados.md)
 * [Funciones](ut08-procedimientos-almacenados-funciones-y-triggers/funciones.md)
+* [Estructuras de control PL/pgSQL](ut08-procedimientos-almacenados-funciones-y-triggers/estructuras-de-control-pl-pgsql.md)
 * [Triggers](ut08-procedimientos-almacenados-funciones-y-triggers/triggers.md)
 
 ## UT09 - Bases de datos NoSQL
