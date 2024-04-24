@@ -8,7 +8,7 @@ coverY: 0
 ## Instalación de clientes
 
 ```bash
-sudo apt install mysql-client-8.0 postgresql-client -y
+sudo apt install mysql-client-8.0 -y
 ```
 
 ## Backups / Restore
@@ -20,13 +20,13 @@ Un backup, o copia de seguridad, es una copia duplicada de los datos almacenados
 En MySQL usaremos la utilidad mysqldump para realizar backups.&#x20;
 
 ```bash
-mysqldump -u tu_nombre_de_usuario -p nombre_de_tu_base_de_datos > archivo_de_backup.sql
+mysqldump [-h host_mysql] -u tu_nombre_de_usuario -p nombre_de_tu_base_de_datos > archivo_de_backup.sql
 ```
 
 Si deseas hacer una copia de seguridad de todas las bases de datos a la vez, usa:
 
 ```bash
-mysqldump -u tu_nombre_de_usuario -p --all-databases > todas_las_bases_de_datos_backup.sql
+mysqldump [-h host_mysql] -u tu_nombre_de_usuario -p --all-databases > todas_las_bases_de_datos_backup.sql
 ```
 {% endtab %}
 
@@ -80,3 +80,7 @@ La planificación de tareas en bases de datos como PostgreSQL y MySQL es crucial
 **Cron y scripts:** Puedes utilizar el programador de tareas del sistema operativo (como cron en sistemas Unix/Linux o Programador de tareas en Windows) para ejecutar scripts SQL que contengan las tareas que deseas automatizar. Por ejemplo, puedes escribir un script SQL que realice una copia de seguridad de la base de datos y luego programar la ejecución de ese script en el programador de tareas del sistema operativo.
 {% endtab %}
 {% endtabs %}
+
+### Acceso a base de datos en contenedor
+
+Para acceder a la base de datos instalada en Docker el parámetro host se debe establecer a **172.17.0.1**
