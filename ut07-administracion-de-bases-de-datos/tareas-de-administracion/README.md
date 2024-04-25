@@ -52,8 +52,12 @@ Cuando se realiza una restauración, los datos almacenados en una copia de segur
 {% tab title="MySQL" %}
 En MySQL usaremos la utilidad cliente `mysql` para restaurar copias de seguridad.&#x20;
 
+Primero creamos la base de datos y luego hacemos el restore
+
 ```bash
-mysql -u tu_nombre_de_usuario -p nombre_de_tu_base_de_datos < archivo_de_backup.sql
+mysql [-h host_postgres] -u tu_nombre_de_usuario -p -e 'CREATE DATABASE nombre_de_tu_base_de_datos;'
+
+mysql [-h host_postgres] -u tu_nombre_de_usuario -p nombre_de_tu_base_de_datos < archivo_de_backup.sql
 ```
 {% endtab %}
 
