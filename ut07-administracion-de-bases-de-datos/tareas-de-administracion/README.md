@@ -61,7 +61,7 @@ mysql -u tu_nombre_de_usuario -p nombre_de_tu_base_de_datos < archivo_de_backup.
 En PostgreSQL usaremos la utilidad cliente `psql` para restaurar copias de seguridad.&#x20;
 
 ```bash
-psql [-h host_postgres] -U nombre_de_usuario -d nombre_de_base_de_datos -f archivo_de_backup.sql
+psql [-h host_postgres] -U nombre_de_usuario -d nombre_de_base_de_datos -f archivo_de_backup.sql --create
 ```
 {% endtab %}
 {% endtabs %}
