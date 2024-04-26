@@ -30,5 +30,5 @@ Una vez instalado Docker, basta con ejecutar este comando
 <pre class="language-bash"><code class="lang-bash"><strong>CONTAINER=diurno-postgres
 </strong><strong>PASSWORD=Sandia4you
 </strong><strong># Este comando lanza un contenedor con PostgreSQL llamado diurno-postgres, la clave de postgres es Sandia4you
-</strong>docker run --name $CONTAINER -e POSTGRES_PASSWORD=$PASSWORD -p 5432:5432  -d postgres
+</strong>docker run --name $CONTAINER -e POSTGRES_PASSWORD=$PASSWORD -p 5432:5432  -d postgres:14.0
 </code></pre>
