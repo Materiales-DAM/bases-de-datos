@@ -187,10 +187,6 @@
 * [Estructuras de control PL/pgSQL](ut08-procedimientos-almacenados-funciones-y-triggers/estructuras-de-control-pl-pgsql.md)
 * [Triggers](ut08-procedimientos-almacenados-funciones-y-triggers/triggers.md)
 
-## UT09 - Bases de datos NoSQL
-
-* [Introducción](ut09-bases-de-datos-nosql/introduccion.md)
-
 ## Bases de datos de prueba
 
 * [Scripts de creación](bases-de-datos-de-prueba/scripts-de-creacion.md)

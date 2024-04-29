@@ -5,36 +5,63 @@ coverY: 0
 
 # Estructuras de control PL/pgSQL
 
-Una función es un objeto que encapsula una serie de instrucciones SQL para realizar una tarea específica y **devuelve un único valor**. Las funciones pueden ser definidas por el usuario o pueden ser funciones integradas proporcionadas por el sistema gestor de bases de datos. Las funciones pueden realizar cálculos, manipular datos y realizar diversas operaciones dentro de la base de datos...
+En PL/pgSQL, las estructuras de control son fundamentales para dirigir el flujo de ejecución de un programa. Aquí tienes una explicación de las principales:
 
-## Creación de funciones
+## **IF-THEN-ELSE**
 
-La sintaxis básica para la creación de funciones en MySQL es la siguiente
+Esta estructura permite ejecutar cierto bloque de código si una condición es verdadera, y otro bloque si la condición es falsa.
 
-<pre class="language-plsql"><code class="lang-plsql"><strong>CREATE
-</strong>    FUNCTION [IF NOT EXISTS] sp_name ([func_parameter[,...]])
-    RETURNS type
-    [characteristic ...] routine_body
+```sql
+IF condition THEN
+    -- Bloque de código si la condición es verdadera
+ELSE
+    -- Bloque de código si la condición es falsa
+END IF;
+```
 
-characteristic: {
-    COMMENT 'string'
-  | LANGUAGE SQL  | [NOT] DETERMINISTIC
-  | { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA }
-  | SQL SECURITY { DEFINER | INVOKER }
-}
+## **LOOP**
 
-routine_body:
-    SQL routine
-</code></pre>
+Permite ejecutar un bloque de código repetidamente hasta que una condición especificada sea verdadera.
 
-Las funciones se pueden invocar dentro de sentencias SQL de varios tipos:
+```sql
+LOOP
+    -- Bloque de código
+    EXIT WHEN condition;
+END LOOP;
+```
 
-* Sentencias DML:&#x20;
-  * INSERT
-  * UPDATE
-  * DELETE
-* Sentencias DCL: todo tipo de consultas
+## **WHILE**
 
-### Parámetros
+Similar al bucle LOOP, pero ejecuta un bloque de código mientras una condición sea verdadera.
 
-Todos los parámetros de las fuciones son de entrada, por lo que no se debe especificar.
+```sql
+WHILE condition LOOP
+    -- Bloque de código
+END LOOP;
+```
+
+## **FOR LOOP**
+
+Itera sobre una secuencia de valores y ejecuta un bloque de código para cada valor en la secuencia.
+
+```sql
+FOR variable IN [REVERSE] valor_inicio..valor_fin LOOP
+    -- Bloque de código
+END LOOP;
+```
+
+## **CASE**
+
+Permite realizar diferentes acciones basadas en el valor de una expresión.
+
+```sql
+CASE expression
+    WHEN value1 THEN
+        -- Acciones si expression es igual a value1
+    WHEN value2 THEN
+        -- Acciones si expression es igual a value2
+    ELSE
+        -- Acciones por defecto si ninguna condición se cumple
+END CASE;
+```
+
