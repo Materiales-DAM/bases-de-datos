@@ -83,7 +83,7 @@ En MySQL
 
 ```plsql
 CREATE PROCEDURE list_films(
-	IN category VARCHAR(50), 
+	IN category VARCHAR(25), 
 	OUT category_films INT UNSIGNED
 )
 BEGIN
@@ -105,7 +105,7 @@ En PostgreSQL
 {% code lineNumbers="true" %}
 ```plsql
 CREATE OR REPLACE PROCEDURE sakila.list_films(
-	IN category VARCHAR(50), 
+	IN category VARCHAR(25), 
 	OUT category_films INT
 )
 LANGUAGE plpgsql
