@@ -67,7 +67,7 @@ En PostgreSQL, al igual que en MySQL, puedes comenzar una transacción con la in
 Ejemplo de uso de transacciones en PostgreSQL:
 
 ```sql
-BEGIN;
+START TRANSACTION;
 UPDATE cuentas SET saldo = saldo - 100 WHERE id = 123;
 UPDATE cuentas SET saldo = saldo + 100 WHERE id = 456;
 COMMIT;
