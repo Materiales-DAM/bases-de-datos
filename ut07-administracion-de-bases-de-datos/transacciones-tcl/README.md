@@ -62,7 +62,7 @@ COMMIT;
 {% endtab %}
 
 {% tab title="PostgreSQL" %}
-En PostgreSQL, al igual que en MySQL, puedes comenzar una transacción con la instrucción `BEGIN`, confirmarla con `COMMIT` o revertirla con `ROLLBACK`. Por defecto, las transacciones se confirman automáticamente, pero puedes deshabilitar esta funcionalidad con la instrucción `SET AUTOCOMMIT = OFF`.
+En PostgreSQL, al igual que en MySQL, puedes comenzar una transacción con la instrucción START TRANSACTION, confirmarla con `COMMIT` o revertirla con `ROLLBACK`. Por defecto, las transacciones se confirman automáticamente, pero puedes deshabilitar esta funcionalidad con la instrucción `SET AUTOCOMMIT = OFF`.
 
 Ejemplo de uso de transacciones en PostgreSQL:
 
