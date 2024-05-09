@@ -1,5 +1,5 @@
 ---
-cover: ../../.gitbook/assets/plsql.jpg
+cover: ../../../.gitbook/assets/plsql.jpg
 coverY: 0
 layout:
   cover:
