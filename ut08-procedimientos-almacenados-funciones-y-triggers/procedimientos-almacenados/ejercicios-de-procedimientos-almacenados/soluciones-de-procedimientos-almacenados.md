@@ -23,7 +23,7 @@ Escribe los siguientes procedimientos almacendados en sakila:
 
 1.  delete\_actor: Recibe como parámetro un actor\_id, elimina todos los film\_actor de ese actor y el actor también.
 
-    ```sql
+    ```plsql
     set plpgsql.variable_conflict to use_variable;
 
     CREATE OR REPLACE PROCEDURE sakila.delete_actor(
@@ -40,7 +40,7 @@ Escribe los siguientes procedimientos almacendados en sakila:
     ```
 2.  delete\_films\_older:  Recibe como parámetro un año (INT),  elimina películas más antiguas que el año del parámetro (film, film\_actor, film\_category, inventory, rental y payment)
 
-    ```sql
+    ```plsql
     CREATE OR REPLACE PROCEDURE sakila.delete_films_older
     (
     	IN release_year INT
@@ -90,6 +90,24 @@ Escribe los siguientes procedimientos almacendados en sakila:
     		);
     END;$$
     ```
-3. transfer\_inventory(original\_store\_id, destination\_store\_id): transfiere todo el inventario y personal de un store a otro, una vez ejecutado el procedimiento el original\_store\_id debe quedar sin inventario ni personal.
+3.  transfer\_inventory(original\_store\_id, destination\_store\_id): transfiere todo el inventario y personal de un store a otro, una vez ejecutado el procedimiento el original\_store\_id debe quedar sin inventario ni personal.
+
+    ```plsql
+    CREATE OR REPLACE PROCEDURE sakila.transfer_inventory(
+    	IN original_store_id INT,
+    	IN destination_store_id INT
+    )
+    language plpgsql
+    as $$
+    begin
+    	UPDATE inventory SET store_id = transfer_inventory.destination_store_id
+    	WHERE store_id = transfer_inventory.original_store_id;
+
+    	UPDATE staff SET store_id = transfer_inventory.destination_store_id
+    	WHERE store_id = transfer_inventory.original_store_id;
+    end;$$
+
+    CALL sakila.transfer_inventory(1, 2);
+    ```
 4. duplicate\_film(film\_id): Dado un film\_id, crea una nueva película con los mismos datos y el título 'Copia de \<original>', cópialo con sus categorías y actores.
 5. create\_user(user, password, schema): Haz un procedimiento que crea el usuario con el nombre del primer parámetro, el password del segundo parámetro y dale todos los permisos sobre el schema del tercer parámetro
