@@ -109,5 +109,36 @@ Escribe los siguientes procedimientos almacendados en sakila:
 
     CALL sakila.transfer_inventory(1, 2);
     ```
-4. duplicate\_film(film\_id): Dado un film\_id, crea una nueva película con los mismos datos y el título 'Copia de \<original>', cópialo con sus categorías y actores.
-5. create\_user(user, password, schema): Haz un procedimiento que crea el usuario con el nombre del primer parámetro, el password del segundo parámetro y dale todos los permisos sobre el schema del tercer parámetro
+4.  duplicate\_film(film\_id): Dado un film\_id, crea una nueva película con los mismos datos y el título 'Copia de \<original>', cópialo con sus categorías y actores.
+
+    ```plsql
+    CREATE OR REPLACE PROCEDURE sakila.duplicate_film(
+    	IN film_id_to_copy INT,
+    	OUT duplicated_id INT
+    )
+    language plpgsql
+    as $$
+    begin
+    	INSERT INTO film(title, description, release_year, language_id, original_language_id, rental_duration, length, replacement_cost, rating, special_features, fulltext)
+    	(SELECT CONCAT('Copia de ', title), description, release_year, language_id, original_language_id, rental_duration, length, replacement_cost, rating, special_features, fulltext
+    	FROM film f
+    	WHERE f.film_id = duplicate_film.film_id_to_copy)
+    	returning film_id into duplicated_id;
+
+    	INSERT INTO film_category (film_id, category_id, last_update)
+    	(SELECT duplicated_id, fc.category_id, NOW()
+    	FROM film_category fc
+    	WHERE fc.film_id = duplicate_film.film_id_to_copy);
+
+    	INSERT INTO film_actor (film_id, actor_id, last_update)
+    	(SELECT duplicated_id, fa.actor_id, NOW()
+    	FROM film_actor fa
+    	WHERE fa.film_id = duplicate_film.film_id_to_copy);
+    END;$$
+
+    CALL sakila.duplicate_film(1, null);
+    ```
+5.  create\_user(user, password, schema): Haz un procedimiento que crea el usuario con el nombre del primer parámetro, el password del segundo parámetro y dale todos los permisos sobre el schema del tercer parámetro
+
+    ```
+    ```
