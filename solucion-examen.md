@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Solución examen
 
 1\.
