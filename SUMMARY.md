@@ -24,7 +24,7 @@
     * [Modelo relacional](ut01-introduccion-a-los-sistemas-de-almacenamiento-de-informacion/bases-de-datos/modelos-de-bases-de-datos/modelo-relacional.md)
   * [Sistemas Gestores de Bases de Datos](ut01-introduccion-a-los-sistemas-de-almacenamiento-de-informacion/bases-de-datos/sistemas-gestores-de-bases-de-datos/README.md)
     * [Funciones de los SGDB](ut01-introduccion-a-los-sistemas-de-almacenamiento-de-informacion/bases-de-datos/sistemas-gestores-de-bases-de-datos/funciones-de-los-sgdb.md)
-    * [Ventajas de los SGDB](ut01-introduccion-a-los-sistemas-de-almacenamiento-de-informacion/bases-de-datos/sistemas-gestores-de-bases-de-datos/ventajas-de-los-sgdb.md)
+    * [Ventajas de los SGBD](ut01-introduccion-a-los-sistemas-de-almacenamiento-de-informacion/bases-de-datos/sistemas-gestores-de-bases-de-datos/ventajas-de-los-sgbd.md)
     * [Desventajas de los SGBD](ut01-introduccion-a-los-sistemas-de-almacenamiento-de-informacion/bases-de-datos/sistemas-gestores-de-bases-de-datos/desventajas-de-los-sgbd.md)
     * [Componentes de los SGBD](ut01-introduccion-a-los-sistemas-de-almacenamiento-de-informacion/bases-de-datos/sistemas-gestores-de-bases-de-datos/componentes-de-los-sgbd.md)
     * [Principales SGDB](ut01-introduccion-a-los-sistemas-de-almacenamiento-de-informacion/bases-de-datos/sistemas-gestores-de-bases-de-datos/principales-sgdb.md)
