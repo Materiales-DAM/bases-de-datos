@@ -39,7 +39,7 @@
 * [Entidades](ut02-diseno-conceptual-de-bases-de-datos/entidades.md)
 * [Atributos](ut02-diseno-conceptual-de-bases-de-datos/atributos.md)
 * [Relaciones](ut02-diseno-conceptual-de-bases-de-datos/relaciones.md)
-* [Ejercicios de diagramas ER](ut02-diseno-conceptual-de-bases-de-datos/ejercicios-de-diagramas-er/README.md)
+* [Ejercicios de diagramas ER](ut02-diseno-conceptual-de-bases-de-datos/ejercicios-de-diagramas-er.md)
   * [Soluciones de diagramas ER](ut02-diseno-conceptual-de-bases-de-datos/ejercicios-de-diagramas-er/soluciones-de-diagramas-er.md)
 * [Claves](ut02-diseno-conceptual-de-bases-de-datos/claves.md)
 * [Cardinalidad](ut02-diseno-conceptual-de-bases-de-datos/cardinalidad/README.md)
