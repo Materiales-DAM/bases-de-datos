@@ -19,12 +19,11 @@ layout:
 
 # Soluciones de diagramas ER
 
-1. Diseña el diagrama de entidad-relación de una base de datos de los alumnos un instituto:
-   * En una clase de un instituto estudian una serie de alumnos
-   * Cada clase tiene un código que la identifica (1DAWT, 1DAWM, 1DAMM, 2DAMM) y un nº de metros cuadrados
-   * De cada alumno se quiere guardar su edad, el nombre y el DNI
-   * Además, algunos alumnos tienen un carnet especial que les permite salir fuera del centro
-   * Se quiere guardar de cada clase en qué planta están y si se da clase de secundaria o pertenece a un ciclo formativo
+1.  Diseña el diagrama de entidad-relación de una base de datos de los alumnos un instituto:
+
+
+
+    <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 2. Diseña el diagrama de entidad-relación de una base de datos de los departamentos de un instituto:
    * En un instituto hay varios departamentos&#x20;
    * Cada departamento tiene asignada una habitación, un presupuesto, un código identificativo y una serie de ordenadores&#x20;
