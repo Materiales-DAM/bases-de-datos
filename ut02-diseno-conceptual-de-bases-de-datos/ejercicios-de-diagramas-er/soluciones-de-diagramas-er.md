@@ -29,3 +29,4 @@ layout:
     <figure><img src="../../.gitbook/assets/image (148).png" alt=""><figcaption></figcaption></figure>
 3.  Diseña el diagrama de entidad-relación de una base de datos de una empresa:
 
+    <figure><img src="../../.gitbook/assets/image (149).png" alt=""><figcaption></figcaption></figure>
