@@ -26,6 +26,6 @@ layout:
     <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 2.  Diseña el diagrama de entidad-relación de una base de datos de los departamentos de un instituto:
 
-
+    <figure><img src="../../.gitbook/assets/image (148).png" alt=""><figcaption></figcaption></figure>
 3.  Diseña el diagrama de entidad-relación de una base de datos de una empresa:
 
