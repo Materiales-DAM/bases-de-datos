@@ -22,10 +22,9 @@ layout:
 1.  Haz el diagrama ER de una base de datos que sirva para guardar los proyectos de una empresa:
 
     <figure><img src="../../../.gitbook/assets/image (150).png" alt=""><figcaption></figcaption></figure>
-2. Haz el diagrama ER de una base de datos que sirva para guardar los datos de libros y sus autores:
-   1. De cada libro se desea guardar: ISBN, título, año de publicación
-   2. Cada libro puede haber sido escrito por uno o varios autores
-   3. De cada autor se desea guardar: nombre, apellidos, nacionalidad.
+2.  Haz el diagrama ER de una base de datos que sirva para guardar los datos de libros y sus autores:
+
+    <figure><img src="../../../.gitbook/assets/image (151).png" alt=""><figcaption></figcaption></figure>
 3. Añade las anotaciones de cardinalidad a los [ejercicios anteriores](../../ejercicios-de-diagramas-er.md).
 4. Elige la cardinalidad correcta para cada caso:
    1. Un perro tiene un único dueño, pero una persona puede ser dueña de varios perros
