@@ -53,13 +53,16 @@
 * [Atributos de relaciones](ut02-diseno-conceptual-de-bases-de-datos/atributos-de-relaciones.md)
 * [Relaciones reflexivas](ut02-diseno-conceptual-de-bases-de-datos/relaciones-reflexivas.md)
 * [Relaciones ternarias](ut02-diseno-conceptual-de-bases-de-datos/relaciones-ternarias.md)
-* [Ejercicios ER ternarias y reflexivas](ut02-diseno-conceptual-de-bases-de-datos/ejercicios-er-ternarias-y-reflexivas.md)
+* [Ejercicios ER ternarias y reflexivas](ut02-diseno-conceptual-de-bases-de-datos/ejercicios-er-ternarias-y-reflexivas/README.md)
+  * [Soluciones ER ternarias y reflexivas](ut02-diseno-conceptual-de-bases-de-datos/ejercicios-er-ternarias-y-reflexivas/soluciones-er-ternarias-y-reflexivas.md)
 * [Modelo E/R extendido](ut02-diseno-conceptual-de-bases-de-datos/modelo-e-r-extendido/README.md)
   * [Herencia](ut02-diseno-conceptual-de-bases-de-datos/modelo-e-r-extendido/herencia.md)
-  * [Ejercicios ER extendida](ut02-diseno-conceptual-de-bases-de-datos/modelo-e-r-extendido/ejercicios-er-extendida.md)
+  * [Ejercicios ER extendida](ut02-diseno-conceptual-de-bases-de-datos/modelo-e-r-extendido/ejercicios-er-extendida/README.md)
+    * [Soluciones ER extendida](ut02-diseno-conceptual-de-bases-de-datos/modelo-e-r-extendido/ejercicios-er-extendida/soluciones-er-extendida.md)
   * [Generalización y especialización](ut02-diseno-conceptual-de-bases-de-datos/modelo-e-r-extendido/generalizacion-y-especializacion.md)
   * [Tipos de jerarquías](ut02-diseno-conceptual-de-bases-de-datos/modelo-e-r-extendido/tipos-de-jerarquias/README.md)
-    * [Ejercicios ER jerarquías](ut02-diseno-conceptual-de-bases-de-datos/modelo-e-r-extendido/tipos-de-jerarquias/ejercicios-er-jerarquias.md)
+    * [Ejercicios ER jerarquías](ut02-diseno-conceptual-de-bases-de-datos/modelo-e-r-extendido/tipos-de-jerarquias/ejercicios-er-jerarquias/README.md)
+      * [Soluciones ER jerarquías](ut02-diseno-conceptual-de-bases-de-datos/modelo-e-r-extendido/tipos-de-jerarquias/ejercicios-er-jerarquias/soluciones-er-jerarquias.md)
 
 ## UT03 - Diseño lógico de bases de datos
 

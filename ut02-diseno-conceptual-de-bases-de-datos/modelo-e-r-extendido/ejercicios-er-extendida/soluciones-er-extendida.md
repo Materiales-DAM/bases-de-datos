@@ -1,0 +1,53 @@
+---
+cover: ../../../.gitbook/assets/entidad-relacion.png
+coverY: -17.90631743899708
+layout:
+  cover:
+    visible: true
+    size: hero
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
+# Soluciones ER extendida
+
+1. Crea un diagrama con las entidades Escuela y Persona.
+   * Escuela: nombre, idEscuela
+   * Persona: dni, nombre, Dirección (Población, CP)&#x20;
+   * Las personas se subdividen en Director, Docente, Administrativo.&#x20;
+   * Docente: materia.
+   * Administrativo: grupo.
+   * Director: grado
+   * Cada escuela tiene un director
+   * Cada escuela tiene varios docentes y administrativos
+2. Crea un diagrama con las entidades Hospital, Planta y Empleado.
+   * Hospital: nombre, idHospital, Dirección (Población, CP)
+   * Planta: numero, idPlanta, idHospital
+   * Empleado: idEmpleado, nombre, NIF, idPlanta
+   * Los empleados se subdividen en Auxiliar, Enfermero, Médico.
+   * Médico: especialidad.
+   * Enfermero: turno
+   * Auxiliar: tipo
+   * 1 hospital puede tener 1 o varios empleados, y 1 empleado puede estar en 1 o varios hospitales.
+   * 1 hospital puede tener 1 o varias plantas, y 1 planta solo puede estar en 1 hospital.
+   * 1 planta puede tener 1 o varios empleados, y 1 empleado solo puede trabajar en una planta.
+3. Una empresa está dividida en varios departamentos de los que se conoce su nombre que los identifica y número de empleados. De los empleados se conoce su número, nombre, dirección y departamento en el que trabaja. Si el empleados es chofer, se conoce su número de libreta y número de accidentes que tuvo. Si es administrativo, los idiomas que habla. Si es técnico, las especialidades en las que puede trabajar. La empresa tiene un conjunto de coches (conducidos por chóferes) de los que se conoce matrícula y marca. A cualquier chofer se le puede asignar cualquier coche. Se registra la fecha en que cada chofer manejó cada coche. Un Chofer conduce un coche por día y no siempre el mismo.
+4.  Las sedes olímpicas se dividen en complejos deportivos. Los complejos deportivos se subdividen en aquellos en los que se desarrolla un único deporte y en los polideportivos. Los complejos polideportivos tienen áreas designadas para cada deporte con un indicador de localización (ejemplo: centro, esquinaNE, etc.).&#x20;
+
+    Un complejo tiene una localización, un jefe de organización individual y un área total ocupada. Los dos tipos de complejos (deporte único y polideportivo) tendrán diferentes tipos de información.&#x20;
+
+    Para cada sede, se conservará el número de complejos junto con su presupuesto aproximado. Cada complejo celebra una serie de eventos (ejemplo: la pista del estadio puede celebrar muchas carreras distintas.).&#x20;
+
+    Para cada evento está prevista una fecha, duración, número de participantes, número de comisarios.&#x20;
+
+    Una lista de todos los comisarios se conservará junto con la lista de los eventos en los que esté involucrado cada comisario ya sea cumpliendo la tarea de juez u observador.&#x20;
+
+    \
