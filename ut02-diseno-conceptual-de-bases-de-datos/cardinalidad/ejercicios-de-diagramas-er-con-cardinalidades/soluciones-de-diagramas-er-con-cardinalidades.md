@@ -30,4 +30,5 @@ layout:
    1. Un perro tiene un único dueño, pero una persona puede ser dueña de varios perros
    2. Un perro puede tener varios dueños y una persona puede ser dueña de varios perros
    3. Cada persona puede tener solo un perro, y los perros tienen un dueño
-   4. Un perro puede tener varios dueños y una persona puede ser dueña un único perro
+   4. Un perro puede tener varios dueños y una persona puede ser dueña un único perro\
+      ![](<../../../.gitbook/assets/image (152).png>)
