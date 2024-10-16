@@ -19,8 +19,11 @@ layout:
 
 # Soluciones ER ternarias y reflexivas
 
-1. En una universidad, para facilitar la gestión de las enseñanzas, se quiere almacenar información relativa a los alumnos, como por ejemplo el número de la matrícula, el nombre, la fecha de nacimiento y su teléfono. Se quiere saber también si el alumno está matriculado de una o de varias asignaturas, teniendo en cuenta que el alumno puede llegar a matricularse en la misma asignatura en más de un curso (en los casos en los que repite), por tanto, hay que registrar el curso escolar en el que cada alumno está matriculado de cada asignatura. (atributo en la relación) En una asignatura (de la cual se guardará su código y su nombre) habrá entre 10 y 25 alumnos matriculados. Una asignatura será impartida por un único profesor, mientras que un profesor impartirá varias asignaturas. Además, de los profesores es conveniente saber su identificador, su nombre, su especialidad y su número de teléfono.\
+1.  En una universidad, para facilitar la gestión de las enseñanzas, se quiere almacenar información relativa a los alumnos, como por ejemplo el número de la matrícula, el nombre, la fecha de nacimiento y su teléfono. Se quiere saber también si el alumno está matriculado de una o de varias asignaturas, teniendo en cuenta que el alumno puede llegar a matricularse en la misma asignatura en más de un curso (en los casos en los que repite), por tanto, hay que registrar el curso escolar en el que cada alumno está matriculado de cada asignatura. (atributo en la relación) En una asignatura (de la cual se guardará su código y su nombre) habrá entre 10 y 25 alumnos matriculados. Una asignatura será impartida por un único profesor, mientras que un profesor impartirá varias asignaturas. Además, de los profesores es conveniente saber su identificador, su nombre, su especialidad y su número de teléfono.\
+    \
 
+
+    <figure><img src="../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>
 2. Se desea almacenar información de recetas de cocina:
    1. Cada receta tiene un nombre y una duración
    2. Las recetas usan ingredientes. De cada ingrediente guardamos el nombre, y el tipo.
