@@ -39,8 +39,10 @@ layout:
    2. Cada médico puede tener varias especialidades, de cada especialidad guardaremos el nombre y el campo.
    3. De cada enfermero almacenaremos su NIF, nombre y apellidos
    4. De cada paciente almacenaremos su Id de paciente, nombre y apellidos
-   5. Cada paciente será atendido por un médico y una enfermera simultaneamente. Cada vez que sea atendido se debe almacenar la fecha y hora.\
+   5.  Cada paciente será atendido por un médico y una enfermera simultaneamente. Cada vez que sea atendido se debe almacenar la fecha y hora.\
 
+
+       <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 4.  Se desean guardar los datos de un banco:
 
     1. De cada sucursal: un identificador, una provincia y una dirección
