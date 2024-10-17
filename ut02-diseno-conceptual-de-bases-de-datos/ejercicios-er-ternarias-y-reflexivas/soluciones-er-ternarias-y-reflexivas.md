@@ -51,6 +51,9 @@ layout:
     4. De cada Hipoteca: Nº de póliza, meses restantes, interés, tipo, saldo
     5. Los clientes han abierto sus cuentas en una sucursal y esta información debe quedar así almacenada.
     6. Los clientes han contratoda sus hipotecas en una sucursal, también se debe almacenar esto.
-    7. Hay clientes que han referenciado a amigos y se han hecho clientes. Queremos guardar esta información. Además se desea almacenar la fecha en la que referención al otro cliente.\
+    7.  Hay clientes que han referenciado a amigos y se han hecho clientes. Queremos guardar esta información. Además se desea almacenar la fecha en la que referención al otro cliente.\
+        \
 
+
+        <figure><img src="../../.gitbook/assets/image (156).png" alt=""><figcaption></figcaption></figure>
 
