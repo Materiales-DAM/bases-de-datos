@@ -31,10 +31,9 @@ layout:
    4. Cada recete es obra de un chef.&#x20;
    5. De cada chef deseamos saber el NIF, nombre y apellidos
    6.  Algunas recetas están basadas en otra receta, se desea almacenar esta relación.\
-       \
 
 
-       <figure><img src="../../.gitbook/assets/image (154).png" alt=""><figcaption></figcaption></figure>
+       <figure><img src="../../.gitbook/assets/image (155).png" alt=""><figcaption></figcaption></figure>
 3. Se desean guardar los datos del trabajo en un hospital:
    1. De cada médico almacenaremos su NIF, nombre, apellidos.
    2. Cada médico puede tener varias especialidades, de cada especialidad guardaremos el nombre y el campo.
