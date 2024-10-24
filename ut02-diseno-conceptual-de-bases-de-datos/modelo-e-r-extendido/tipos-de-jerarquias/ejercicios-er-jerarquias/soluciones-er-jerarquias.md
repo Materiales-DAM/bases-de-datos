@@ -2,19 +2,9 @@
 
 1. Indica y explica los tipos de jerarquía de los siguientes ejemplos:
 
-a.
-
-<figure><img src="https://lh6.googleusercontent.com/fSU2znU4ViIV2XFKZYvxp2aWpGupmJkLVbQHXDECOl7lz0lXBni64yROe4muijZFOSOU3mFqQ6fI4oz1ZUX6N3RhSQjYyLFP7Q1m16ik6BXPo17aZPnco1HtgqaA7fE97XhJDDDWVzKW7uq2pi8oHA" alt=""><figcaption></figcaption></figure>
-
-b.
-
 <figure><img src="https://lh3.googleusercontent.com/qOx-6GSXuSSBZnJlk09_K8ywwqrUwNC6xjgYLOnCyGfpu4tVrSQlVhx18plB49vy-_3Qi1aOUZ9HWWvPOQx5AjQVGrHwdaxJOupawQvIO0NNcKqeFk3zkitwF1goTSl7KwTO14JM1P9c0RilSgVG5w" alt=""><figcaption></figcaption></figure>
 
-c.&#x20;
-
 <figure><img src="https://lh6.googleusercontent.com/lsbsmmK7VHF4gsy7yf8Vq2M4kPQ7_F1WGvPAWN_5cpYwr4krp8XXrxDXqkK49JW7Z7sYXkmpGUgjlOwWUVu_BK_wWB-gnNYjVQ6PoId863MGKc6U04uYbiDQSZim6Cwyz6U5or2EB-LLHFrbltoOMw" alt=""><figcaption></figcaption></figure>
-
-d.&#x20;
 
 <figure><img src="https://lh6.googleusercontent.com/zRxq6Z2j_j4b_caPMVvSWRH2qOXvGO_2hMLmM90NOJEuqj9I-gd3vyM_niQklOazo8nuLaicsMoorDUfy7seuCD_nW64oJJcZygSiNCpHpxKAYgVsyOuv2mUuwkWUyfFQTDn9a08ueFgLIR12XiaxQ" alt=""><figcaption></figcaption></figure>
 
