@@ -27,11 +27,12 @@ layout:
    * Administrativo: grupo.
    * Director: grado
    * Cada escuela tiene un director
-   * Cada escuela tiene varios docentes y administrativos
+   * Cada escuela tiene varios docentes y administrativos\
+     ![](../../../.gitbook/assets/image.png)
 2. Crea un diagrama con las entidades Hospital, Planta y Empleado.
-   * Hospital: nombre, idHospital, Dirección (Población, CP)
-   * Planta: numero, idPlanta, idHospital
-   * Empleado: idEmpleado, nombre, NIF, idPlanta
+   * Hospital: idHospital, nombre , Dirección (Población, CP)
+   * Planta:  idPlanta, numero,
+   * Empleado: idEmpleado, nombre, NIF
    * Los empleados se subdividen en Auxiliar, Enfermero, Médico.
    * Médico: especialidad.
    * Enfermero: turno

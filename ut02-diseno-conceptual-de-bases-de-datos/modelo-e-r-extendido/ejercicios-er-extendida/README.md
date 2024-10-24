@@ -29,16 +29,19 @@ layout:
    * Cada escuela tiene un director
    * Cada escuela tiene varios docentes y administrativos
 2. Crea un diagrama con las entidades Hospital, Planta y Empleado.
-   * Hospital: nombre, idHospital, Dirección (Población, CP)
-   * Planta: numero, idPlanta, idHospital
-   * Empleado: idEmpleado, nombre, NIF, idPlanta
+   * Hospital: idHospital, nombre , Dirección (Población, CP)
+   * Planta:  idPlanta, numero,
+   * Empleado: idEmpleado, nombre, NIF
    * Los empleados se subdividen en Auxiliar, Enfermero, Médico.
    * Médico: especialidad.
    * Enfermero: turno
    * Auxiliar: tipo
    * Un hospital puede tener uno o varios empleados, y un empleado puede estar en uno o varios hospitales.
    * Un hospital puede tener una o varias plantas, y una planta solo puede estar en un hospital.
-   * Un planta puede tener uno o varios empleados, y un empleado solo puede trabajar en una planta.
+   *   Un planta puede tener uno o varios empleados, y un empleado solo puede trabajar en una planta.\
+
+
+       <figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 3. Una empresa está dividida en varios departamentos de los que se conoce su nombre que los identifica y número de empleados. De los empleados se conoce su número, nombre, dirección y departamento en el que trabaja. Si el empleados es chofer, se conoce su número de libreta y número de accidentes que tuvo. Si es administrativo, los idiomas que habla. Si es técnico, las especialidades en las que puede trabajar. La empresa tiene un conjunto de coches (conducidos por chóferes) de los que se conoce matrícula y marca. A cualquier chofer se le puede asignar cualquier coche. Se registra la fecha en que cada chofer manejó cada coche. Un Chofer conduce un coche por día y no siempre el mismo.
 4.  Las sedes olímpicas se dividen en complejos deportivos. Los complejos deportivos se subdividen en aquellos en los que se desarrolla un único deporte y en los polideportivos. Los complejos polideportivos tienen áreas designadas para cada deporte con un indicador de localización (ejemplo: centro, esquinaNE, etc.).&#x20;
 

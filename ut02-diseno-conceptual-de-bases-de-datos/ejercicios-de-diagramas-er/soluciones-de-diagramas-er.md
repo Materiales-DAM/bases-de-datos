@@ -23,7 +23,7 @@ layout:
 
 
 
-    <figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 2.  Diseña el diagrama de entidad-relación de una base de datos de los departamentos de un instituto:
 
     <figure><img src="../../.gitbook/assets/image (148).png" alt=""><figcaption></figcaption></figure>
