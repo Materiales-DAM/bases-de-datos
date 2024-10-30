@@ -55,6 +55,10 @@ layout:
 
     Para cada evento está prevista una fecha, duración, número de participantes, número de comisarios.&#x20;
 
-    Una lista de todos los comisarios se conservará junto con la lista de los eventos en los que esté involucrado cada comisario ya sea cumpliendo la tarea de juez u observador.&#x20;
+    Una lista de todos los comisarios se conservará junto con la lista de los eventos en los que esté involucrado cada comisario ya sea cumpliendo la tarea de juez u observador. \
+
 
     \
+
+
+    <figure><img src="../../../.gitbook/assets/image (158).png" alt=""><figcaption></figcaption></figure>
