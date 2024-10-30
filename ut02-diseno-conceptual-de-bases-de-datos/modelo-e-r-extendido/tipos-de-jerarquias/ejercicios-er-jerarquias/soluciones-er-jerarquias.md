@@ -1,9 +1,17 @@
 # Soluciones ER jerarquías
 
-1. Crea un diagrama con una jerarquía inclusiva y total entre la entidad ‘Persona’ y las subentidades ‘Jubilado’, ‘Estudiante’, ‘Trabajador’.\
+1.  Crea un diagrama con una jerarquía inclusiva y total entre la entidad ‘Persona’ y las subentidades ‘Jubilado’, ‘Estudiante’, ‘Trabajador’.\
 
-2. Crea un diagrama con la jerarquía en la que un ‘Documento’ solo puede ser un ‘Libro’ o un ‘Articulo’, pero no ambos a la vez.
-3. Crea un diagrama con la jerarquía en el que una persona siempre sea al menos ‘Docente’, ‘Tecnico’, ‘Alumno’, ‘Delegado’. Una persona puede ser a la vez ‘Docente’ y ‘Técnico’.
+
+    <figure><img src="../../../../.gitbook/assets/image (159).png" alt=""><figcaption></figcaption></figure>
+2.  Crea un diagrama con la jerarquía en la que un ‘Documento’ solo puede ser un ‘Libro’ o un ‘Articulo’, pero no ambos a la vez.\
+
+
+    <figure><img src="../../../../.gitbook/assets/image (160).png" alt=""><figcaption></figcaption></figure>
+3.  Crea un diagrama con la jerarquía en el que una persona siempre sea al menos ‘Docente’, ‘Tecnico’, ‘Alumno’, ‘Delegado’. Una persona puede ser a la vez ‘Docente’ y ‘Técnico’.\
+
+
+    <figure><img src="../../../../.gitbook/assets/image (161).png" alt=""><figcaption></figcaption></figure>
 4. El Ayuntamiento quiere una BD de las personas de la ciudad. Se subdividen en  trabajadores, estudiantes y parados. De los trabajadores queremos conocer el número de la Seguridad Social, la empresa y el salario. De los estudiantes, el número de matrícula y el centro educativo. De los parados la fecha desde que está parado. Crea un diagrama con la relación jerárquica. Indica el tipo de jerarquía.
 5. Se desea informatizar la gestión de una biblioteca, los libros se clasifican según su formato: papel o digital.&#x20;
    1. Del libro se quiere conocer el título y el isbn
