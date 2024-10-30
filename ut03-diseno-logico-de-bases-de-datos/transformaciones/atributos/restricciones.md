@@ -7,7 +7,7 @@ coverY: 96
 
 Es posible establecer restricciones a nivel de los atributos:
 
-* **Restricciones de clave primaria**: Es el conjunto de atributos que identiıcan de forma única a una entidadç
+* **Restricciones de clave primaria**: Es el conjunto de atributos que identiıcan de forma única a una entidad.
 *   **UNIQUE**: Es una restricción que impide que un atributo tenga un valor repetido. Todos los atributos clave cumplen esta restricción. No obstante es posible que algún atributo no sea
 
     clave y requiere una restricción de valor único.&#x20;

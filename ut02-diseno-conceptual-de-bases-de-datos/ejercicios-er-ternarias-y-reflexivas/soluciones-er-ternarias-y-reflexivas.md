@@ -42,7 +42,7 @@ layout:
    5.  Cada paciente será atendido por un médico y una enfermera simultaneamente. Cada vez que sea atendido se debe almacenar la fecha y hora.\
 
 
-       <figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+       <figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 4.  Se desean guardar los datos de un banco:
 
     1. De cada sucursal: un identificador, una provincia y una dirección
