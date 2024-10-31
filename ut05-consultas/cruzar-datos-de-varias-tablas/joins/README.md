@@ -165,7 +165,7 @@ El `RIGHT JOIN` devuelve una fila por cada ordenador en un departamento, y en el
 
 Un "cross join" (unión cruzada) en SQL es una operación que combina cada fila de una tabla con cada fila de otra tabla, creando así un conjunto de resultados que es el producto cartesiano de ambas tablas. En otras palabras, cada fila de la primera tabla se combina con todas las filas de la segunda tabla.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>En el producto cartesiano se combinan todas las filas de la izquierda con todas las de la derecha</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption><p>En el producto cartesiano se combinan todas las filas de la izquierda con todas las de la derecha</p></figcaption></figure>
 
 El resultado de este tipo de JOIN es el mismo que en el [producto de tablas](../producto-de-tablas/), por lo que podemos usarlos indistintamente. Es posible deshacer el producto cartesiano resultante usando la cláusula WHERE.
 
@@ -194,7 +194,7 @@ Un "self join" es una operación en SQL donde una tabla se une a sí misma. Esto
 
 El propósito principal de un "self join" es comparar filas dentro de la misma tabla. Esto puede ser útil en situaciones donde hay relaciones entre las filas de la misma tabla que necesitan ser exploradas o cuando se necesita comparar información dentro de la misma entidad.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>La tabla A se cruza con ella misma</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>La tabla A se cruza con ella misma</p></figcaption></figure>
 
 No existe una sintáxis específica para hacer un "self join", simplemente se pone la misma tabla a izquierda y derecha del join. De hecho, se pueden realizar self joins de todo tipo: inner, left, right, full o cross.
 

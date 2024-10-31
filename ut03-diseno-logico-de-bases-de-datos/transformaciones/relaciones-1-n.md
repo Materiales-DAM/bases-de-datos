@@ -21,10 +21,10 @@ Para transformar una relación de **1:N** que incluye una **entidad débil** en 
 
 Veamos un ejemplo
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 Si aplicamos la transformación quedaría
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 La clave primaria de Tarea incluiría su clave parcial NombreTarea (viene de la entidad Tarea.Nombre) y  la clave principal de su entidad fuerte NombreProyecto (viene de la entidad Proyecto.Nombre)
