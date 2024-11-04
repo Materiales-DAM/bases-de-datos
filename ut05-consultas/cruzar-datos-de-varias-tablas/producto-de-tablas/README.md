@@ -74,7 +74,7 @@ U producto cartesiano se refiere a una operación que combina cada fila de una t
 
 
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Por ejemplo, la siguiente consulta devolverá el producto cartesiano de las filas de `Profesor` y `Departamento`, es decir, todas las combinaciones posibles entre ellas.
 

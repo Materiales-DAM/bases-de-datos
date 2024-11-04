@@ -15,16 +15,26 @@ Se convierte en
 
 <figure><img src="../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
 
+## Transformación 1:N con cardinalidad (0,1)
+
+En caso de que la cardinalidad del lado 1 sea (0,1), la foreign key debe poder ser NULL
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+Se transformaría a&#x20;
+
+<figure><img src="../../.gitbook/assets/image (168).png" alt=""><figcaption></figcaption></figure>
+
 ## Transformación 1:N con entidad débil
 
 Para transformar una relación de **1:N** que incluye una **entidad débil** en un modelo relacional, es importante comprender que una entidad débil depende de su entidad fuerte para existir y se identifica parcialmente mediante un atributo o conjunto de atributos que, junto con la clave primaria de la entidad fuerte, forma su clave primaria.
 
 Veamos un ejemplo
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Si aplicamos la transformación quedaría
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 La clave primaria de Tarea incluiría su clave parcial NombreTarea (viene de la entidad Tarea.Nombre) y  la clave principal de su entidad fuerte NombreProyecto (viene de la entidad Proyecto.Nombre)
