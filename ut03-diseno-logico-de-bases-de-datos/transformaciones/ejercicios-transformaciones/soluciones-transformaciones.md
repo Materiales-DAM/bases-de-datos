@@ -24,7 +24,7 @@ layout:
     <figure><img src="../../../.gitbook/assets/image (167).png" alt=""><figcaption></figcaption></figure>
 2.
 
-
+    <figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 3.
 
 

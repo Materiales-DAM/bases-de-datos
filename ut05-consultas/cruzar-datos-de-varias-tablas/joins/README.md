@@ -194,7 +194,7 @@ Un "self join" es una operación en SQL donde una tabla se une a sí misma. Esto
 
 El propósito principal de un "self join" es comparar filas dentro de la misma tabla. Esto puede ser útil en situaciones donde hay relaciones entre las filas de la misma tabla que necesitan ser exploradas o cuando se necesita comparar información dentro de la misma entidad.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>La tabla A se cruza con ella misma</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>La tabla A se cruza con ella misma</p></figcaption></figure>
 
 No existe una sintáxis específica para hacer un "self join", simplemente se pone la misma tabla a izquierda y derecha del join. De hecho, se pueden realizar self joins de todo tipo: inner, left, right, full o cross.
 
