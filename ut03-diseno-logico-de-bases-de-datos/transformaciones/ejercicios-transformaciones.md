@@ -19,15 +19,15 @@ layout:
 
 # Ejercicios transformaciones
 
-1\.
-
-<figure><img src="../../.gitbook/assets/EJERCICIO1.svg" alt=""><figcaption></figcaption></figure>
-
-2\.
+1.\
 
 
+<figure><img src="../../.gitbook/assets/image (164).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/ejercicio2.svg" alt=""><figcaption></figcaption></figure>
+2.\
+
+
+<figure><img src="../../.gitbook/assets/image (165).png" alt=""><figcaption></figcaption></figure>
 
 3\.
 
