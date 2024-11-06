@@ -28,9 +28,10 @@ layout:
 3.
 
     <figure><img src="../../../.gitbook/assets/image (169).png" alt=""><figcaption></figcaption></figure>
-4.
+4.  \
 
 
+    <figure><img src="../../../.gitbook/assets/image (171).png" alt=""><figcaption></figcaption></figure>
 5.
 
 
