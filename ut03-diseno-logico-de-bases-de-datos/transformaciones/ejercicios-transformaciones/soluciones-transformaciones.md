@@ -32,8 +32,11 @@ layout:
 
 
     <figure><img src="../../../.gitbook/assets/image (171).png" alt=""><figcaption></figcaption></figure>
-5.
+5.  \
 
 
+
+
+    <figure><img src="../../../.gitbook/assets/image (172).png" alt=""><figcaption></figcaption></figure>
 6.
 
