@@ -22,7 +22,7 @@
    3.  Del libro en formato digital el precio y el tamaño del archivo.\
 
 
-       <figure><img src="../../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+       <figure><img src="../../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 6.  Se desea informatizar la gestión de un centro de enseñanza para llevar el control de los alumnos matriculados y los profesores que imparten clases en ese centro. De cada profesor y cada alumno se desea recoger el nombre, apellidos, dirección, población, dni, fecha de nacimiento, código postal y teléfono.
 
     1. Los alumnos se matriculan en una o más asignaturas, y de ellas se desea almacenar el código de asignatura, nombre y número de horas que se imparten a la semana.

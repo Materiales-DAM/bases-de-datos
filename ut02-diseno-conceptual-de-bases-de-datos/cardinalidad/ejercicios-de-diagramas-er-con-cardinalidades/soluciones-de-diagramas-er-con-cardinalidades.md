@@ -37,10 +37,10 @@ layout:
    2. De cada cliente se guardará su código de cliente, su nombre, sus apellidos y su domicilio.
    3. El domicilio constará de la calle y número de su casa, y la ciudad donde vive
    4. Un cliente sólo puede tener un domicilio, pero en el mismo domicilio pueden vivir varios clientes\
-      ![](<../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png>)
+      ![](<../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png>)
 6. Queremos guardar la siguiente información sobre países y presidentes en la BD:
    1. En cada país sólo hay un presidente
    2. De cada país se guardará el nombre, el nº de habitantes y su extensión en kilómetros cuadrados
    3. De los presidentes se guardará su nombre y el nombre del partido al que está afiliado
    4. Además, cada país tendrá una única capital, de la cual se guardará su nombre\
-      ![](<../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png>)
+      ![](<../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)

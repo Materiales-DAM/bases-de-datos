@@ -28,7 +28,7 @@ layout:
    * Director: grado
    * Cada escuela tiene un director
    * Cada escuela tiene varios docentes y administrativos\
-     ![](<../../../.gitbook/assets/image (1) (1) (1) (1) (1).png>)
+     ![](<../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png>)
 2. Crea un diagrama con las entidades Hospital, Planta y Empleado.
    * Hospital: idHospital, nombre , Dirección (Población, CP)
    * Planta:  idPlanta, numero,
