@@ -85,10 +85,6 @@
 * [Normalización](ut03-diseno-logico-de-bases-de-datos/normalizacion/README.md)
   * [Ejercicios normalización](ut03-diseno-logico-de-bases-de-datos/normalizacion/ejercicios-normalizacion.md)
 
-***
-
-* [Solución examen](solucion-examen.md)
-
 ## UT04 - Diseño físico de bases de datos
 
 * [Conceptos SGBD](ut04-diseno-fisico-de-bases-de-datos/conceptos-sgbd.md)
