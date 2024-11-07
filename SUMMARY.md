@@ -80,7 +80,7 @@
   * [Relaciones reflexivas](ut03-diseno-logico-de-bases-de-datos/transformaciones/relaciones-reflexivas.md)
   * [Relaciones ternarias](ut03-diseno-logico-de-bases-de-datos/transformaciones/relaciones-ternarias.md)
   * [Jerarquías](ut03-diseno-logico-de-bases-de-datos/transformaciones/jerarquias.md)
-  * [Ejercicios transformaciones reflexivas y ternarias](ut03-diseno-logico-de-bases-de-datos/transformaciones/ejercicios-transformaciones-reflexivas-y-ternarias.md)
+  * [Ejercicios transformaciones jerarquías, reflexivas y ternarias](ut03-diseno-logico-de-bases-de-datos/transformaciones/ejercicios-transformaciones-jerarquias-reflexivas-y-ternarias.md)
 * [Normalización](ut03-diseno-logico-de-bases-de-datos/normalizacion/README.md)
   * [Ejercicios normalización](ut03-diseno-logico-de-bases-de-datos/normalizacion/ejercicios-normalizacion.md)
 
