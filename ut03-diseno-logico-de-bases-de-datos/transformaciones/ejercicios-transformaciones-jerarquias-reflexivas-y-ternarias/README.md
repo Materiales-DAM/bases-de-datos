@@ -1,4 +1,4 @@
-# Ejercicios transformaciones reflexivas y ternarias
+# Ejercicios transformaciones jerarquías, reflexivas y ternarias
 
 Convierte al modelo relacional:
 
@@ -8,7 +8,7 @@ Convierte al modelo relacional:
 
 2\.
 
-<figure><img src="../../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 
 
