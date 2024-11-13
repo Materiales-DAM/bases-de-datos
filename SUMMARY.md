@@ -83,7 +83,8 @@
   * [Ejercicios transformaciones jerarquías, reflexivas y ternarias](ut03-diseno-logico-de-bases-de-datos/transformaciones/ejercicios-transformaciones-jerarquias-reflexivas-y-ternarias/README.md)
     * [Soluciones transformaciones jerarquías, reflexivas y ternarias](ut03-diseno-logico-de-bases-de-datos/transformaciones/ejercicios-transformaciones-jerarquias-reflexivas-y-ternarias/soluciones-transformaciones-jerarquias-reflexivas-y-ternarias.md)
 * [Normalización](ut03-diseno-logico-de-bases-de-datos/normalizacion/README.md)
-  * [Ejercicios normalización](ut03-diseno-logico-de-bases-de-datos/normalizacion/ejercicios-normalizacion.md)
+  * [Ejercicios normalización](ut03-diseno-logico-de-bases-de-datos/normalizacion/ejercicios-normalizacion/README.md)
+    * [Soluciones normalización](ut03-diseno-logico-de-bases-de-datos/normalizacion/ejercicios-normalizacion/soluciones-normalizacion.md)
 
 ## UT04 - Diseño físico de bases de datos
 
