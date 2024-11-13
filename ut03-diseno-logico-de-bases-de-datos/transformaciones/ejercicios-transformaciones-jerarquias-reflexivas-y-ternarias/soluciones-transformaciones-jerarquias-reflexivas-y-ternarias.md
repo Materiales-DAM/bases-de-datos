@@ -14,3 +14,5 @@ Convierte al modelo relacional:
 3.\
 
 
+<figure><img src="../../../.gitbook/assets/image (175).png" alt=""><figcaption></figcaption></figure>
+
