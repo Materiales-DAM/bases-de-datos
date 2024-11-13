@@ -31,10 +31,11 @@ Se transforma a:
 
 ## Caso 1:1:N
 
-En este caso no es necesario crear una tabla para la relación. La tabla derivada de la entidad que participa con N en la relación recibe las claves de las otras dos entidades y las incorpora como parte de su clave primaria.
+Se crea una tabla intermedia que recibe todas las claves de las tres tablas y crea foreign keys con ellas. La tabla intermedia establece como PK las claves de una de las tablas con cardinalidad 1 y la de cardinalidad N
 
 <figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
-Se transforma en:
+Se transforma en:\
 
-<figure><img src="../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (174).png" alt=""><figcaption></figcaption></figure>
