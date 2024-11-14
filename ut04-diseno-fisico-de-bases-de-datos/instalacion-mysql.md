@@ -32,7 +32,7 @@ sudo apt autoclean -y
 
 #### Instalación Docker
 
-[Sigue estas instrucciones](https://gs0-2.gitbook.io/docker)
+[Sigue estas instrucciones](https://fp-informatica.gitbook.io/development-tools/docker/instalacion-docker)
 
 #### Crear el contenedor&#x20;
 
