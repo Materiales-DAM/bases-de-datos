@@ -19,7 +19,7 @@ layout:
 
 # Soluciones CREATE TABLE I
 
-1\.
+### MySQL
 
 ```sql
 DROP DATABASE IF EXISTS Ej1;
@@ -51,6 +51,44 @@ CREATE TABLE Departamento(
 );
 
 CREATE TABLE Modulo(
+    Titulo VARCHAR(10) NOT NULL,
+    Curso INT NOT NULL,
+    Nombre VARCHAR(30) NOT NULL,
+    PRIMARY KEY(Titulo, Curso, Nombre)
+);
+
+```
+
+### Postgres
+
+```sql
+DROP SCHEMA IF EXISTS Ej1 CASCADE;
+
+CREATE SCHEMA IF NOT EXISTS Ej1;
+
+CREATE TABLE Ej1.Profesor(
+	Id SERIAL PRIMARY KEY,
+	Dni VARCHAR(9) NOT NULL,
+	Nombre VARCHAR(20) NOT NULL,
+	Categoria VARCHAR(20) NOT NULL,
+	Antiguedad INT NOT NULL,
+	CodigoDepartamento VARCHAR(5) NOT NULL
+);
+
+CREATE TABLE Ej1.Ordenador(
+	Id SERIAL PRIMARY KEY,
+	Memoria INT DEFAULT 16 NOT NULL,
+	Procesador VARCHAR(30) NOT NULL,
+	CodigoDepartamento VARCHAR(5) DEFAULT 'MKT' NOT NULL
+);
+
+CREATE TABLE Ej1.Departamento( 
+	Codigo VARCHAR(5) PRIMARY KEY,
+	Presupuesto INT NOT NULL,
+	Habitacion VARCHAR(5) NOT NULL
+);
+
+CREATE TABLE Ej1.Modulo(
     Titulo VARCHAR(10) NOT NULL,
     Curso INT NOT NULL,
     Nombre VARCHAR(30) NOT NULL,
