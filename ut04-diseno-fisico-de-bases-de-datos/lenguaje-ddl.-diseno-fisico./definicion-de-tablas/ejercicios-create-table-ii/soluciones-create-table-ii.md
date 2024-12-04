@@ -196,11 +196,145 @@ CREATE TABLE Departamentos.Ordenador(
 ### Mysql
 
 ```sql
+DROP SCHEMA IF EXISTS Productos ;
+
+CREATE SCHEMA IF NOT EXISTS Productos;
+
+USE Productos;
+
+CREATE TABLE Producto (
+	Nombre VARCHAR(30) PRIMARY KEY,
+	Calorias INT NOT NULL,
+	Precio INT NOT NULL,
+	Tipo_Bolsa CHAR (1) NOT NULL
+
+);
+
+
+CREATE TABLE Provincia (
+	Codigo VARCHAR (10) PRIMARY KEY,
+	Nombre VARCHAR (30) NOT NULL,
+	Distancia INT NOT NULL
+	
+);
+
+
+CREATE TABLE Proveedor (
+	Nombre VARCHAR(30) PRIMARY KEY ,
+	Direccion VARCHAR (30) NOT NULL,
+	Telefono VARCHAR(9) NOT NULL ,
+	Codigo_Provincia VARCHAR(9) NOT NULL,
+	CONSTRAINT fk_PROVEEDOR_PROVINCIA
+	FOREIGN KEY (Codigo_Provincia)
+	REFERENCES Provincia(Codigo)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE 
+
+);
+
+
+CREATE TABLE Ingrediente (
+	Codigo VARCHAR (10) PRIMARY KEY ,
+	Nombre VARCHAR (30) NOT NULL,
+	PRECIO INT NOT NULL,
+	Nombre_Proveedor VARCHAR(30) NOT NULL,
+	CONSTRAINT fk_INGREDIENTE_PROVEEDOR
+	FOREIGN KEY (Nombre_Proveedor)
+	REFERENCES Proveedor(Nombre)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE 
+
+);
+
+
+
+CREATE TABLE Productos.PRODUCTO_CONTIENE (
+	Nombre_Producto VARCHAR (30) NOT NULL,
+	Codigo_Ingrediente VARCHAR(30) NOT NULL,
+	PRIMARY KEY(Nombre_Producto,Codigo_Ingrediente),
+	CONSTRAINT fk_PRODUCTO_CONTIENE_PRODUCTO
+	FOREIGN KEY (Nombre_Producto)
+	REFERENCES Producto(Nombre)
+	ON DELETE CASCADE
+	ON UPDATE CASCADE,
+	CONSTRAINT fk_PRODUCTO_CONTIENE_INGREDIENTE
+	FOREIGN KEY (Codigo_Ingrediente)
+	REFERENCES Ingrediente(Codigo)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE
+
+); 
 ```
 
 ### Postgres
 
 ```sql
+DROP SCHEMA IF EXISTS Productos CASCADE ;
+
+CREATE SCHEMA IF NOT EXISTS Productos;
+
+CREATE TABLE Productos.Producto (
+	Nombre VARCHAR(30) PRIMARY KEY,
+	Calorias INT NOT NULL,
+	Precio INT NOT NULL,
+	Tipo_Bolsa CHAR (1) NOT NULL
+
+);
+
+
+CREATE TABLE Productos.Provincia (
+	Codigo VARCHAR (10) PRIMARY KEY,
+	Nombre VARCHAR (30) NOT NULL,
+	Distancia INT NOT NULL
+	
+);
+
+
+CREATE TABLE Productos.Proveedor (
+	Nombre VARCHAR(30) PRIMARY KEY ,
+	Direccion VARCHAR (30) NOT NULL,
+	Telefono VARCHAR(9) NOT NULL ,
+	Codigo_Provincia VARCHAR(9) NOT NULL,
+	CONSTRAINT fk_PROVEEDOR_PROVINCIA
+	FOREIGN KEY (Codigo_Provincia)
+	REFERENCES Productos.Provincia(Codigo)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE 
+
+);
+
+
+CREATE TABLE Productos.Ingrediente (
+	Codigo VARCHAR (10) PRIMARY KEY ,
+	Nombre VARCHAR (30) NOT NULL,
+	PRECIO INT NOT NULL,
+	Nombre_Proveedor VARCHAR(30) NOT NULL,
+	CONSTRAINT fk_INGREDIENTE_PROVEEDOR
+	FOREIGN KEY (Nombre_Proveedor)
+	REFERENCES Productos.Proveedor(Nombre)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE 
+
+);
+
+
+
+CREATE TABLE Productos.PRODUCTO_CONTIENE (
+	Nombre_Producto VARCHAR (30) NOT NULL,
+	Codigo_Ingrediente VARCHAR(30) NOT NULL,
+	PRIMARY KEY(Nombre_Producto,Codigo_Ingrediente),
+	CONSTRAINT fk_PRODUCTO_CONTIENE_PRODUCTO
+	FOREIGN KEY (Nombre_Producto)
+	REFERENCES Productos.Producto(Nombre)
+	ON DELETE CASCADE
+	ON UPDATE CASCADE,
+	CONSTRAINT fk_PRODUCTO_CONTIENE_INGREDIENTE
+	FOREIGN KEY (Codigo_Ingrediente)
+	REFERENCES Productos.Ingrediente(Codigo)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE
+
+); 
 ```
 
 ## Proyectos
