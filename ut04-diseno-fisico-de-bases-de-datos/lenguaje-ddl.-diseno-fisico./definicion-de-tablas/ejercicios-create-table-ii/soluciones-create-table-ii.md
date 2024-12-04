@@ -114,11 +114,81 @@ CREATE TABLE Clases.Alumno(
 ### Mysql
 
 ```sql
+DROP DATABASE IF EXISTS Departamentos;
+
+CREATE DATABASE IF NOT EXISTS Departamentos;
+
+USE Departamentos;
+
+CREATE TABLE Departamento(
+	Codigo INT PRIMARY KEY ,
+	Presupuesto INT NOT NULL ,
+	Habitacion INT NOT NULL 
+);
+
+CREATE TABLE Profesor(
+	Dni CHAR(9) PRIMARY KEY ,
+	Nombre VARCHAR(20) NOT NULL ,
+	Categoria VARCHAR(20) NOT NULL ,
+	Antiguedad INT NOT NULL ,
+	Cod_Departamento INT NOT NULL ,
+	CONSTRAINT fk_Profesor_Departamento
+	FOREIGN KEY (Cod_Departamento)
+	REFERENCES Departamento(Codigo)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE
+);
+
+CREATE TABLE Ordenador(
+	Id INT PRIMARY KEY ,
+	Memoria INT NOT NULL ,
+	Procesador VARCHAR(30),
+	Cod_Departamento INT NOT NULL,
+	CONSTRAINT fk_Ordenador_Departamento
+	FOREIGN KEY (Cod_Departamento)
+	REFERENCES Departamento(Codigo)
+	ON DELETE RESTRICT 
+	ON UPDATE CASCADE 
+); 	
 ```
 
 ### Postgres
 
 ```sql
+DROP SCHEMA IF EXISTS Departamentos CASCADE ;
+
+CREATE SCHEMA IF NOT EXISTS Departamentos;
+
+CREATE TABLE Departamentos.Departamento(
+	Codigo INT PRIMARY KEY ,
+	Presupuesto INT NOT NULL ,
+	Habitacion INT NOT NULL 
+);
+
+CREATE TABLE Departamentos.Profesor(
+	Dni CHAR(9) PRIMARY KEY ,
+	Nombre VARCHAR(20) NOT NULL ,
+	Categoria VARCHAR(20) NOT NULL ,
+	Antiguedad INT NOT NULL ,
+	Cod_Departamento INT NOT NULL ,
+	CONSTRAINT fk_Profesor_Departamento
+	FOREIGN KEY (Cod_Departamento)
+	REFERENCES Departamentos.Departamento(Codigo)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE
+);
+
+CREATE TABLE Departamentos.Ordenador(
+	Id INT PRIMARY KEY ,
+	Memoria INT NOT NULL ,
+	Procesador VARCHAR(30),
+	Cod_Departamento INT NOT NULL,
+	CONSTRAINT fk_Ordenador_Departamento
+	FOREIGN KEY (Cod_Departamento)
+	REFERENCES Departamentos.Departamento(Codigo)
+	ON DELETE RESTRICT 
+	ON UPDATE CASCADE 
+); 
 ```
 
 ## Productos
