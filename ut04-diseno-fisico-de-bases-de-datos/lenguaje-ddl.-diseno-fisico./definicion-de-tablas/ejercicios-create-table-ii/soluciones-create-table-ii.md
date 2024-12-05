@@ -248,7 +248,7 @@ CREATE TABLE Ingrediente (
 
 
 
-CREATE TABLE Productos.PRODUCTO_CONTIENE (
+CREATE TABLE Producto_Contiene (
 	Nombre_Producto VARCHAR (30) NOT NULL,
 	Codigo_Ingrediente VARCHAR(30) NOT NULL,
 	PRIMARY KEY(Nombre_Producto,Codigo_Ingrediente),
@@ -319,7 +319,7 @@ CREATE TABLE Productos.Ingrediente (
 
 
 
-CREATE TABLE Productos.PRODUCTO_CONTIENE (
+CREATE TABLE Productos.Producto_Contiene (
 	Nombre_Producto VARCHAR (30) NOT NULL,
 	Codigo_Ingrediente VARCHAR(30) NOT NULL,
 	PRIMARY KEY(Nombre_Producto,Codigo_Ingrediente),
