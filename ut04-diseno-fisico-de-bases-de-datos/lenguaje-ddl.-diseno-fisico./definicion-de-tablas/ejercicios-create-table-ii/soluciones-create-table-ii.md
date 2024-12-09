@@ -342,11 +342,77 @@ CREATE TABLE Productos.Producto_Contiene (
 ### Mysql
 
 ```sql
+DROP SCHEMA IF EXISTS Proyectos;
+
+CREATE SCHEMA IF NOT EXISTS Proyectos;
+
+USE Proyectos;
+
+CREATE TABLE Empleado(
+	Id INT PRIMARY KEY AUTO_INCREMENT,
+	Nombre VARCHAR(30) NOT NULL,
+	Apellidos VARCHAR(30) NOT NULL,
+	Rol VARCHAR(10) NOT NULL
+);
+
+CREATE TABLE Proyecto(
+	Id INT PRIMARY KEY AUTO_INCREMENT,
+	Nombre VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE Tarea(
+	Id INT PRIMARY KEY AUTO_INCREMENT,
+	Nombre VARCHAR(30) NOT NULL,
+	Id_Empleado INT NOT NULL,
+	Id_Proyecto INT NOT NULL,
+	CONSTRAINT fk_Tarea_Empleado
+	FOREIGN KEY (Id_Empleado)
+	REFERENCES Empleado(Id)
+	ON DELETE RESTRICT
+    ON UPDATE CASCADE,
+    CONSTRAINT fk_Tarea_Proyecto
+	FOREIGN KEY (Id_Proyecto) 
+	REFERENCES Proyecto(Id)
+	ON DELETE CASCADE
+    ON UPDATE CASCADE
+); 
 ```
 
 ### Postgres
 
 ```sql
+DROP SCHEMA IF EXISTS Proyectos CASCADE;
+
+CREATE SCHEMA IF NOT EXISTS Proyectos;
+
+CREATE TABLE Proyectos.Empleado(
+	Id SERIAL PRIMARY KEY ,
+	Nombre VARCHAR(30) NOT NULL,
+	Apellidos VARCHAR(30) NOT NULL,
+	Rol VARCHAR(10) NOT NULL
+);
+
+CREATE TABLE Proyectos.Proyecto(
+	Id SERIAL PRIMARY KEY,
+	Nombre VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE Proyectos.Tarea(
+	Id SERIAL PRIMARY KEY,
+	Nombre VARCHAR(30) NOT NULL,
+	Id_Empleado INT NOT NULL,
+	Id_Proyecto INT NOT NULL,
+	CONSTRAINT fk_Tarea_Empleado
+	FOREIGN KEY (Id_Empleado)
+	REFERENCES Proyectos.Empleado(Id)
+	ON DELETE RESTRICT
+    ON UPDATE CASCADE,
+    CONSTRAINT fk_Tarea_Proyecto
+	FOREIGN KEY (Id_Proyecto) 
+	REFERENCES Proyectos.Proyecto(Id)
+	ON DELETE CASCADE
+    ON UPDATE CASCADE
+); 
 ```
 
 ## Libros
