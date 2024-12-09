@@ -679,11 +679,52 @@ CREATE TABLE ej7_3.Perro(
 ### Mysql
 
 ```sql
+DROP SCHEMA IF EXISTS Perros;
+
+CREATE SCHEMA IF NOT EXISTS Perros;
+USE Perros;
+
+CREATE TABLE Perro(
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE Persona(
+    DNI VARCHAR(9) PRIMARY KEY ,
+    Nombre VARCHAR(30) NOT NULL ,
+    Apellidos VARCHAR(30) NOT NULL,
+    ID_Perro INT NOT NULL,
+    CONSTRAINT fk_Perro_Persona
+    FOREIGN KEY (ID_Perro)
+    REFERENCES Perro(ID)
+    ON DELETE RESTRICT
+    ON UPDATE CASCADE 
+); 
 ```
 
 ### Postgres
 
 ```sql
+DROP SCHEMA IF EXISTS Perros CASCADE;
+
+CREATE SCHEMA IF NOT EXISTS Perros;
+
+CREATE TABLE Perros.Perro(
+    ID SERIAL PRIMARY KEY ,
+    Nombre VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE Perros.Persona(
+    DNI VARCHAR(9) PRIMARY KEY ,
+    Nombre VARCHAR(30) NOT NULL ,
+    Apellidos VARCHAR(30) NOT NULL,
+    ID_Perro INT NOT NULL,
+    CONSTRAINT fk_Perro_Persona
+    FOREIGN KEY (ID_Perro)
+    REFERENCES Perros.Perro(ID)
+    ON DELETE RESTRICT
+    ON UPDATE CASCADE 
+); 
 ```
 
 ## Empresa
