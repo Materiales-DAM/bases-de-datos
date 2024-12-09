@@ -732,10 +732,192 @@ CREATE TABLE Perros.Persona(
 ### Mysql
 
 ```sql
+DROP DATABASE IF EXISTS ej8;
+
+CREATE DATABASE IF NOT EXISTS ej8;
+
+USE ej8;
+
+CREATE TABLE Departamento(
+	Nombre VARCHAR(30) PRIMARY KEY
+);
+
+CREATE TABLE Chofer(
+	NumEmpleado INT PRIMARY KEY,
+	Nombre VARCHAR(30) NOT NULL,
+	Direccion VARCHAR(30) NOT NULL,
+	NumLibreta INT NOT NULL,
+	NumAccidente INT NOT NULL,
+	NomDep VARCHAR(30) NOT NULL,
+	CONSTRAINT fk_Chofer_Departamento
+	FOREIGN KEY (NomDep)
+	REFERENCES Departamento(Nombre)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE
+);
+
+CREATE TABLE Administrativo(
+	NumEmpleado INT PRIMARY KEY,
+	Nombre VARCHAR(30) NOT NULL,
+	Direccion VARCHAR(30) NOT NULL,
+	NumDep VARCHAR(30) NOT NULL,
+	CONSTRAINT fk_Administrativo_Departamento
+	FOREIGN KEY (NumDep)
+	REFERENCES Departamento(Nombre)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE
+);
+
+CREATE TABLE IdiomaAdmin(
+	NumEmpleado INT PRIMARY KEY,
+	Idioma VARCHAR(30),
+	CONSTRAINT fk_IdiomaAdmin_Administrativo
+	FOREIGN KEY (NumEmpleado)
+	REFERENCES Administrativo(NumEmpleado)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE
+);
+
+CREATE TABLE Coche(
+	Matricula VARCHAR(30) PRIMARY KEY,
+	Marca VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE ChoferConduceCoche(
+	idChofer INT NOT NULL,
+	Matricula VARCHAR(30) NOT NULL,
+	Fecha DATE NOT NULL,
+	PRIMARY KEY(idChofer, Matricula, Fecha),
+	CONSTRAINT fk_ChoferConduceCoche_Chofer
+	FOREIGN KEY (idChofer)
+	REFERENCES Chofer(NumEmpleado)
+	ON DELETE RESTRICT 
+	ON UPDATE CASCADE,
+	CONSTRAINT fk_ChoferConduceCoche_Coche
+	FOREIGN KEY (Matricula)
+	REFERENCES Coche(Matricula)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE
+);
+
+
+
+CREATE TABLE Tecnico(
+	NumEmpleado INT PRIMARY KEY,
+	Nombre VARCHAR(30) NOT NULL,
+	Direccion VARCHAR(30) NOT NULL,
+	NomDep VARCHAR(30) NOT NULL,
+	CONSTRAINT fk_Tecnico_Departamento
+	FOREIGN KEY (NomDep)
+	REFERENCES Departamento(Nombre)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE
+);
+
+CREATE TABLE EspecialidadTecnico(
+	NumEmpleado INT NOT NULL,
+	Especialidad INT NOT NULL,
+	PRIMARY KEY(NumEmpleado, Especialidad),
+	CONSTRAINT fk_EspecialidadTecnico_Tecnico
+	FOREIGN KEY (NumEmpleado)
+	REFERENCES Tecnico(NumEmpleado)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE
+); 
 ```
 
 ### Postgres
 
 ```sql
+DROP SCHEMA IF EXISTS ej8 CASCADE;
+
+CREATE SCHEMA IF NOT EXISTS ej8;
+
+CREATE TABLE ej8.Departamento(
+	Nombre VARCHAR(30) PRIMARY KEY
+);
+
+CREATE TABLE ej8.Chofer(
+	NumEmpleado INT PRIMARY KEY,
+	Nombre VARCHAR(30) NOT NULL,
+	Direccion VARCHAR(30) NOT NULL,
+	NumLibreta INT NOT NULL,
+	NumAccidente INT NOT NULL,
+	NomDep VARCHAR(30) NOT NULL,
+	CONSTRAINT fk_Chofer_Departamento
+	FOREIGN KEY (NomDep)
+	REFERENCES ej8.Departamento(Nombre)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE
+);
+
+CREATE TABLE ej8.Administrativo(
+	NumEmpleado INT PRIMARY KEY,
+	Nombre VARCHAR(30) NOT NULL,
+	Direccion VARCHAR(30) NOT NULL,
+	NumDep VARCHAR(30) NOT NULL,
+	CONSTRAINT fk_Administrativo_Departamento
+	FOREIGN KEY (NumDep)
+	REFERENCES ej8.Departamento(Nombre)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE
+);
+
+CREATE TABLE ej8.IdiomaAdmin(
+	NumEmpleado INT PRIMARY KEY,
+	Idioma VARCHAR(30),
+	CONSTRAINT fk_IdiomaAdmin_Administrativo
+	FOREIGN KEY (NumEmpleado)
+	REFERENCES ej8.Administrativo(NumEmpleado)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE
+);
+
+CREATE TABLE ej8.Coche(
+	Matricula VARCHAR(30) PRIMARY KEY,
+	Marca VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE ej8.ChoferConduceCoche(
+	idChofer INT NOT NULL,
+	Matricula VARCHAR(30) NOT NULL,
+	Fecha DATE NOT NULL,
+	PRIMARY KEY(idChofer, Matricula, Fecha),
+	CONSTRAINT fk_ChoferConduceCoche_Chofer
+	FOREIGN KEY (idChofer)
+	REFERENCES ej8.Chofer(NumEmpleado)
+	ON DELETE RESTRICT 
+	ON UPDATE CASCADE,
+	CONSTRAINT fk_ChoferConduceCoche_Coche
+	FOREIGN KEY (Matricula)
+	REFERENCES ej8.Coche(Matricula)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE
+);
+
+
+
+CREATE TABLE ej8.Tecnico(
+	NumEmpleado INT PRIMARY KEY,
+	Nombre VARCHAR(30) NOT NULL,
+	Direccion VARCHAR(30) NOT NULL,
+	NomDep VARCHAR(30) NOT NULL,
+	CONSTRAINT fk_Tecnico_Departamento
+	FOREIGN KEY (NomDep)
+	REFERENCES ej8.Departamento(Nombre)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE
+);
+
+CREATE TABLE EspecialidadTecnico(
+	NumEmpleado INT NOT NULL,
+	Especialidad INT NOT NULL,
+	PRIMARY KEY(NumEmpleado, Especialidad),
+	CONSTRAINT fk_EspecialidadTecnico_Tecnico
+	FOREIGN KEY (NumEmpleado)
+	REFERENCES ej8.Tecnico(NumEmpleado)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE
+); 
 ```
 
