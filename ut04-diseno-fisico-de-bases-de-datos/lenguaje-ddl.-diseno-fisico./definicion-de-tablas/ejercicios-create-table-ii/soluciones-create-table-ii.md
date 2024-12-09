@@ -420,6 +420,141 @@ CREATE TABLE Proyectos.Tarea(
 ### Mysql
 
 ```sql
+DROP DATABASE IF EXISTS Libros;
+
+CREATE DATABASE IF NOT EXISTS Libros;
+
+USE Libros;
+
+CREATE TABLE Autor(
+	Nif VARCHAR(10) PRIMARY KEY,
+	Nombre VARCHAR(20) NOT NULL,
+	Apellidos VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Libro(
+	Isbn VARCHAR(30) PRIMARY KEY,
+	Titulo VARCHAR(50) NOT NULL,
+	Genero VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE Libro_Escrito_Por(
+	Nif_Autor VARCHAR(10) NOT NULL,
+	Isbn_Libro VARCHAR(30) NOT NULL,
+	PRIMARY KEY (Nif_Autor, Isbn_Libro),
+	
+	CONSTRAINT fk_Libro_Escrito_Por_Autor
+	FOREIGN KEY (Nif_Autor)
+	REFERENCES Autor(Nif)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE,
+	
+	CONSTRAINT fk_Libro_Escrito_Por_Libro
+	FOREIGN KEY (Isbn_Libro)
+	REFERENCES Libro(Isbn)
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
+); 
+```
+
+### Postgres
+
+```sql
+DROP SCHEMA IF EXISTS Libros CASCADE;
+
+CREATE SCHEMA IF NOT EXISTS Libros;
+
+
+CREATE TABLE Libros.Autor(
+	Nif VARCHAR(10) PRIMARY KEY,
+	Nombre VARCHAR(20) NOT NULL,
+	Apellidos VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Libros.Libro(
+	Isbn VARCHAR(30) PRIMARY KEY,
+	Titulo VARCHAR(50) NOT NULL,
+	Genero VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE Libros.Libro_Escrito_Por(
+	Nif_Autor VARCHAR(10) NOT NULL,
+	Isbn_Libro VARCHAR(30) NOT NULL,
+	PRIMARY KEY (Nif_Autor, Isbn_Libro),
+	
+	CONSTRAINT fk_Libro_Escrito_Por_Autor
+	FOREIGN KEY (Nif_Autor)
+	REFERENCES Libros.Autor(Nif)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE,
+	
+	CONSTRAINT fk_Libro_Escrito_Por_Libro
+	FOREIGN KEY (Isbn_Libro)
+	REFERENCES Libros.Libro(Isbn)
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
+); 
+```
+
+## Perros I
+
+### Mysql
+
+```sql
+DROP DATABASE IF EXISTS Ej5II;
+
+CREATE DATABASE IF NOT EXISTS Ej5II;
+
+USE Ej5II;
+
+CREATE TABLE Persona (
+    Dni VARCHAR PRIMARY KEY,
+    Nombre VARCHAR (20) NOT NULL,
+    Apellidos VARCHAR (20) NOT NULL
+);
+
+CREATE TABLE Perro (
+    Id INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre VARCHAR (20) NOT NULL,
+    Dni_Persona VARCHAR NOT NULL,
+    CONSTRAINT fk_Perro_Persona
+    FOREIGN KEY (Dni_Persona)
+    REFERENCES Persona (Dni)
+    ON DELETE RESTRICT
+    ON UPDATE CASCADE
+); 
+```
+
+### Postgres
+
+```sql
+DROP SCHEMA IF EXISTS Ej5II CASCADE;
+
+CREATE SCHEMA IF NOT EXISTS Ej5II;
+
+CREATE TABLE Ej5II.Persona (
+    Dni VARCHAR PRIMARY KEY,
+    Nombre VARCHAR (20) NOT NULL,
+    Apellidos VARCHAR (20) NOT NULL
+);
+
+CREATE TABLE Ej5II.Perro (
+    Id SERIAL PRIMARY KEY,
+    Nombre VARCHAR (20) NOT NULL,
+    Dni_Persona VARCHAR NOT NULL,
+    CONSTRAINT fk_Perro_Persona
+    FOREIGN KEY (Dni_Persona)
+    REFERENCES Ej5II.Persona (Dni)
+    ON DELETE RESTRICT
+    ON UPDATE CASCADE
+); 
+```
+
+## Perros II
+
+### Mysql
+
+```sql
 ```
 
 ### Postgres
@@ -427,7 +562,19 @@ CREATE TABLE Proyectos.Tarea(
 ```sql
 ```
 
-## Perros
+## Perros III
+
+### Mysql
+
+```sql
+```
+
+### Postgres
+
+```sql
+```
+
+## Perros IV
 
 ### Mysql
 
