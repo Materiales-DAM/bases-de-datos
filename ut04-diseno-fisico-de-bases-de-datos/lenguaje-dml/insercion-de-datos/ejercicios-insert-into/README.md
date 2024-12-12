@@ -31,17 +31,17 @@ Inserta los siguientes datos. MOdifica los script ddl
          4. Ingredientes:
             1. I003: conejo, 6 euros
             2. I004: verduras, 4 euros
-      3. Productos:
-         1. Paella:
-            1. 100 calorías
-            2. En bolsa grande
-            3. 20 euros
-            4. Ingrediientes: arroz bomba, conejo y verduras
-         2. Arroz con verduras
-            1. 50 calorías
-            2. En bolsa pequeña
-            3. 10 euros
-            4. Ingrediientes: arroz largo y verduras
+   2. Productos:
+      1. Paella:
+         1. 100 calorías
+         2. En bolsa grande
+         3. 20 euros
+         4. Ingrediientes: arroz bomba, conejo y verduras
+      2. Arroz con verduras
+         1. 50 calorías
+         2. En bolsa pequeña
+         3. 10 euros
+         4. Ingrediientes: arroz largo y verduras
 3. Empresa
    1. Departamento Informática
       1. Administrativos

@@ -108,9 +108,11 @@
   * [Eliminación de tablas](ut04-diseno-fisico-de-bases-de-datos/lenguaje-ddl.-diseno-fisico./eliminacion-de-tablas.md)
 * [Lenguaje DML](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/README.md)
   * [Inserción de datos](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/insercion-de-datos/README.md)
-    * [Ejercicios INSERT INTO](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/insercion-de-datos/ejercicios-insert-into.md)
+    * [Ejercicios INSERT INTO](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/insercion-de-datos/ejercicios-insert-into/README.md)
+      * [Soluciones INSERT INTO](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/insercion-de-datos/ejercicios-insert-into/soluciones-insert-into.md)
   * [Actualización de datos](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/actualizacion-de-datos/README.md)
-    * [Ejercicios UPDATE](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/actualizacion-de-datos/ejercicios-update.md)
+    * [Ejercicios UPDATE](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/actualizacion-de-datos/ejercicios-update/README.md)
+      * [Soluciones UPDATE](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/actualizacion-de-datos/ejercicios-update/soluciones-update.md)
   * [Eliminación de datos](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/eliminacion-de-datos/README.md)
     * [Ejercicios DELETE](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/eliminacion-de-datos/ejercicios-delete.md)
 
