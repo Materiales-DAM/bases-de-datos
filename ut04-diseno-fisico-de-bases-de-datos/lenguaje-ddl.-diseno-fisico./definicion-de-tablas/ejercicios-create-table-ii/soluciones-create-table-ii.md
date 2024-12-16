@@ -864,8 +864,9 @@ CREATE TABLE ej8.Administrativo(
 );
 
 CREATE TABLE ej8.IdiomaAdmin(
-	NumEmpleado INT PRIMARY KEY,
-	Idioma VARCHAR(30),
+	NumEmpleado INT NOT NULL,
+	Idioma VARCHAR(30) NOT NULL,
+	PRIMARY KEY(NumEmpleado, Idioma),
 	CONSTRAINT fk_IdiomaAdmin_Administrativo
 	FOREIGN KEY (NumEmpleado)
 	REFERENCES ej8.Administrativo(NumEmpleado)
