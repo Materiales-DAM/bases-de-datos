@@ -85,7 +85,7 @@ Inserta los siguientes datos. MOdifica los script ddl
     	Nombre VARCHAR(30) PRIMARY KEY,
     	Calorias INT NOT NULL,
     	Precio INT NOT NULL,
-    	Tipo_Bolsa VARCHAR (30) NOT NULL
+    	Tipo_Bolsa CHAR(1) NOT NULL
 
     );
 
@@ -159,8 +159,8 @@ Inserta los siguientes datos. MOdifica los script ddl
            ('1004', 'Verduras', 4, 'Almacenes Guadalajara');
           
     INSERT INTO Producto (Nombre, Calorias, Precio, Tipo_Bolsa)
-     VALUES('Paella', 100, 20, 'Bolsa Grande'),
-           ('Arroz con Verduras', 50, 10, 'Bolsa Pequeña');
+     VALUES('Paella', 100, 20, 'L'),
+           ('Arroz con Verduras', 50, 10, 'S');
     INSERT INTO Producto_Contiene (Nombre_Producto, Codigo_Ingrediente)
      VALUES ('Paella', '1002'),
             ('Paella', '1003'),
