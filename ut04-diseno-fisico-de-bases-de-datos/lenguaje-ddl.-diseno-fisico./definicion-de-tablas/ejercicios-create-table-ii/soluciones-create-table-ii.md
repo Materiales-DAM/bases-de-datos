@@ -911,7 +911,7 @@ CREATE TABLE ej8.Tecnico(
 
 CREATE TABLE EspecialidadTecnico(
 	NumEmpleado INT NOT NULL,
-	Especialidad INT NOT NULL,
+	Especialidad VARCHAR(50) NOT NULL,
 	PRIMARY KEY(NumEmpleado, Especialidad),
 	CONSTRAINT fk_EspecialidadTecnico_Tecnico
 	FOREIGN KEY (NumEmpleado)
