@@ -171,5 +171,135 @@ Inserta los siguientes datos. MOdifica los script ddl
 3.  Empresa
 
     ```sql
+    DROP DATABASE IF EXISTS Empresa;
+
+    CREATE DATABASE IF NOT EXISTS Empresa;
+
+    USE Empresa;
+
+    CREATE TABLE Departamento(
+    	Nombre VARCHAR(30) PRIMARY KEY
+    );
+
+    CREATE TABLE Chofer(
+    	NumEmpleado INT PRIMARY KEY,
+    	Nombre VARCHAR(30) NOT NULL,
+    	Direccion VARCHAR(30) NOT NULL,
+    	NumLibreta INT NOT NULL,
+    	NumAccidente INT NOT NULL,
+    	NomDep VARCHAR(30) NOT NULL,
+    	CONSTRAINT fk_Chofer_Departamento
+    	FOREIGN KEY (NomDep)
+    	REFERENCES Departamento(Nombre)
+    	ON DELETE RESTRICT
+    	ON UPDATE CASCADE
+    );
+
+    CREATE TABLE Administrativo(
+    	NumEmpleado INT PRIMARY KEY,
+    	Nombre VARCHAR(30) NOT NULL,
+    	Direccion VARCHAR(30) NOT NULL,
+    	NomDep VARCHAR(30) NOT NULL,
+    	CONSTRAINT fk_Administrativo_Departamento
+    	FOREIGN KEY (NomDep)
+    	REFERENCES Departamento(Nombre)
+    	ON DELETE RESTRICT
+    	ON UPDATE CASCADE
+    );
+
+    CREATE TABLE IdiomaAdmin(
+    	NumEmpleado INT NOT NULL,
+    	Idioma VARCHAR(30) NOT NULL,
+    	PRIMARY KEY (NumEmpleado, Idioma), /* pk compuesta para poder poner dos idiomas */
+    	CONSTRAINT fk_IdiomaAdmin_Administrativo
+    	FOREIGN KEY (NumEmpleado)
+    	REFERENCES Administrativo(NumEmpleado)
+    	ON DELETE RESTRICT
+    	ON UPDATE CASCADE
+    );
+
+    CREATE TABLE Coche(
+    	Matricula VARCHAR(30) PRIMARY KEY,
+    	Marca VARCHAR(30) NOT NULL
+    );
+
+    CREATE TABLE ChoferConduceCoche(
+    	idChofer INT NOT NULL,
+    	Matricula VARCHAR(30) NOT NULL,
+    	Fecha DATE NOT NULL,
+    	PRIMARY KEY(idChofer, Matricula, Fecha),
+    	CONSTRAINT fk_ChoferConduceCoche_Chofer
+    	FOREIGN KEY (idChofer)
+    	REFERENCES Chofer(NumEmpleado)
+    	ON DELETE RESTRICT 
+    	ON UPDATE CASCADE,
+    	CONSTRAINT fk_ChoferConduceCoche_Coche
+    	FOREIGN KEY (Matricula)
+    	REFERENCES Coche(Matricula)
+    	ON DELETE RESTRICT
+    	ON UPDATE CASCADE
+    );
+
+    CREATE TABLE Tecnico(
+    	NumEmpleado INT PRIMARY KEY,
+    	Nombre VARCHAR(30) NOT NULL,
+    	Direccion VARCHAR(30) NOT NULL,
+    	NomDep VARCHAR(30) NOT NULL,
+    	CONSTRAINT fk_Tecnico_Departamento
+    	FOREIGN KEY (NomDep)
+    	REFERENCES Departamento(Nombre)
+    	ON DELETE RESTRICT
+    	ON UPDATE CASCADE
+    );
+
+    CREATE TABLE EspecialidadTecnico(
+    	NumEmpleado INT NOT NULL,
+    	Especialidad VARCHAR(60) NOT NULL,
+    	PRIMARY KEY(NumEmpleado, Especialidad), /* aquí pasa igual, pk compuesta */
+    	CONSTRAINT fk_EspecialidadTecnico_Tecnico
+    	FOREIGN KEY (NumEmpleado)
+    	REFERENCES Tecnico(NumEmpleado)
+    	ON DELETE RESTRICT
+    	ON UPDATE CASCADE
+    );
+
+    INSERT INTO Departamento(Nombre)
+    VALUES
+    	('Informatica');
+
+    INSERT INTO Chofer(NumEmpleado, Nombre, Direccion, NumLibreta, NumAccidente, NomDep)
+    VALUES 
+    	(4, 'Bruce Wayne', 'Calle Otra', 101, 100, 'Informatica');
+
+    INSERT INTO Administrativo(NumEmpleado, Nombre, Direccion, NomDep)
+    VALUES 
+    	(1, 'Bob Esponja', 'Calle Falsa 2', 'Informatica'),
+    	(2, 'Peppa Pig', 'Calle Otra', 'Informatica');
+
+    INSERT INTO IdiomaAdmin(NumEmpleado, Idioma)
+    VALUES  /* al ser dos idiomas, uno cada uno */
+    	(1, 'Ingles'),
+    	(1, 'Ruso'),
+    	(2, 'Ingles'),
+    	(2, 'Español');
+
+    INSERT INTO Coche(Matricula, Marca)
+    VALUES 
+    	('3452KVD', 'SEAT'),
+    	('3352KVD', 'FORD');
+
+    INSERT INTO ChoferConduceCoche(idChofer, Matricula, Fecha)
+    VALUES 
+    	(4, '3452KVD', '2023-01-12'),
+    	(4, '3352KVD', '2023-03-30');
+
+    INSERT INTO Tecnico(NumEmpleado, Nombre, Direccion, NomDep)
+    VALUES 
+    	(3, 'George Pig', 'Calle Falsa 5', 'Informatica');
+
+    INSERT INTO EspecialidadTecnico(NumEmpleado, Especialidad)
+    VALUES /* no puede ser multivaluado */
+    	(3,   'Informática'),
+    	(3,   'Mantenimiento');
     ```
 
