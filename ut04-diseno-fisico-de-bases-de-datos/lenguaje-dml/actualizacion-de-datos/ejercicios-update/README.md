@@ -25,7 +25,7 @@ Realiza estas consultas en la base de datos [world-db](broken-reference) de MySQ
 3. **Cambiar la población a 75 millones de todos los países que tienen una población entre 50 y 100 millones .**
 4. **Actualizar la capital de los países que contienen la letra "o" en su nombre a 'Herat' (busca el código de esa ciudad).**
 5. **Cambiar el continente  a 'Oceania' de los países cuya población es mayor que 200 millones.**
-6. **Modificar la esperanza de vida a 70 años de los países que no son de Europa y tienen una esperanza de vida menor que 70.**
+6. **Modificar la esperanza de vida a 70 años de los países que no son de Europe y tienen una esperanza de vida menor que 70.**
 7. **Actualizar la fecha de independencia a '1800-01-01' de los países que se independizaron antes de 1800 .**
 8. **Cambiar la población de los países cuyo nombre comienza con 'B' a la mitad de su población actual.**
 9. **Actualizar la capital a 'Herat' de los países que no están en Europa y tienen una población mayor que 100 millones**&#x20;

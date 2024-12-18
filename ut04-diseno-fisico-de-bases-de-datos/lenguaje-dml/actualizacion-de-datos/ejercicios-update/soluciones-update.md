@@ -25,6 +25,9 @@ coverY: 0
 3.
 
     ```sql
+    UPDATE country
+    SET population = 75000000
+    WHERE population BETWEEN 50000000 AND 100000000; 
     ```
 4.
 
@@ -36,10 +39,16 @@ coverY: 0
 5.
 
     ```sql
+    UPDATE country
+    SET Continent = 'Oceania' 
+    WHERE Population > 200000000; 
     ```
 6.
 
     ```sql
+    UPDATE country 
+    SET LifeExpectancy = 70 
+    WHERE LifeExpectancy < 70 AND Continent != 'Europe'; 
     ```
 7.
 
