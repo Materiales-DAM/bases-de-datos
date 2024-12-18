@@ -53,6 +53,9 @@ coverY: 0
 7.
 
     ```sql
+    UPDATE country
+    SET IndepYear = 1800
+    WHERE IndepYear < 1800;
     ```
 8.
 
