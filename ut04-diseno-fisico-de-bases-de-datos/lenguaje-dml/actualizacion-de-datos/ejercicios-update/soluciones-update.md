@@ -7,17 +7,24 @@ coverY: 0
 
 Inserta los siguientes datos. MOdifica los script ddl
 
-1.  Departamentos:\
-
-
-    ```sql
-    ```
-2.  Productos\
-
+1.
 
     ```sql
+    ALTER TABLE country 
+    ADD CONSTRAINT fk_country_capital 
+    FOREIGN KEY (capital) 
+    REFERENCES city(id) 
+    ON DELETE RESTRICT 
+    ON UPDATE CASCADE;
     ```
-3.  Empresa
+2.
+
+    ```sql
+    UPDATE country 
+    SET Name = 'Nuevo mundo'
+    WHERE Code = 'USA';
+    ```
+3.
 
     ```sql
     ```
