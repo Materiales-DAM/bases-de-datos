@@ -1,26 +1,33 @@
 ---
 cover: ../../../../.gitbook/assets/mysqlpost.jpeg
 coverY: 0
+layout:
+  cover:
+    visible: true
+    size: full
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-# Soluciones UPDATE
+# SolucionesDELETE
+
+
 
 1.
 
     ```sql
-    ALTER TABLE country 
-    ADD CONSTRAINT fk_country_capital 
-    FOREIGN KEY (capital) 
-    REFERENCES city(id) 
-    ON DELETE RESTRICT 
-    ON UPDATE CASCADE;
     ```
 2.
 
     ```sql
-    UPDATE country 
-    SET Name = 'Nuevo mundo'
-    WHERE Code = 'USA';
     ```
 3.
 
@@ -29,9 +36,6 @@ coverY: 0
 4.
 
     ```sql
-    UPDATE country 
-    SET Capital = 3
-    WHERE Name LIKE '%o%';
     ```
 5.
 
@@ -86,14 +90,6 @@ coverY: 0
     ```sql
     ```
 18.
-
-    ```sql
-    ```
-19.
-
-    ```sql
-    ```
-20.
 
     ```sql
     ```
