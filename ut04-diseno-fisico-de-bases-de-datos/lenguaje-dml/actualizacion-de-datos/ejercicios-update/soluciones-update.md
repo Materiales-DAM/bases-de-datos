@@ -60,14 +60,23 @@ coverY: 0
 8.
 
     ```sql
+    UPDATE country
+    SET Population = Population / 2
+    WHERE Name LIKE 'B%';
     ```
 9.
 
     ```sql
+    UPDATE country
+    SET Capital = 3
+    WHERE Continent != 'Europe' AND Population > 100000000; 
     ```
 10.
 
     ```sql
+    UPDATE country 
+    SET LifeExpectancy= 75
+    WHERE Name LIKE '%land%'; 
     ```
 11.
 
