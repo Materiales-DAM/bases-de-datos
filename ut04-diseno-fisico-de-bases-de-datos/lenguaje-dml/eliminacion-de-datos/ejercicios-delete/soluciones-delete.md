@@ -17,13 +17,15 @@ layout:
     visible: true
 ---
 
-# SolucionesDELETE
+# Soluciones DELETE
 
 
 
 1.
 
     ```sql
+    DELETE FROM film
+    WHERE release_year < 2005;
     ```
 2.
 

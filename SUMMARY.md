@@ -115,7 +115,7 @@
       * [Soluciones UPDATE](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/actualizacion-de-datos/ejercicios-update/soluciones-update.md)
   * [Eliminación de datos](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/eliminacion-de-datos/README.md)
     * [Ejercicios DELETE](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/eliminacion-de-datos/ejercicios-delete/README.md)
-      * [SolucionesDELETE](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/eliminacion-de-datos/ejercicios-delete/solucionesdelete.md)
+      * [Soluciones DELETE](ut04-diseno-fisico-de-bases-de-datos/lenguaje-dml/eliminacion-de-datos/ejercicios-delete/soluciones-delete.md)
 
 ## UT05 - Consultas
 
