@@ -109,5 +109,5 @@ layout:
 
     ```sql
     DELETE FROM film
-    WHERE title LIKE '%drama%' OR release_year <2000; 
+    WHERE description LIKE '%drama%' OR release_year <2000; 
     ```
