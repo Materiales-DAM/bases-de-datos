@@ -40,7 +40,7 @@ Ejercicios:
 1. **Eliminar todas las películas lanzadas antes de 2005.**
 2. **Borrar los registros de la tabla `payment` que tengan un monto entre 5.00 y 10.00.**
 3. **Eliminar todos los alquileres que fueron realizados el 1 de enero de 2023.**
-4. **Borrar las películas que contengan la palabra 'Comedia' en la descripción.**
+4. **Borrar las películas que contengan la palabra 'Comedy' en la descripción.**
 5. **Borrar todas las películas que tengan una clasificación por edades diferente de 'G'.**
 6. **Eliminar actores cuyo apellido comience con la letra 'A'.**
 7. **Borrar todas las películas lanzadas después de 2010 y que tengan una duración menor a 120 minutos.**

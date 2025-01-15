@@ -30,18 +30,26 @@ layout:
 2.
 
     ```sql
+    DELETE FROM payment
+    WHERE amount BETWEEN 5.00 AND 10.00;
     ```
 3.
 
     ```sql
+    DELETE FROM rental
+    WHERE rental_date = '2023-01-01'; 
     ```
 4.
 
     ```sql
+    DELETE FROM film 
+    WHERE description LIKE '%Comedy%'; 
     ```
 5.
 
     ```sql
+    DELETE FROM film
+    WHERE rating != 'G';
     ```
 6.
 
