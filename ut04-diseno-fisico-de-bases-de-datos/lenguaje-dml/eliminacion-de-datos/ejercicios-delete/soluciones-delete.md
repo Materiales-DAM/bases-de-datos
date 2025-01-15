@@ -54,18 +54,26 @@ layout:
 6.
 
     ```sql
+    DELETE FROM actor 
+    WHERE last_name LIKE 'A%';    
     ```
 7.
 
     ```sql
+    DELETE FROM film 
+    WHERE release_year > 2010 AND length <120 ; 
     ```
 8.
 
     ```sql
+    DELETE FROM film
+    WHERE title NOT LIKE '%Action%';
     ```
 9.
 
     ```sql
+    DELETE FROM customer
+    WHERE email IS NULL OR create_date < '1980-01-01';
     ```
 10.
 
