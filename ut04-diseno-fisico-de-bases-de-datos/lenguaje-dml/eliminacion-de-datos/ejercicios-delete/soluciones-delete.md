@@ -102,9 +102,12 @@ layout:
 14.
 
     ```sql
+    DELETE FROM rental
+    WHERE rental_date > '2023-01-01' AND return_date IS NULL;
     ```
 15.
 
     ```sql
+    DELETE FROM film
+    WHERE title LIKE '%drama%' OR release_year <2000; 
     ```
-
