@@ -47,10 +47,10 @@ layout:
     ```
 5.
 
-    ```sql
-    DELETE FROM film
-    WHERE rating != 'G';
-    ```
+    <pre class="language-sql"><code class="lang-sql"><strong># Da error de foreign key, ignorarlo
+    </strong><strong>DELETE FROM film
+    </strong>WHERE rating != 'G';
+    </code></pre>
 6.
 
     ```sql
