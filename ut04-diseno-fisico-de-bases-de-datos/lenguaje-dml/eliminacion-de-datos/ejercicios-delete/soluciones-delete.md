@@ -78,10 +78,14 @@ layout:
 10.
 
     ```sql
+    DELETE FROM film 
+    WHERE rating IS NULL; 
     ```
 11.
 
     ```sql
+    DELETE FROM customer
+    WHERE name NOT LIKE 'M%'; 
     ```
 12.
 
