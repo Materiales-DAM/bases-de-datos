@@ -90,10 +90,14 @@ layout:
 12.
 
     ```sql
+    DELETE FROM film
+    WHERE lenght = 120 OR rating = 'PG-13';
     ```
 13.
 
     ```sql
+    DELETE FROM actor
+    WHERE first_name LIKE '%test%'; 
     ```
 14.
 
