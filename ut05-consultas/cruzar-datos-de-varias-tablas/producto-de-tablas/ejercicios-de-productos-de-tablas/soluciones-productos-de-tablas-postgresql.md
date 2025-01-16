@@ -1,5 +1,5 @@
 ---
-cover: ../../../.gitbook/assets/mysqlpost.jpeg
+cover: ../../../../.gitbook/assets/mysqlpost.jpeg
 coverY: 0
 layout:
   cover:
@@ -17,15 +17,11 @@ layout:
     visible: true
 ---
 
-# Soluciones SELECT PostgreSQL
+# Soluciones productos de tablas PostgreSQL
 
 
 
 1. ```sql
-   SELECT description
-   FROM sakila.film 
-   WHERE description LIKE '%Adventure%' OR description LIKE '%Action%'
-   ORDER BY title;
    ```
 2. ```sql
    ```
@@ -33,8 +29,8 @@ layout:
    ```
 4. ```sql
    ```
-5. ```sql
-   ```
+5. <pre class="language-sql"><code class="lang-sql"><strong>
+   </strong></code></pre>
 6. ```sql
    ```
 7. ```sql
@@ -44,12 +40,4 @@ layout:
 9. ```sql
    ```
 10. ```sql
-    ```
-11. ```sql
-    ```
-12. ```sql
-    ```
-13. ```sql
-    ```
-14. ```sql
     ```

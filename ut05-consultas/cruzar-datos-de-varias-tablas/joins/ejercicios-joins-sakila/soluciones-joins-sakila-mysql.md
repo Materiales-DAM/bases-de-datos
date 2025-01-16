@@ -1,5 +1,5 @@
 ---
-cover: ../../../.gitbook/assets/mysqlpost.jpeg
+cover: ../../../../.gitbook/assets/mysqlpost.jpeg
 coverY: 0
 layout:
   cover:
@@ -17,15 +17,11 @@ layout:
     visible: true
 ---
 
-# Soluciones SELECT PostgreSQL
+# Soluciones joins sakila MySQL
 
 
 
 1. ```sql
-   SELECT description
-   FROM sakila.film 
-   WHERE description LIKE '%Adventure%' OR description LIKE '%Action%'
-   ORDER BY title;
    ```
 2. ```sql
    ```
@@ -33,7 +29,7 @@ layout:
    ```
 4. ```sql
    ```
-5. ```sql
+5. ```
    ```
 6. ```sql
    ```
@@ -52,4 +48,16 @@ layout:
 13. ```sql
     ```
 14. ```sql
+    ```
+15. ```
+    ```
+16. ```
+    ```
+17. ```
+    ```
+18. ```
+    ```
+19. ```
+    ```
+20. ```
     ```

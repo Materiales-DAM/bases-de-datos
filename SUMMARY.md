@@ -130,10 +130,16 @@
     * [Soluciones SELECT PostgreSQL](ut05-consultas/consulta-de-datos/ejercicios-select/soluciones-select-postgresql.md)
 * [Cruzar datos de varias tablas](ut05-consultas/cruzar-datos-de-varias-tablas/README.md)
   * [Producto de tablas](ut05-consultas/cruzar-datos-de-varias-tablas/producto-de-tablas/README.md)
-    * [Ejercicios de productos de tablas](ut05-consultas/cruzar-datos-de-varias-tablas/producto-de-tablas/ejercicios-de-productos-de-tablas.md)
+    * [Ejercicios de productos de tablas](ut05-consultas/cruzar-datos-de-varias-tablas/producto-de-tablas/ejercicios-de-productos-de-tablas/README.md)
+      * [Soluciones productos de tablas MySQL](ut05-consultas/cruzar-datos-de-varias-tablas/producto-de-tablas/ejercicios-de-productos-de-tablas/soluciones-productos-de-tablas-mysql.md)
+      * [Soluciones productos de tablas PostgreSQL](ut05-consultas/cruzar-datos-de-varias-tablas/producto-de-tablas/ejercicios-de-productos-de-tablas/soluciones-productos-de-tablas-postgresql.md)
   * [Joins](ut05-consultas/cruzar-datos-de-varias-tablas/joins/README.md)
-    * [Ejercicios joins sakila](ut05-consultas/cruzar-datos-de-varias-tablas/joins/ejercicios-joins-sakila.md)
-    * [Ejercicios joins universidad](ut05-consultas/cruzar-datos-de-varias-tablas/joins/ejercicios-joins-universidad.md)
+    * [Ejercicios joins sakila](ut05-consultas/cruzar-datos-de-varias-tablas/joins/ejercicios-joins-sakila/README.md)
+      * [Soluciones joins sakila MySQL](ut05-consultas/cruzar-datos-de-varias-tablas/joins/ejercicios-joins-sakila/soluciones-joins-sakila-mysql.md)
+      * [Soluciones joins sakila PostgreSQL](ut05-consultas/cruzar-datos-de-varias-tablas/joins/ejercicios-joins-sakila/soluciones-joins-sakila-postgresql.md)
+    * [Ejercicios joins universidad](ut05-consultas/cruzar-datos-de-varias-tablas/joins/ejercicios-joins-universidad/README.md)
+      * [Soluciones joins universidad MySQL](ut05-consultas/cruzar-datos-de-varias-tablas/joins/ejercicios-joins-universidad/soluciones-joins-universidad-mysql.md)
+      * [Soluciones joins universidad PostgreSQL](ut05-consultas/cruzar-datos-de-varias-tablas/joins/ejercicios-joins-universidad/soluciones-joins-universidad-postgresql.md)
 
 ## UT06 - Agregaciones, subconsultas, optimizaciones
 
