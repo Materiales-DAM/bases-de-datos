@@ -56,7 +56,17 @@ Este ejemplo omitirá las primeras 5 filas del conjunto de resultados ordenados 
 
 La paginación en SQL se refiere al proceso de dividir un conjunto de resultados de una consulta en bloques más pequeños o "páginas". Esto es especialmente útil cuando se trabaja con grandes conjuntos de datos y se desea mostrar resultados de manera escalonada, permitiendo a los usuarios navegar a través de las páginas de resultados en lugar de cargar toda la información de una sola vez. La paginación es comúnmente implementada mediante el uso de las cláusulas `LIMIT` y `OFFSET` (o sus equivalentes, dependiendo de la base de datos) en combinación con consultas SQL.
 
-Lo primero que se debe decidir es el tamaño de página que se desea, este valor será lo que ponemos en LIMIT. El OFFSET se calcula con esta fórmula OFFEST = (NumPágina-1) \* TamañoPágina&#x20;
+Lo primero que se debe decidir es el tamaño de página que se desea:
+
+$$
+OFFSET = (numPagina-1) *tamañoPagina
+$$
+
+$$
+LIMIT = numPagina
+$$
+
+
 
 Por ejemplo:
 
