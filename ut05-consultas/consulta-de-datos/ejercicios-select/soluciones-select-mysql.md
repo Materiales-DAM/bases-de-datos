@@ -33,8 +33,8 @@ layout:
    ```
 4. ```sql
    ```
-5. <pre class="language-sql"><code class="lang-sql"><strong>
-   </strong></code></pre>
+5. ```
+   ```
 6. ```sql
    ```
 7. ```sql
