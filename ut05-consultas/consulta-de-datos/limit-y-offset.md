@@ -63,7 +63,7 @@ OFFSET = (numPagina-1) *tamañoPagina
 $$
 
 $$
-LIMIT = numPagina
+OFFSET = tamañoPagina
 $$
 
 
