@@ -22,7 +22,7 @@ layout:
 Ejercicios Sakila:
 
 1. Recupera las descripciones de las películas de la tabla `film` que contienen la palabra 'Adventure' o 'Action', ordenadas alfabéticamente por título.
-2. Selecciona todos los datos de la tabla `category` donde la categoría sea 'Drama' o 'Music', ordenados por nombre de manera ascendente.
+2. Selecciona todas los columnas de la tabla `category` donde la categoría sea 'Drama' o 'Music', ordenados por nombre de manera ascendente.
 3. Muestra los nombres de las ciudades de la tabla `city` que pertenecen al país con el ID 1 o al país con el ID 2, ordenados por nombre de ciudad de manera descendente.
 4. Obtén los nombres y apellidos de los clientes de la tabla `customer` que tienen una dirección de correo electrónico, ordenados por apellido de manera ascendente.
 5. Recupera las direcciones de la tabla `address` donde el código postal comience con '48' y el distrito sea 'California', ordenadas city\_id de forma descendente.
