@@ -22,6 +22,9 @@ layout:
 
 
 1. ```sql
+   SELECT a.first_name, a.last_name
+   FROM actor a, film_actor fa
+   WHERE fa.actor_id = a.actor_id AND fa.film_id = 5;
    ```
 2. ```sql
    ```
