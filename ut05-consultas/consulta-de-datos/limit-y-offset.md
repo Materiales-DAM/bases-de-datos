@@ -59,14 +59,12 @@ La paginación en SQL se refiere al proceso de dividir un conjunto de resultados
 Lo primero que se debe decidir es el tamaño de página que se desea:
 
 $$
+LIMIT = tamañoPagina
+$$
+
+$$
 OFFSET = (numPagina-1) *tamañoPagina
 $$
-
-$$
-OFFSET = tamañoPagina
-$$
-
-
 
 Por ejemplo:
 

@@ -67,8 +67,16 @@ layout:
    ORDER BY name ASC; 
    ```
 9. ```sql
+   SELECT name
+   FROM sakila.category
+   WHERE name = 'Action' OR name = 'Travel'
+   ORDER BY name ASC;
    ```
 10. ```sql
+    SELECT first_name, last_name
+    FROM sakila.staff
+    WHERE (staff_id = 1 OR staff_id = 2) AND picture IS NOT NULL 
+    ORDER BY last_name;
     ```
 11. ```sql
     ```
