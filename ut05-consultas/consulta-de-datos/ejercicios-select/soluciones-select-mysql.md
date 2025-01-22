@@ -78,14 +78,34 @@ layout:
 10. ```sql
     SELECT first_name, last_name
     FROM staff
-    WHERE (staff_id = 1 OR staff_id = 2) AND picture IS NOT NULL 
+    WHERE (store_id = 1 OR store_id = 2) AND picture IS NOT NULL 
     ORDER BY last_name;
     ```
 11. ```sql
+    SELECT first_name, last_name
+    FROM customer
+    ORDER BY last_name
+    LIMIT 50 OFFSET 50; 
     ```
 12. ```sql
+    SELECT title, description
+    FROM film
+    WHERE length > 120
+    ORDER BY length DESC, title
+    LIMIT 10 OFFSET 30;
     ```
 13. ```sql
+    SELECT name
+    FROM category 
+    WHERE name LIKE '%me%'
+    ORDER BY name ASC
+    LIMIT 1; 
     ```
 14. ```sql
+    SELECT *
+    FROM film
+    WHERE 
+        (title LIKE '%paced%' OR title LIKE '%of%') 
+        AND 
+        (release_year > 2000 OR length > 100); 
     ```
