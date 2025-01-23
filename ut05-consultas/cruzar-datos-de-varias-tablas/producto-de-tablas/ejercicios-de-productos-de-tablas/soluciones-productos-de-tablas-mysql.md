@@ -27,8 +27,17 @@ layout:
    WHERE fa.actor_id = a.actor_id AND fa.film_id = 5;
    ```
 2. ```sql
+   SELECT c.first_name, r.rental_date 
+   FROM customer c, rental r
+   WHERE c.customer_id = r.customer_id
+   ORDER BY c.first_name, r.rental_date; 
+
    ```
 3. ```sql
+   SELECT c.first_name, a.postal_code
+   FROM customer c, address a
+   WHERE c.address_id = a.address_id
+   ORDER BY c.last_name, c.first_name; 
    ```
 4. ```
    ```
