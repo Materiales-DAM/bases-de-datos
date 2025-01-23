@@ -39,9 +39,16 @@ layout:
    WHERE c.address_id = a.address_id
    ORDER BY c.last_name, c.first_name; 
    ```
-4. ```
+4. ```sql
+   SELECT 
+       c.name, f.title
+   FROM category c, film_category fc, film f 
+   WHERE c.category_id = fc.category_id AND f.film_id = fc.film_id;
    ```
 5. ```sql
+   SELECT c.first_name,f.title, i.inventory_id
+   FROM customer c, rental r, inventory i, film f 
+   WHERE c.customer_id = r.customer_id AND i.inventory_id = r.inventory_id AND f.film_id = i.film_id ; 
    ```
 6. ```sql
    ```
