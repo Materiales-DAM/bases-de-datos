@@ -77,15 +77,10 @@ DROP SCHEMA IF EXISTS MiEsquema CASCADE;
 
 ### PostgreSQL
 
-No se puede seleccionar un esquema, se debe especificar el esquema en cada consulta
+Se usa la sentencia `SET search_path`
 
 ```sql
-CREATE TABLE MiEsquema.Product(
-	Name VARCHAR(30) PRIMARY KEY,
-	Calories INT NOT NULL,
-	Price NUMERIC(8, 2) NOT NULL,
-	BagType CHAR(3) NOT NULL
-);
+SET search_path TO MiEsquema;
 ```
 
 ### MySQL
