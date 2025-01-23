@@ -44,7 +44,7 @@ layout:
    ```
 5. ```sql
    SELECT c.first_name,f.title, i.inventory_id
-   FROM sakila.customer c, sakila.rental r, sakila.inventory i, film f 
+   FROM sakila.customer c, sakila.rental r, sakila.inventory i, sakila.film f 
    WHERE c.customer_id = r.customer_id AND i.inventory_id = r.inventory_id AND f.film_id = i.film_id ; 
    ```
 6. ```sql
