@@ -22,6 +22,11 @@ layout:
 
 
 1. ```sql
+   SELECT *
+   FROM sakila.rental r
+   INNER JOIN sakila.customer c ON r.customer_id = c.customer_id
+   WHERE c.active = 1
+   ORDER BY c.customer_id, r.rental_date;
    ```
 2. ```sql
    ```
