@@ -29,6 +29,10 @@ layout:
    ORDER BY c.customer_id, r.rental_date;
    ```
 2. ```sql
+   SELECT *
+   FROM staff sta
+   LEFT JOIN store sto ON sta.store_id = sto.store_id
+   ORDER BY sta.first_name, sta.last_name; 
    ```
 3. ```sql
    ```
