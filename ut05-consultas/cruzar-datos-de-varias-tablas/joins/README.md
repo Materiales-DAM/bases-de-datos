@@ -68,25 +68,25 @@ Este tipo de JOIN combina filas de dos tablas basándose en una condición de un
 
 <figure><img src="../../../.gitbook/assets/image (141).png" alt="" width="375"><figcaption></figcaption></figure>
 
-Por ejemplo, si queremos listar todos los departamentos, añadiendo sus profesores haríamos:
+Por ejemplo, si queremos listar todos los profesores con sus departamentos, incluyendo los profesores sin departamento, haríamos:
 
 ```sql
 SELECT * 
-FROM 
-    Departamento d LEFT JOIN Profesor p ON p.CodigoDepartamento  = d.Codigo
+FROM Profesor p 
+LEFT JOIN Departamento d ON p.CodigoDepartamento  = d.Codigo
 ```
 
 Esta consulta devolvería estas filas
 
 ```
-Codigo|Presupuesto|Habitacion|Dni      |Nombre     |Categoria|Antiguedad|CodigoDepartamento|
-------+-----------+----------+---------+-----------+---------+----------+------------------+
-ADM   |    1500.00|103       |         |           |         |          |                  |
-INF   |   10000.00|101       |00000000X|Bob Esponja|JD       |        15|INF               |
-INF   |   10000.00|101       |00000001X|Calamardo  |PS       |         5|INF               |
-INF   |   10000.00|101       |00000002X|George Pig |PT       |         6|INF               |
-MKT   |   15000.00|102       |00000003X|Peppa Pig  |JD       |        15|MKT               |
-MKT   |   15000.00|102       |00000004X|Pocoyo     |PS       |        10|MKT               |
+Dni      |Nombre     |Categoria|Antiguedad|CodigoDepartamento|Codigo|Presupuesto|Habitacion|
+---------+-----------+---------+----------+------------------+------+-----------+----------+
+00000000X|Bob Esponja|JD       |        15|INF               |INF   |   10000.00|101       |
+00000001X|Calamardo  |PS       |         5|INF               |INF   |   10000.00|101       |
+00000002X|George Pig |PT       |         6|INF               |INF   |   10000.00|101       |
+00000003X|Peppa Pig  |JD       |        15|MKT               |MKT   |   15000.00|102       |
+00000004X|Pocoyo     |PS       |        10|MKT               |MKT   |   15000.00|102       |
+00000005X|Elly       |PS       |         5|                  |      |           |          |
 ```
 
 El `LEFT JOIN` devuelve una fila por cada profesor en un departamento, y en el caso de departamentos sin profesores (ADM) devuelve una sola fila para ese departamento en la que los valores de las columnas de la tabla `Profesor` son null.
@@ -99,24 +99,25 @@ Este tipo de JOIN combina filas de dos tablas basándose en una condición de un
 
 <figure><img src="../../../.gitbook/assets/image (142).png" alt="" width="375"><figcaption></figcaption></figure>
 
-Por ejemplo, si queremos listar todos los departamentos, añadiendo sus profesores haríamos:
+Por ejemplo, si queremos listar los profesores con sus  departamentos, incluyendo departamentos sin profesores, haríamos:
 
 ```sql
 SELECT * 
-FROM 
-    Orderador o RIGHT JOIN Departamento d ON o.CodigoDepartamento  = d.Codigo
+FROM Profesor p 
+RIGHT JOIN Departamento d ON p.CodigoDepartamento  = d.Codigo
 ```
 
 Esta consulta devolvería estas filas
 
 ```
-Id|Memoria|Procesador|CodigoDepartamento|Codigo|Presupuesto|Habitacion|
---+-------+----------+------------------+------+-----------+----------+
-  |       |          |                  |ADM   |    1500.00|103       |
- 1|      8|I5        |INF               |INF   |   10000.00|101       |
- 2|     16|I7        |INF               |INF   |   10000.00|101       |
- 3|      8|I5        |MKT               |MKT   |   15000.00|102       |
- 4|      8|I5        |MKT               |MKT   |   15000.00|102       |
+Dni      |Nombre     |Categoria|Antiguedad|CodigoDepartamento|Codigo|Presupuesto|Habitacion|
+---------+-----------+---------+----------+------------------+------+-----------+----------+
+00000000X|Bob Esponja|JD       |        15|INF               |INF   |   10000.00|101       |
+00000001X|Calamardo  |PS       |         5|INF               |INF   |   10000.00|101       |
+00000002X|George Pig |PT       |         6|INF               |INF   |   10000.00|101       |
+00000003X|Peppa Pig  |JD       |        15|MKT               |MKT   |   15000.00|102       |
+00000004X|Pocoyo     |PS       |        10|MKT               |MKT   |   15000.00|102       |
+         |           |         |          |                  |ADM   |    1500.00|103       
 ```
 
 El `RIGHT JOIN` devuelve una fila por cada ordenador en un departamento, y en el caso de departamentos sin ordenadores (ADM) devuelve una sola fila para ese departamento en la que los valores de las columnas de la tabla `Ordenador` son null.
