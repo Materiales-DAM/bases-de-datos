@@ -80,8 +80,20 @@ layout:
    ORDER BY sto.store_id, sta.staff_id; 
    ```
 9. ```sql
+   SELECT sta.* 
+   FROM staff sta
+   inner JOIN store s ON sta.store_id = s.store_id 
+   INNER JOIN address a ON s.address_id = a.address_id
+   INNER JOIN city c ON a.city_id = c.city_id
+   WHERE city='Woodridge'; 
    ```
 10. ```sql
+    SELECT DISTINCT co.*, s.* 
+    FROM country co
+    LEFT JOIN city ci ON ci.country_id = co.country_id
+    LEFT JOIN address a ON a.city_id = ci.city_id
+    LEFT JOIN store s ON a.address_id = s.address_id 
+    ORDER BY co.country; 
     ```
 11. ```sql
     ```
