@@ -124,15 +124,20 @@ layout:
     INNER JOIN city ci ON a.city_id = ci.city_id
     WHERE ci.city = 'Woodridge'; 
     ```
-15. ```
+15. ```sql
+    SELECT DISTINCT f.* 
+    FROM film f 
+    INNER JOIN film_actor fa ON f.film_id = fa.film_id 
+    INNER JOIN actor a ON fa.actor_id = a.actor_id
+    WHERE a.first_name = 'PENELOPE'; 
     ```
-16. ```
+16. ```sql
     ```
-17. ```
+17. ```sql
     ```
 18. ```
     ```
-19. ```
+19. ```sql
     ```
-20. ```
+20. ```sql
     ```
