@@ -32,7 +32,7 @@ layout:
 11. Muestra todos los alquileres de clientes que viven en Canada o en Senegal. Ordena por nombre de país, id de cliente y fecha de alquiler
 12. Muestra el id de inventario, id de store y título de la película, de aquellas películas cuyo idioma sea "English" y su categoría "Documentary"
 13. Muestra las tiendas que tienen algún empleado
-14. Muestra los clientes que han realizado algún alquiler en London
+14. Muestra los clientes que han realizado algún alquiler en Woodridge
 15. Muestra las películas que tienen una actriz llamada PENELOPE
 16. Muestra las categorías que tienen alguna película en inglés
 17. Mostrar todas la películas que tienen dos actores que se llamen igual (first\_name)

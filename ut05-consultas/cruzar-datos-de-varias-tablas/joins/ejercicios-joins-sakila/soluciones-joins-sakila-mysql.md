@@ -101,10 +101,28 @@ layout:
     WHERE co.country = 'Canada' OR co.country = 'Senegal'; 
     ```
 12. ```sql
+    SELECT i.inventory_id, i.store_id, f.title
+    FROM inventory i
+    INNER JOIN film f ON i.film_id = f.film_id
+    INNER JOIN language l ON f.language_id = l.language_id
+    INNER JOIN film_category fc ON f.film_id = fc.film_id
+    INNER JOIN category c ON fc.category_id = c.category_id
+    WHERE l.name = 'English' AND c.name = 'Documentary'; 
     ```
 13. ```sql
+    SELECT DISTINCT s.*
+    FROM store s 
+    INNER JOIN staff s2 ON s2.store_id =s.store_id; 
     ```
 14. ```sql
+    SELECT DISTINCT c.*
+    FROM customer c 
+    INNER JOIN rental r ON c.customer_id = r.customer_id 
+    INNER JOIN inventory i ON r.inventory_id = i.inventory_id 
+    INNER JOIN store s ON i.store_id = s.store_id 
+    INNER JOIN address a ON s.address_id = a.address_id 
+    INNER JOIN city ci ON a.city_id = ci.city_id
+    WHERE ci.city = 'Woodridge'; 
     ```
 15. ```
     ```
