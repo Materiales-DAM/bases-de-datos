@@ -96,6 +96,13 @@ layout:
     ORDER BY co.country; 
     ```
 11. ```sql
+    SELECT r.*
+    FROM rental r
+    INNER JOIN customer c  ON c.customer_id  = r.customer_id
+    INNER JOIN address a ON a.address_id = c.address_id
+    INNER JOIN city ci ON ci.city_id = a.city_id 
+    INNER JOIN country co ON co.country_id = ci.country_id 
+    WHERE co.country = 'Canada' OR co.country = 'Senegal'; 
     ```
 12. ```sql
     ```
