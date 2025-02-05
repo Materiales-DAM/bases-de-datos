@@ -132,6 +132,12 @@ layout:
     WHERE a.first_name = 'PENELOPE'; 
     ```
 16. ```sql
+    SELECT DISTINCT cat.*
+    FROM category cat
+    INNER JOIN film_category fc ON cat.category_id= fc.category_id
+    INNER JOIN film f ON fc.film_id = f.film_id
+    INNER JOIN language lng ON f.language_id = lng.language_id
+    WHERE lng.name = 'English'; 
     ```
 17. ```sql
     ```
