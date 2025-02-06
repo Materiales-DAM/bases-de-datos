@@ -62,7 +62,7 @@ DROP DATABASE IF EXISTS MiBaseDeDatos;
 También valdría hacerlo con la palabra SCHEMA
 
 ```sql
-DROP SCHEMA BASE IF EXISTS MiEsquema;
+DROP SCHEMA IF EXISTS MiEsquema;
 ```
 
 ### PostgreSQL
