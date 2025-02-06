@@ -1,5 +1,5 @@
 ---
-cover: ../.gitbook/assets/mysqlpost.jpeg
+cover: ../../.gitbook/assets/mysqlpost.jpeg
 coverY: 0
 layout:
   cover:
