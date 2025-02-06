@@ -38,7 +38,7 @@ CREATE DATABASE IF NOT EXISTS MiBaseDeDatos;
 También valdría hacerlo con la palabra SCHEMA
 
 ```sql
-CREATE SCHEMA BASE IF NOT EXISTS MiBaseDeDatos;
+CREATE SCHEMA IF NOT EXISTS MiBaseDeDatos;
 ```
 
 ### PostgreSQL
