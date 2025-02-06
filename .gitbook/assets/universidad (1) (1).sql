@@ -1,6 +1,3 @@
-
-/*!50503 SET NAMES utf8mb4 */;
-
 DROP DATABASE IF EXISTS universidad;
 CREATE DATABASE universidad CHARACTER SET utf8mb4;
 USE universidad;
@@ -54,8 +51,8 @@ CREATE TABLE asignatura (
     id_grado INT UNSIGNED NOT NULL,
     FOREIGN KEY(id_profesor) REFERENCES profesor(id),
     FOREIGN KEY(id_grado) REFERENCES grado(id)
-) engine=innodb character set utf8 collate utf8_unicode_ci;
-  
+);
+ 
 CREATE TABLE curso_escolar (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     anyo_inicio YEAR NOT NULL,
