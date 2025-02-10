@@ -158,6 +158,23 @@ layout:
     	WHERE c.city = 'Lethbridge'AND no_devuelto.rental_id IS  NULL; 
     ```
 19. ```sql
+    SELECT DISTINCT s.*
+    FROM staff s 
+    INNER JOIN rental r 
+    	ON s.staff_id = r.staff_id 
+    INNER JOIN inventory i 
+    	ON r.inventory_id = i.inventory_id 
+    INNER JOIN film f 
+    	ON i.film_id = f.film_id 
+    INNER JOIN store st
+    	ON st.store_id = i.store_id    
+    INNER JOIN customer c 
+    	ON r.customer_id = c.customer_id 
+    INNER JOIN address a 
+    	ON c.address_id = a.address_id 
+    INNER JOIN city ci
+    	ON a.city_id = ci.city_id 
+    WHERE f.title = 'ACADEMY DINOSAUR' AND ci.city = 'Sucre'; 
     ```
 20. ```sql
     ```
