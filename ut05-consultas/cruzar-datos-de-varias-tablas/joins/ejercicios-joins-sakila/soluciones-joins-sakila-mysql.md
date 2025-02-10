@@ -147,7 +147,15 @@ layout:
     INNER JOIN film_actor fa2 ON f.film_id = fa2.film_id AND a1.actor_id <> fa2.actor_id
     INNER JOIN actor a2 ON fa2.actor_id = a2.actor_id AND a1.first_name = a2.first_name; 
     ```
-18. ```
+18. ```sql
+    SELECT DISTINCT f.title
+    	FROM inventory i
+    	LEFT JOIN rental no_devuelto ON i.inventory_id =no_devuelto.inventory_id AND no_devuelto.return_date IS NULL
+    	INNER JOIN store s ON i.store_id = s.store_id
+    	INNER JOIN address a ON s.address_id = a.address_id
+    	INNER JOIN city c ON a.city_id = c.city_id
+    	INNER JOIN film f ON i.film_id = f.film_id
+    	WHERE c.city = 'Lethbridge'AND no_devuelto.rental_id IS  NULL; 
     ```
 19. ```sql
     ```
