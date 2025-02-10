@@ -38,4 +38,3 @@ layout:
 17. Mostrar todas la películas que tienen dos actores que se llamen igual (first\_name)
 18. Mostrar películas que se puedan alquilar en Lethbridge
 19. Mostrar los empleados que hayan alquilado alguna vez la película 'ACADEMY DINOSAUR' a algún cliente que viva en la ciudad Sucre
-20. Muestra los títulos de las películas que nunca han sido alquiladas en Spain

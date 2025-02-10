@@ -176,5 +176,3 @@ layout:
     	ON a.city_id = ci.city_id 
     WHERE f.title = 'ACADEMY DINOSAUR' AND ci.city = 'Sucre'; 
     ```
-20. ```sql
-    ```

@@ -1,5 +1,5 @@
 ---
-cover: ../../../.gitbook/assets/subquery (1).gif
+cover: ../../.gitbook/assets/subquery (1).gif
 coverY: 0
 layout:
   cover:
@@ -32,3 +32,4 @@ layout:
 11. Muestra el número de pagos por clientes, para clientes que hayan gastado más que la media
 12. Muestra el número de alquileres por tienda, para tiendas que hayan alquilado menos de la media
 13. Muestra los ingresos por tienda, para tiendas que hayan recibido más pagos que la media
+14. Muestra los títulos de las películas que nunca han sido alquiladas en Spain
