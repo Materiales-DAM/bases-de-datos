@@ -35,6 +35,10 @@ layout:
    WHERE g.nombre = 'Ingeniería Informática (Plan 2015)'; 
    ```
 3. ```sql
+   SELECT pf.apellido1,pf.apellido2,pf.nombre, dp.nombre
+   FROM profesor pf
+   INNER JOIN departamento dp ON dp.id=pf.id_departamento
+   ORDER BY pf.apellido1, pf.apellido2, pf.nombre; 
    ```
 4. ```sql
    ```
