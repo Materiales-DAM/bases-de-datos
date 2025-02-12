@@ -138,8 +138,7 @@
       * [Soluciones joins sakila MySQL](ut05-consultas/cruzar-datos-de-varias-tablas/joins/ejercicios-joins-sakila/soluciones-joins-sakila-mysql.md)
       * [Soluciones joins sakila PostgreSQL](ut05-consultas/cruzar-datos-de-varias-tablas/joins/ejercicios-joins-sakila/soluciones-joins-sakila-postgresql.md)
     * [Ejercicios joins universidad](ut05-consultas/cruzar-datos-de-varias-tablas/joins/ejercicios-joins-universidad/README.md)
-      * [Soluciones joins universidad MySQL](ut05-consultas/cruzar-datos-de-varias-tablas/joins/ejercicios-joins-universidad/soluciones-joins-universidad-mysql.md)
-      * [Soluciones joins universidad PostgreSQL](ut05-consultas/cruzar-datos-de-varias-tablas/joins/ejercicios-joins-universidad/soluciones-joins-universidad-postgresql.md)
+      * [Soluciones joins universidad](ut05-consultas/cruzar-datos-de-varias-tablas/joins/ejercicios-joins-universidad/soluciones-joins-universidad.md)
 
 ## UT06 - Agregaciones, subconsultas, optimizaciones
 

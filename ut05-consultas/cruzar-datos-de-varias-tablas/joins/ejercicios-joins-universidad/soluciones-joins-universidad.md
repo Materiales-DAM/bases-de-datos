@@ -17,11 +17,16 @@ layout:
     visible: true
 ---
 
-# Soluciones joins universidad MySQL
-
-
+# Soluciones joins universidad
 
 1. ```sql
+   SELECT DISTINCT a.*
+   FROM alumno a 
+   INNER JOIN alumno_se_matricula_asignatura asma ON a.id = asma.id_alumno 
+   INNER JOIN curso_escolar ce ON asma.id_curso_escolar = ce.id
+   INNER JOIN asignatura asig ON asma.id_asignatura = asig.id
+   INNER JOIN grado g ON asig.id_grado = g.id
+   WHERE a.sexo = 'M' AND g.nombre = 'Ingeniería Informática (Plan 2015)' ; 
    ```
 2. ```sql
    ```
