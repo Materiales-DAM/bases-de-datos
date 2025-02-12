@@ -29,6 +29,10 @@ layout:
    WHERE a.sexo = 'M' AND g.nombre = 'Ingeniería Informática (Plan 2015)' ; 
    ```
 2. ```sql
+   SELECT a.nombre 
+   FROM asignatura a 
+   INNER JOIN grado g ON a.id_grado = g.id 
+   WHERE g.nombre = 'Ingeniería Informática (Plan 2015)'; 
    ```
 3. ```sql
    ```
