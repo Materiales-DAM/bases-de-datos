@@ -48,7 +48,13 @@ layout:
    JOIN asignatura asig ON asig.id = asma.id_asignatura
    WHERE a.nif = '2X'; 
    ```
-5. ```
+5. ```sql
+   SELECT DISTINCT d.*
+   FROM departamento d 
+   INNER JOIN profesor p ON d.id= p.id_departamento
+   INNER JOIN asignatura a ON p.id = a.id_profesor
+   INNER JOIN grado g ON g.id = a.id_grado
+   WHERE g.nombre = 'Ingeniería Informática (Plan 2015)' 
    ```
 6. ```sql
    ```
