@@ -82,8 +82,22 @@ layout:
    WHERE p.id IS NULL ; 
    ```
 10. ```sql
+    SELECT p.*
+    FROM profesor p
+    LEFT JOIN asignatura ag ON p.id = ag.id_profesor
+    WHERE ag.id_profesor IS NULL; 
     ```
 11. ```sql
+    SELECT asig.*
+    FROM asignatura asig
+    LEFT JOIN profesor p ON asig.id_profesor = p.id
+    WHERE p.id IS NULL; 
     ```
 12. ```sql
+    SELECT d.nombre, d.id, a.id, a.nombre
+    FROM departamento d
+    INNER JOIN profesor p ON d.id = p.id_departamento
+    INNER JOIN asignatura a ON p.id = a.id_profesor
+    LEFT JOIN alumno_se_matricula_asignatura asma ON a.id = asma.id_asignatura 
+    WHERE asma.id_curso_escolar IS NULL; 
     ```

@@ -32,6 +32,4 @@ La base de datos se puede configurar siguiendo las instrucciones que hay [aquí]
 9. Devuelve un listado con los departamentos que no tienen profesores asociados.
 10. Devuelve un listado con los profesores que no imparten ninguna asignatura.
 11. Devuelve un listado con las asignaturas que no tienen un profesor asignado.
-12. Devuelve un listado con todos los departamentos que tienen alguna asignatura que no se haya impartido en ningún curso escolar. El resultado debe mostrar el nombre del departamento y el id y nombre de la asignatura que no se haya impartido nunca.
-
-\
+12. Devuelve un listado con todos los departamentos que tienen alguna asignatura que no se haya impartido en ningún curso escolar. El resultado debe mostrar el nombre del departamento, el id del departamento, el id de la asignatura y nombre de la asignatura que no se haya impartido nunca.
