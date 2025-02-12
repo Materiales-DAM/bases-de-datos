@@ -41,6 +41,12 @@ layout:
    ORDER BY pf.apellido1, pf.apellido2, pf.nombre; 
    ```
 4. ```sql
+   SELECT DISTINCT asig.nombre, ce.anyo_inicio, ce.anyo_fin
+   FROM alumno a
+   INNER JOIN alumno_se_matricula_asignatura asma ON asma.id_alumno = a.id
+   INNER JOIN curso_escolar ce ON ce.id = asma.id_curso_escolar
+   JOIN asignatura asig ON asig.id = asma.id_asignatura
+   WHERE a.nif = '2X'; 
    ```
 5. ```
    ```
