@@ -57,12 +57,29 @@ layout:
    WHERE g.nombre = 'Ingeniería Informática (Plan 2015)' 
    ```
 6. ```sql
+   SELECT DISTINCT a.*
+   FROM alumno a 
+   INNER JOIN alumno_se_matricula_asignatura asma ON a.id = asma.id_alumno
+   INNER JOIN curso_escolar ce ON asma.id_curso_escolar = ce.id
+   WHERE ce.anyo_inicio = 2020 AND ce.anyo_fin = 2021; 
    ```
 7. ```sql
+   SELECT p.apellido1, p.apellido2, p.nombre, d.nombre AS departamento
+   FROM profesor p
+   LEFT JOIN departamento d ON p.id_departamento = d.id
+   ORDER BY d.nombre, p.apellido1, p.apellido2, p.nombre; 
    ```
 8. ```sql
+   SELECT p.* 
+   FROM profesor p 
+   LEFT JOIN departamento d ON p.id_departamento = d.id
+   WHERE d.nombre IS NULL; 
    ```
 9. ```sql
+   SELECT d.*
+   FROM departamento d 
+   LEFT JOIN profesor p ON d.id = p.id_departamento 
+   WHERE p.id IS NULL ; 
    ```
 10. ```sql
     ```
