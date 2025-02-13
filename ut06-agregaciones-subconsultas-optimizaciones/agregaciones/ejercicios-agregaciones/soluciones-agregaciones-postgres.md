@@ -43,6 +43,16 @@ layout:
        date_part('month', payment_date)=5; 
    ```
 5. ```sql
+   SELECT COUNT (film_id) as actor_films
+   FROM film_actor fa
+   INNER JOIN actor a ON fa.actor_id = a.actor_id
+   WHERE a.first_name = 'MATTHEW' AND a.last_name = 'JOHANSSON'; 
    ```
 6. ```sql
+   SELECT COUNT(*) as city_inventories
+   FROM inventory i
+   INNER JOIN store s ON i.store_id = s.store_id
+   INNER JOIN address a ON a.address_id = s.address_id 
+   INNER JOIN city c ON c.city_id = a.city_id 
+   WHERE c.city = 'Woodridge'; 
    ```

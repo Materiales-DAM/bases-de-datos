@@ -143,7 +143,7 @@
 ## UT06 - Agregaciones, subconsultas, optimizaciones
 
 * [Agregaciones](ut06-agregaciones-subconsultas-optimizaciones/agregaciones/README.md)
-  * [Ejercicios agregaciones](ut06-agregaciones-subconsultas-optimizaciones/agregaciones/ejercicios-agregaciones/README.md)
+  * [Ejercicios agregaciones](ut06-agregaciones-subconsultas-optimizaciones/agregaciones/ejercicios-agregaciones.md)
     * [Soluciones agregaciones Mysql](ut06-agregaciones-subconsultas-optimizaciones/agregaciones/ejercicios-agregaciones/soluciones-agregaciones-mysql.md)
     * [Soluciones agregaciones Postgres](ut06-agregaciones-subconsultas-optimizaciones/agregaciones/ejercicios-agregaciones/soluciones-agregaciones-postgres.md)
   * [Agregaciones por grupos](ut06-agregaciones-subconsultas-optimizaciones/agregaciones/agregaciones-por-grupos.md)
