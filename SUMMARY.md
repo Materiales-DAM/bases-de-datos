@@ -161,7 +161,8 @@
     * [Ejercicios DML y subqueries](ut06-agregaciones-subconsultas-optimizaciones/subqueries/dml-y-subqueries/ejercicios-dml-y-subqueries/README.md)
       * [Soluciones DML y subqueries](ut06-agregaciones-subconsultas-optimizaciones/subqueries/dml-y-subqueries/ejercicios-dml-y-subqueries/soluciones-dml-y-subqueries.md)
 * [Vistas](ut06-agregaciones-subconsultas-optimizaciones/vistas/README.md)
-  * [Ejercicios vistas](ut06-agregaciones-subconsultas-optimizaciones/vistas/ejercicios-vistas.md)
+  * [Ejercicios vistas](ut06-agregaciones-subconsultas-optimizaciones/vistas/ejercicios-vistas/README.md)
+    * [Soluciones vistas](ut06-agregaciones-subconsultas-optimizaciones/vistas/ejercicios-vistas/soluciones-vistas.md)
 * [Optimización de consultas](ut06-agregaciones-subconsultas-optimizaciones/optimizacion-de-consultas.md)
 
 ## UT07 - Administración de bases de datos
