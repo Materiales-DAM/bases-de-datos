@@ -22,7 +22,7 @@ layout:
 1. Calcular el número total de pagos realizados.
 2. Obtener el monto total de los pagos realizados.
 3. Calcula el número de películas de Horror.
-4. Obtener el monto promedio de pagos realizados en mayo de 2005.
+4. Obtener la cantidad promedio (amount) de pagos realizados en mayo de 2005.
 5. Obtener el número total de películas interpretadas por MATTHEW JOHANSSON.
 6. Calcular la cantidad total de inventario disponible en las tiendas de la ciudad Woodridge.
 
