@@ -1,5 +1,5 @@
 ---
-cover: ../../../.gitbook/assets/aggregation.png
+cover: ../../.gitbook/assets/aggregation.png
 coverY: 36.37866666666667
 layout:
   cover:

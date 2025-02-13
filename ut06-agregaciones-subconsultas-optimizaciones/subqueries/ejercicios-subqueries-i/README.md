@@ -1,5 +1,5 @@
 ---
-cover: ../../.gitbook/assets/subquery (1).gif
+cover: ../../../.gitbook/assets/subquery (1).gif
 coverY: 0
 layout:
   cover:
