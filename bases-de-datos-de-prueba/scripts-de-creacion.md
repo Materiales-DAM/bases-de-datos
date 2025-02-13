@@ -8,12 +8,24 @@ Solo disponible para MySQL
 
 En el directorio donde se haya descargado el zip ejecutar lo siguiente
 
+{% tabs %}
+{% tab title="Ubuntu" %}
 ```bash
 CONTAINER=diurno-mysql
 PASSWORD=Sandia4you
 unzip -o world-db.zip
 docker exec -i $CONTAINER mysql -u root -p$PASSWORD < world-db/world.sql
 ```
+{% endtab %}
+
+{% tab title="Windows" %}
+Primero descomprime el archivo world-db.zip y abre la terminal CMD en el directorio donde esta el zip
+
+```bash
+docker exec -i diurno-mysql mysql -u root -pSandia4you < world-db/world.sql
+```
+{% endtab %}
+{% endtabs %}
 
 ## Sakila
 
@@ -23,6 +35,8 @@ docker exec -i $CONTAINER mysql -u root -p$PASSWORD < world-db/world.sql
 
 En el directorio donde se haya descargado el zip ejecutar lo siguiente
 
+{% tabs %}
+{% tab title="Ubuntu" %}
 ```bash
 CONTAINER=diurno-mysql
 PASSWORD=Sandia4you
@@ -32,17 +46,41 @@ docker exec -i $CONTAINER mysql -u root -p$PASSWORD < sakila-db/sakila-data.sql
 ```
 {% endtab %}
 
+{% tab title="Windows" %}
+Primero descomprime el archivo sakila-db.zip y abre la terminal CMD en el directorio donde esta el zip
+
+```bash
+docker exec -i diurno-mysql mysql -u root -pSandia4you < sakila-db/sakila-schema.sql
+docker exec -i diurno-mysql mysql -u root -pSandia4you < sakila-db/sakila-data.sql
+```
+{% endtab %}
+{% endtabs %}
+{% endtab %}
+
 {% tab title="PostgreSQL" %}
 {% file src="../.gitbook/assets/postgres-sakila.zip" %}
 
-Para instalar ejecutar los siguientes comandos en el directorio donde se ha descargado el fichero anterior
+En el directorio donde se haya descargado el zip ejecutar lo siguiente
 
+{% tabs %}
+{% tab title="Ubuntu" %}
 ```bash
 CONTAINER=diurno-postgres
 unzip -o postgres-sakila.zip
 docker exec -i $CONTAINER psql -U postgres < postgres-sakila-schema.sql
 docker exec -i $CONTAINER psql -U postgres < postgres-sakila-insert-data.sql
 ```
+{% endtab %}
+
+{% tab title="Windows" %}
+Primero descomprime el archivo sakila-db.zip y abre la terminal CMD en el directorio donde esta el zip
+
+```bash
+docker exec -i diurno-mysql psql -U postgres < postgres-sakila-schema.sql
+docker exec -i diurno-mysql psql -U postgres < postgres-sakila-insert-dat
+```
+{% endtab %}
+{% endtabs %}
 {% endtab %}
 {% endtabs %}
 
