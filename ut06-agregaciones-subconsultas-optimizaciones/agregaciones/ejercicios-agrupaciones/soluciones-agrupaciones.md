@@ -27,8 +27,16 @@ layout:
    GROUP BY i.film_id;
    ```
 2. ```sql
+   SELECT  customer_id ,count(*) AS numeros_de_alquleres
+   FROM rental 
+   GROUP BY customer_id ; 
    ```
 3. ```sql
+   SELECT c.category_id, c.name, COUNT(*) as num_films
+   FROM film f
+   INNER JOIN film_category fc ON f.film_id = fc.film_id 
+   INNER JOIN category c ON fc.category_id = c.category_id 
+   GROUP BY c.category_id ;
    ```
 4. ```sql
    ```
