@@ -22,7 +22,7 @@ layout:
 1. Calcular el total de ingresos generados por cada película.
 2. Determinar el número de alquileres por cliente.
 3. Encontrar el total de películas en cada categoría.
-4. Calcular el ingreso promedio de los alquileres.
+4. Calcular el ingreso promedio de las películas por categoría.
 5. Contar el número total de alquileres por película.
 6. Encontrar la duración promedio de todas las películas.
 7. Determinar el total de ingresos generados por cada miembro del personal.
