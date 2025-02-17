@@ -75,8 +75,18 @@ layout:
    GROUP BY sto.store_id;
    ```
 9. ```sql
+   SELECT a.actor_id, a.first_name, a.last_name, MIN(f.length) AS minimum_length
+   FROM actor a
+   INNER JOIN film_actor fa ON a.actor_id = fa.actor_id
+   INNER JOIN film f ON fa.film_id = f.film_id
+   GROUP BY a.actor_id; 
    ```
 10. ```sql
+    SELECT c.customer_id, SUM(p.amount) AS average_customer
+    FROM payment p
+    INNER JOIN rental r ON p.rental_id = r.rental_id 
+    INNER JOIN customer c ON r.customer_id =c.customer_id
+    GROUP BY c.customer_id; 
     ```
 11. ```sql
     ```
