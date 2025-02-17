@@ -49,6 +49,11 @@ layout:
    GROUP BY c.category_id; 
    ```
 5. ```sql
+   SELECT  f.film_id, f.title, COUNT(r.rental_id) AS total_alquileres
+   FROM film f 
+   INNER JOIN inventory i ON f.film_id = i.inventory_id
+   INNER JOIN rental r ON i.inventory_id = r.inventory_id
+   GROUP BY f.film_id; 
    ```
 6. ```sql
    ```
