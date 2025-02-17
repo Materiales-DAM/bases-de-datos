@@ -39,6 +39,14 @@ layout:
    GROUP BY c.category_id ;
    ```
 4. ```sql
+   SELECT c.category_id, avg (p.amount) AS Calculo_Rental
+   FROM rental r
+   INNER JOIN payment p ON r.rental_id = p.rental_id
+   INNER JOIN inventory i ON r.inventory_id = i.inventory_id
+   INNER JOIN film f ON i.film_id = f.film_id
+   INNER JOIN film_category fc ON f.film_id = fc.film_id
+   INNER JOIN category c ON fc.category_id = c.category_id
+   GROUP BY c.category_id; 
    ```
 5. ```sql
    ```
