@@ -56,6 +56,10 @@ layout:
    GROUP BY f.film_id; 
    ```
 6. ```sql
+   SELECT f.rating,AVG(f.length) AS duracion_rating
+   FROM film f
+   GROUP BY f.rating
+   HAVING duracion_rating > 100; 
    ```
 7. ```sql
    ```
