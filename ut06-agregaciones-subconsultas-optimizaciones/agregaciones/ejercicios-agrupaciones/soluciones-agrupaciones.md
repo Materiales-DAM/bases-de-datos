@@ -62,8 +62,17 @@ layout:
    HAVING duracion_rating > 100; 
    ```
 7. ```sql
+   SELECT sta.first_name,sta.last_name,SUM(amount) AS ingresos
+   FROM staff sta
+   JOIN payment p ON sta.staff_id=p.staff_id
+   GROUP BY sta.staff_id; 
    ```
 8. ```sql
+   SELECT sto.store_id, COUNT(ren.rental_id) AS Numero_de_alquileres_realizados
+   FROM store sto
+   LEFT JOIN inventory inv ON inv.store_id = sto.store_id
+   LEFT JOIN rental ren ON ren.inventory_id = inv.inventory_id
+   GROUP BY sto.store_id;
    ```
 9. ```sql
    ```
