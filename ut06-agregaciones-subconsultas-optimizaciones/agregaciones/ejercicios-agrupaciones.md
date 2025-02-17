@@ -24,7 +24,7 @@ layout:
 3. Encontrar el total de películas en cada categoría.
 4. Calcular el ingreso promedio de las películas por categoría.
 5. Contar el número total de alquileres por película.
-6. Encontrar la duración promedio de todas las películas.
+6. Encontrar la duración promedio de películas por rating, muestra solo aquellos rating cuyo promedio sea mayor de 100.
 7. Determinar el total de ingresos generados por cada miembro del personal.
 8. Calcular el número de alquileres realizados en cada tienda.
 9. Determinar la duración mínima de las películas  de cada actor.
