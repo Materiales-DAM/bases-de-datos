@@ -120,10 +120,27 @@ layout:
     GROUP BY fc.category_id;
     ```
 15. ```sql
+    SELECT fc.category_id, AVG(f.length) AS Promedio_Duracion
+    FROM film f 
+    INNER JOIN film_category fc ON f.film_id = fc.film_id
+    GROUP BY fc.category_id; 
     ```
 16. ```sql
+    SELECT a.actor_id, COUNT(*) AS total_rentals_per_actor
+    FROM actor a
+    INNER JOIN film_actor fa ON a.actor_id = fa.actor_id
+    INNER JOIN film f ON fa.film_id = f.film_id
+    INNER JOIN inventory i ON f.film_id = i.film_id
+    INNER JOIN rental r ON i.inventory_id = r.inventory_id
+    GROUP BY a.actor_id
+    HAVING total_rentals_per_actor > 3; 
     ```
 17. ```sql
+    SELECT c.customer_id, SUM(p.amount) AS total_ingresos
+    FROM customer c
+    INNER JOIN payment p ON c.customer_id = p.customer_id
+    GROUP BY c.customer_id
+    HAVING COUNT(p.payment_id) > 2; 
     ```
 18. ```sql
     ```
