@@ -89,10 +89,25 @@ layout:
     GROUP BY c.customer_id; 
     ```
 11. ```sql
+    SELECT MONTH(r.rental_date) AS rental_month, COUNT(*) AS num_rentals
+    FROM rental r
+    GROUP BY rental_month; 
     ```
 12. ```sql
+    SELECT fa.actor_id ,sum(p.amount) AS amount
+    FROM payment p 
+    INNER JOIN rental r ON p.rental_id  =r.rental_id 
+    INNER JOIN inventory i ON r.inventory_id = i.inventory_id
+    INNER JOIN film f ON f.film_id = i.film_id
+    INNER JOIN film_actor fa ON f.film_id =fa.film_id
+    GROUP BY fa.actor_id; 
     ```
 13. ```sql
+    SELECT s.store_id, MAX(f.length) AS max_duration
+    FROM store s
+    INNER JOIN inventory i ON s.store_id = i.store_id
+    INNER JOIN film f ON i.film_id = f.film_id
+    GROUP BY s.store_id; 
     ```
 14. ```sql
     ```
