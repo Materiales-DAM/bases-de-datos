@@ -110,6 +110,14 @@ layout:
     GROUP BY s.store_id; 
     ```
 14. ```sql
+    SELECT fc.category_id, SUM(p.amount) As amount
+    FROM store st
+    INNER JOIN inventory inv ON inv.store_id = st.store_id
+    INNER JOIN film fi ON fi.film_id = inv.film_id
+    INNER JOIN film_category fc ON fi.film_id = fc.film_id
+    INNER JOIN rental r ON r.inventory_id = inv.inventory_id
+    INNER JOIN payment p ON p.rental_id = r.rental_id
+    GROUP BY fc.category_id;
     ```
 15. ```sql
     ```
