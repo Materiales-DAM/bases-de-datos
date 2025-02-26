@@ -155,6 +155,14 @@ layout:
     GROUP BY day_of_week ;
     </code></pre>
 19. ```sql
-    ```
-20. ```sql
+    SELECT f.*
+    FROM film f
+    INNER JOIN inventory i ON f.film_id = i.film_id
+    INNER JOIN store s ON i.store_id = s.store_id
+    INNER JOIN address a ON s.address_id = a.address_id
+    INNER JOIN city c ON a.city_id = c.city_id
+    INNER JOIN rental r ON i.inventory_id = r.inventory_id
+    WHERE c.city= 'Woodridge'
+    GROUP BY f.film_id 
+    HAVING count(r.rental_id) > 18;
     ```
