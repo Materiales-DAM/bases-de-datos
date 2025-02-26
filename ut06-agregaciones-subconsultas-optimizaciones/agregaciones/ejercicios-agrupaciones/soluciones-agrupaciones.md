@@ -142,8 +142,18 @@ layout:
     GROUP BY c.customer_id
     HAVING COUNT(p.payment_id) > 2; 
     ```
-18. ```sql
-    ```
+18. <pre class="language-sql"><code class="lang-sql"># MySQL
+    SELECT WEEKDAY(r.rental_date)AS day_of_week, COUNT(r.rental_id) AS total_alquileres
+    FROM rental r
+    WHERE WEEKDAY(r.rental_date) BETWEEN 0 AND 4  
+    GROUP BY day_of_week ;
+
+    <strong>#Postgres
+    </strong><strong>SELECT DATE_PART('dow', r.rental_date)AS day_of_week,COUNT(r.rental_id) AS total_alquileres
+    </strong>FROM rental r
+    WHERE DATE_PART('dow', r.rental_date) BETWEEN 1 AND 5  
+    GROUP BY day_of_week ;
+    </code></pre>
 19. ```sql
     ```
 20. ```sql

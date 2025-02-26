@@ -140,6 +140,7 @@ Puedes extraer partes específicas de una fecha, como año, mes, día, hora, min
     MONTH(payment_date) as payment_month,
     MONTHNAME(payment_date) AS payment_month_name,
     DAY(payment_date) as payment_day,
+    # 0 es lunes, 6 domingo
     WEEKDAY(payment_date) as payment_day_of_week,
     DAYNAME(payment_date) as payment_day_name_of_week
 FROM payment;
@@ -153,6 +154,7 @@ SELECT
     date_part('month', payment_date) as payment_month,
     to_char(payment_date, 'month') as payment_month_name,
     date_part('day', payment_date) as payment_day,
+    -- 1 es lunes, 7 domingo
     date_part('dow', payment_date) as payment_day_of_week,
     to_char(payment_date, 'day') as payment_day_of_week_name
 FROM payment;
