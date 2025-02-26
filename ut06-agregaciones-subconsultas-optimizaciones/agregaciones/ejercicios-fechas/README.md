@@ -19,7 +19,7 @@ layout:
 
 # Ejercicios fechas
 
-1. La fecha y hora de alquiler de los videos en la tabla `rental`.
+1. La fecha y hora de alquiler de las películas en la tabla `rental`.
 2. El año de creación de los clientes en la tabla `customer`.
 3. El mes en que se devolvió cada película en la tabla `rental`.
 4. El día de la semana en que se realizó cada alquiler en la tabla `rental`.
