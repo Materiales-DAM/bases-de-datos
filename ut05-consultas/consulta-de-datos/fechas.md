@@ -142,7 +142,10 @@ Puedes extraer partes específicas de una fecha, como año, mes, día, hora, min
     DAY(payment_date) as payment_day,
     # 0 es lunes, 6 domingo
     WEEKDAY(payment_date) as payment_day_of_week,
-    DAYNAME(payment_date) as payment_day_name_of_week
+    DAYNAME(payment_date) as payment_day_name_of_week,
+    HOUR(payment_date) as payment_hour,
+    MINUTE(payment_date) as payment_minute,
+    SECOND(payment_date) as payment_second
 FROM payment;
 </code></pre>
 {% endtab %}
@@ -156,7 +159,10 @@ SELECT
     date_part('day', payment_date) as payment_day,
     -- 1 es lunes, 7 domingo
     date_part('dow', payment_date) as payment_day_of_week,
-    to_char(payment_date, 'day') as payment_day_of_week_name
+    to_char(payment_date, 'day') as payment_day_of_week_name,
+    date_part('hour', payment_date) as payment_hour,
+    date_part('minute', payment_date) as payment_minute,
+    date_part('second', payment_date) as payment_second
 FROM payment;
 ```
 {% endtab %}
