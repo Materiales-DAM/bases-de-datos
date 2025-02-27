@@ -20,7 +20,7 @@ layout:
 # Ejercicios fechas
 
 1. El año de creación (a partir de create\_date) de los clientes en la tabla `customer`.
-2. El mes en que se devolvió cada película (a partir de renturn\_date) en la tabla `rental`.
+2. El mes en que se devolvió cada película (a partir de return\_date) en la tabla `rental`.
 3. El día de la semana en que se realizó cada alquiler en la tabla `rental`.
 4. La fecha de devolución más antigua registrada en la tabla `rental`.
 5. La fecha de devolución más tardía registrada en la tabla `rental`.
