@@ -73,6 +73,19 @@ layout:
 9. ```sql
    ```
 10. ```sql
+    SELECT c.*, COUNT(fc.film_id) AS num_films
+    FROM category c
+    LEFT JOIN film_category fc USING(category_id)
+    GROUP BY c.category_id
+    HAVING COUNT(fc.film_id) > (
+    	SELECT AVG(num_films)
+    	FROM (
+    		SELECT c.*, COUNT(fc.film_id) AS num_films
+    		FROM category c
+    		LEFT JOIN film_category fc USING(category_id)
+    		GROUP BY c.category_id
+    	) AS category_num_films
+    );
     ```
 11. ```sql
     ```
