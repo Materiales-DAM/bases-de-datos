@@ -33,8 +33,32 @@ layout:
    );
    ```
 2. ```sql
+   SELECT a.*
+   FROM actor a
+   WHERE a.actor_id IN (
+   	SELECT fa.actor_id
+   	FROM film_actor fa
+   	INNER JOIN film f USING(film_id)
+   	INNER JOIN language l USING(language_id)
+   	WHERE l.name = 'English'
+   );
    ```
 3. ```sql
+
+   SELECT * 
+   FROM payment p 
+   WHERE p.rental_id IN (
+   	SELECT r.rental_id 
+   	FROM rental r 
+   	WHERE r.inventory_id  IN(
+   		SELECT i.inventory_id 
+   		FROM inventory i
+   		INNER JOIN store s USING(store_id)
+   		INNER JOIN address a USING(address_id)
+   		INNER JOIN city c USING(city_id)
+   		WHERE c.city = 'Woodridge'
+   	)
+   ); 
    ```
 4. ```sql
    ```
