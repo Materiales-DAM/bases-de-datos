@@ -61,10 +61,39 @@ layout:
    ); 
    ```
 4. ```sql
+   SELECT s.*
+   FROM store s
+   WHERE s.store_id IN (
+   	SELECT i.store_id
+   	FROM inventory i
+   	INNER JOIN film f USING(film_id)
+   	INNER JOIN film_category fc USING(film_id)
+   	INNER JOIN category c USING(category_id)
+   	WHERE c.name = 'Action'
+   );
    ```
 5. ```sql
+   SELECT c.*
+   FROM customer c
+   WHERE c.customer_id IN (
+   	SELECT r.customer_id
+   	FROM rental r
+   	INNER JOIN inventory USING(inventory_id)
+   	INNER JOIN film USING(film_id)
+   	INNER JOIN film_category USING (film_id)
+   	INNER JOIN category c USING (category_id)
+   	WHERE c.name = 'Horror'
+   );
    ```
 6. ```sql
+   SELECT AVG(categories_per_film.num_categories) AS average_categories_per_film
+   FROM (
+       SELECT f.film_id, COUNT(c.category_id)AS num_categories
+       FROM film f
+       LEFT JOIN film_category fc USING(film_id)
+       LEFT JOIN category c USING(category_id)
+       GROUP BY f.film_id
+   ) AS categories_per_film; 
    ```
 7. ```sql
    ```
