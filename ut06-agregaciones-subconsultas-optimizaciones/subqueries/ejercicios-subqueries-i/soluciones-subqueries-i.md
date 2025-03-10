@@ -104,8 +104,25 @@ layout:
    ) AS payments_per_customer; 
    ```
 8. ```sql
+   SELECT AVG(rentals_per_store)
+   FROM (
+   	SELECT COUNT(r.rental_id) AS rentals_per_store
+   	FROM store s 
+   	LEFT JOIN inventory i USING(store_id)
+   	LEFT JOIN rental r USING(inventory_id) 
+   	GROUP BY s.store_id
+   ) AS average_rentals_per_store; 
    ```
 9. ```sql
+   SELECT AVG(revenue) AS avg_revenue_per_store
+   FROM (
+       SELECT SUM(amount) AS revenue
+       FROM store s
+       LEFT JOIN inventory USING (store_id)
+       LEFT JOIN rental USING (inventory_id)
+       LEFT JOIN payment USING (rental_id)
+       GROUP BY store_id
+   ) AS revenue_per_store;
    ```
 10. ```sql
     SELECT c.*, COUNT(fc.film_id) AS num_films
