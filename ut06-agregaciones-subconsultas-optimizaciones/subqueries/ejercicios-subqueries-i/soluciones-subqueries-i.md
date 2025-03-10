@@ -96,6 +96,12 @@ layout:
    ) AS categories_per_film; 
    ```
 7. ```sql
+   SELECT MAX(payments_per_customer.payments) AS maxs_payment
+   FROM (
+   	SELECT  COUNT(p.amount) AS payments
+   	FROM payment p
+   	GROUP BY p.customer_id
+   ) AS payments_per_customer; 
    ```
 8. ```sql
    ```
