@@ -155,8 +155,40 @@ layout:
     ); 
     ```
 12. ```sql
+    SELECT s.store_id, count(r.rental_id) AS num_rentals
+    FROM store s
+    LEFT JOIN inventory c USING(store_id)
+    LEFT JOIN rental r USING(inventory_id)
+    GROUP BY s.store_id
+    HAVING count(r.rental_id) < (
+        SELECT AVG(num_rentals)
+        FROM (
+            SELECT s.store_id, count(r.rental_id) AS num_rentals
+    	FROM store s
+    	LEFT JOIN inventory c USING(store_id)
+    	LEFT JOIN rental r USING(inventory_id)
+    	GROUP BY s.store_id
+        ) AS store_rentals
+    ); 
     ```
 13. ```sql
+    SELECT s.store_id, SUM(p.amount) AS ingresos
+    FROM store s
+    LEFT JOIN inventory USING (store_id)
+    LEFT JOIN rental USING(inventory_id)
+    LEFT JOIN payment p USING(rental_id)
+    GROUP BY s.store_id
+    HAVING COUNT(p.amount) > (
+        SELECT AVG(num_payments)
+        FROM (
+            SELECT s.store_id, COUNT(p.amount) AS num_payments
+            FROM store s
+            LEFT JOIN inventory USING (store_id)
+         	LEFT JOIN rental USING(inventory_id)
+         	LEFT JOIN payment p USING(rental_id)
+            GROUP BY s.store_id
+        ) AS store_payments
+    ); 
     ```
 14. ```sql
     ```
