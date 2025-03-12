@@ -140,6 +140,19 @@ layout:
     );
     ```
 11. ```sql
+    SELECT c.customer_id, COUNT(p.amount) AS num_payments
+    FROM customer c
+    LEFT JOIN payment p USING (customer_id)
+    GROUP BY c.customer_id
+    HAVING sum(p.amount) > (
+        SELECT AVG(total_amount)
+        FROM (
+            SELECT c.customer_id, sum(p.amount) AS total_amount
+    	FROM customer c
+    	LEFT JOIN payment p USING (customer_id)
+    	GROUP BY c.customer_id
+        )AS customer_total_amount
+    ); 
     ```
 12. ```sql
     ```
