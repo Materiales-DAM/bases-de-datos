@@ -191,4 +191,16 @@ layout:
     ); 
     ```
 14. ```sql
+    SELECT * 
+    FROM film
+    WHERE film_id NOT IN(
+    	SELECT inv.film_id
+    	FROM rental r
+    	INNER JOIN inventory inv USING(inventory_id)
+    	INNER JOIN store sto USING(store_id)
+    	INNER JOIN address ad USING(address_id)
+    	INNER JOIN city ci USING(city_id)
+    	INNER JOIN country co USING(country_id)
+    	WHERE co.country = 'Spain'
+    ); 
     ```
