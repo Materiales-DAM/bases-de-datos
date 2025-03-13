@@ -20,6 +20,25 @@ layout:
 # Soluciones subqueries II
 
 1. ```sql
+   # MySQL
+   SELECT title
+   FROM film
+   WHERE film_id IN(
+   	SELECT i.film_id
+   	FROM rental r
+   	INNER JOIN inventory i USING (inventory_id)
+   	WHERE r.rental_date > DATE_SUB(NOW(), INTERVAL '25' YEAR)
+   );
+
+   -- PostgreSQL
+   SELECT title
+   FROM film
+   WHERE film_id IN(
+   	SELECT i.film_id
+   	FROM rental r
+   	INNER JOIN inventory i USING (inventory_id)
+   	WHERE r.rental_date > NOW() - INTERVAL '25' year
+   );
    ```
 2. ```sql
    ```
