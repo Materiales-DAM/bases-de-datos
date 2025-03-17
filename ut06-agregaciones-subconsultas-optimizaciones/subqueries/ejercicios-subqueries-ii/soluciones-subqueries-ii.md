@@ -51,6 +51,13 @@ layout:
    ); 
    ```
 3. ```sql
+   select avg(num_rentals) as average_rentals 
+   from( 
+   	select c.customer_id, count(rental.rental_id) as num_rentals
+   	from customer c
+   	inner join rental using(customer_id)
+   	group by c.customer_id 
+   ) as rentals_per_customer; 
    ```
 4. ```sql
    ```

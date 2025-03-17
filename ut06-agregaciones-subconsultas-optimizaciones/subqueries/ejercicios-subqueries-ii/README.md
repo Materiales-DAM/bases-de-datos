@@ -21,7 +21,7 @@ layout:
 
 1. Encuentra el título de todas las películas que fueron alquiladas en los últimos 25 años.
 2. Lista los nombres de los actores que han actuado en películas clasificadas como 'PG-13'.
-3. Calcula la media de alquileres realizados por da cliente.
+3. Calcula la media de alquileres realizados por cliente.
 4. Muestra los datos de las películas que han sido alquiladas en Woodridge.
 5. Calcula la media de gasto por cliente
 6. Muestra el personal de la tienda en la cual se han realizado más alquileres
