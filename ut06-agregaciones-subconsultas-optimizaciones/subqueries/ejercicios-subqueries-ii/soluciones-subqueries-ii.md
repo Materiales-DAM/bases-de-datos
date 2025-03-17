@@ -41,6 +41,14 @@ layout:
    );
    ```
 2. ```sql
+   SELECT a.first_name
+   FROM actor a 
+   WHERE actor_id IN (
+   	SELECT fa.actor_id  
+   	FROM film_actor fa  
+   	INNER JOIN film f ON fa.film_id = f.film_id 
+   	WHERE f.rating = 'PG-13'
+   ); 
    ```
 3. ```sql
    ```
