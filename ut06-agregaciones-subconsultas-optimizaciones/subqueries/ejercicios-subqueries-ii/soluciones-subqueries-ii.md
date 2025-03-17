@@ -94,6 +94,17 @@ layout:
    );
    ```
 7. ```sql
+   SELECT f.title
+   FROM film f 
+   INNER JOIN film_category fc USING (film_id)
+   WHERE category_id=(
+   	SELECT  category_id
+   	FROM film_category fc 
+   	INNER JOIN category c USING (category_id)
+   	GROUP BY category_id
+   	ORDER BY count(film_id) DESC  
+   	LIMIT 1
+   ); 
    ```
 8. ```sql
    ```
