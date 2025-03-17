@@ -60,6 +60,17 @@ layout:
    ) as rentals_per_customer; 
    ```
 4. ```sql
+   SELECT f.*
+   FROM film f
+   WHERE f.film_id IN (
+       SELECT i.film_id
+       FROM rental r
+       JOIN inventory i USING (inventory_id)
+       JOIN store s USING (store_id)
+       JOIN address a USING (address_id)
+       JOIN city ci USING (city_id)
+       WHERE ci.city = 'Woodridge'
+   );
    ```
 5. ```sql
    ```
