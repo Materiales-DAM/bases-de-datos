@@ -73,6 +73,12 @@ layout:
    );
    ```
 5. ```sql
+   SELECT  AVG(total_amount) AS average_amount
+   FROM (
+       SELECT customer_id , sum(amount) AS total_amount
+       FROM payment p
+       GROUP BY customer_id
+   ) AS amount_per_customer; 
    ```
 6. ```sql
    ```
