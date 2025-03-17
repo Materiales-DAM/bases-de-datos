@@ -81,6 +81,17 @@ layout:
    ) AS amount_per_customer; 
    ```
 6. ```sql
+   SELECT *
+   FROM staff
+   WHERE store_id = (
+   	SELECT store_id
+   	FROM store s
+   	LEFT JOIN inventory i USING (store_id)
+   	LEFT JOIN rental r USING (inventory_id)
+   	GROUP BY store_id
+   	ORDER BY COUNT(r.rental_id) DESC
+   	LIMIT 1
+   );
    ```
 7. ```sql
    ```
