@@ -139,6 +139,16 @@ layout:
    ); 
    ```
 10. ```sql
+    SELECT a.*
+    FROM actor a
+    WHERE a.actor_id IN (
+        SELECT fa.actor_id
+        FROM film_actor fa
+        JOIN inventory i USING (film_id)
+        JOIN rental r USING (inventory_id)
+        GROUP BY fa.actor_id,DATE_PART('MONTH', r.rental_date)
+        HAVING COUNT(*) > 50
+    ); 
     ```
 11. ```sql
     ```
