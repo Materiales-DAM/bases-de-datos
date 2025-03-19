@@ -139,6 +139,19 @@ layout:
    ); 
    ```
 10. ```sql
+    # MySQL
+    SELECT a.*
+    FROM actor a
+    WHERE a.actor_id IN (
+        SELECT fa.actor_id
+        FROM film_actor fa
+        JOIN inventory i USING (film_id)
+        JOIN rental r USING (inventory_id)
+        GROUP BY fa.actor_id, MONTH(r.rental_date)
+        HAVING COUNT(*) > 50
+    ); 
+
+    -- PostgreSQL
     SELECT a.*
     FROM actor a
     WHERE a.actor_id IN (
