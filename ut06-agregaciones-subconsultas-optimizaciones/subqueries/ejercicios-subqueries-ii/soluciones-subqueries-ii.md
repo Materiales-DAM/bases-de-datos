@@ -186,8 +186,34 @@ layout:
     ); 
     ```
 13. ```sql
+    SELECT *
+    FROM actor
+    WHERE actor_id NOT IN (
+    	SELECT fa_other.actor_id
+    	FROM film f
+    	INNER JOIN film_actor fa_penelope USING (film_id)
+    	INNER JOIN actor penelope USING (actor_id)
+    	INNER JOIN film_actor fa_other ON fa_other.film_id = f.film_id 
+    	WHERE penelope.first_name = 'PENELOPE' AND penelope.last_name = 'GUINESS'
+    );
     ```
 14. ```sql
+    SELECT c.*
+    FROM customer c
+    INNER JOIN rental USING(customer_id)
+    INNER JOIN inventory USING(inventory_id)
+    INNER JOIN film f USING (film_id)
+    INNER JOIN film_actor USING (film_id)
+    INNER JOIN actor a USING(actor_id)
+    WHERE a.first_name = 'PENELOPE' AND a.last_name = 'GUINESS'
+    GROUP BY c.customer_id
+    HAVING COUNT(DISTINCT f.film_id) = (
+    	SELECT COUNT(*)
+    	FROM film f
+    	INNER JOIN film_actor fa_penelope USING (film_id)
+    	INNER JOIN actor penelope USING (actor_id)
+    	WHERE penelope.first_name = 'PENELOPE' AND penelope.last_name = 'GUINESS'
+    );
     ```
 15. ```sql
     ```
