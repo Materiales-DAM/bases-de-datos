@@ -164,8 +164,26 @@ layout:
     ); 
     ```
 11. ```sql
+    SELECT c.*
+    FROM category c 
+    WHERE c.category_id IN(
+    	SELECT fc.category_id 
+    	FROM film_category fc 
+    	JOIN film f ON fc.film_id = f.film_id
+    	GROUP BY fc.category_id
+    	HAVING AVG(f.length)>120
+    ); 
     ```
 12. ```sql
+    SELECT f.* 
+    FROM film f 
+    WHERE film_id IN (
+    	SELECT i.film_id 
+    	FROM inventory i
+    	INNER JOIN rental r USING(inventory_id)
+    	GROUP BY i.film_id
+    	HAVING COUNT(r.rental_id) > 10
+    ); 
     ```
 13. ```sql
     ```
