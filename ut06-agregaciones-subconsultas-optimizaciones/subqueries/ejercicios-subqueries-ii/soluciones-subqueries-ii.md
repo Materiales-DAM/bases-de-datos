@@ -216,6 +216,18 @@ layout:
     );
     ```
 15. ```sql
+    SELECT renta_max.*
+    FROM (
+         SELECT SUM(p.amount) AS suma_total, a.*
+         FROM actor a
+         JOIN film_actor fa USING (actor_id)
+         JOIN inventory USING(film_id)
+         JOIN rental USING(inventory_id)
+         JOIN payment p USING(rental_id)
+         GROUP BY actor_id
+    ) AS renta_max
+    ORDER BY suma_total DESC
+    LIMIT 1; 
     ```
 16. ```sql
     ```
