@@ -107,8 +107,36 @@ layout:
    ); 
    ```
 8. ```sql
+   SELECT a.actor_id,COUNT(fa.film_id) AS num_films
+   FROM actor a
+   INNER JOIN film_actor fa USING(actor_id)
+   GROUP BY a.actor_id
+   HAVING COUNT(fa.film_id) > (
+   	SELECT AVG(num_films)
+   	FROM (
+   		SELECT a.actor_id, COUNT(fa.film_id) AS num_films
+   		FROM actor a
+   		INNER JOIN film_actor fa USING(actor_id)
+   		GROUP BY a.actor_id
+   	) AS actor_total_film
+   ); 
    ```
 9. ```sql
+   SELECT st.store_id, SUM(f.film_id) AS films
+   FROM store st
+   INNER JOIN inventory i USING(store_id)
+   INNER JOIN film f USING(film_id)
+   GROUP BY st.store_id
+   HAVING COUNT(f.film_id) > (
+   	SELECT AVG(total_films)
+   	FROM (
+   		SELECT st.store_id, COUNT(f.film_id) AS total_films
+   		FROM store st
+   		INNER JOIN inventory i USING(store_id)
+   		INNER JOIN film f USING(film_id)
+   		GROUP BY st.store_id
+   	) AS films_store
+   ); 
    ```
 10. ```sql
     ```
