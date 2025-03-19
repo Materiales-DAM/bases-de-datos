@@ -202,7 +202,7 @@ layout:
     FROM customer c
     INNER JOIN rental USING(customer_id)
     INNER JOIN inventory USING(inventory_id)
-    INNER JOIN film f USING (film_id)
+    INNER JOIN film USING (film_id)
     INNER JOIN film_actor USING (film_id)
     INNER JOIN actor a USING(actor_id)
     WHERE a.first_name = 'PENELOPE' AND a.last_name = 'GUINESS'
@@ -210,9 +210,9 @@ layout:
     HAVING COUNT(DISTINCT f.film_id) = (
     	SELECT COUNT(*)
     	FROM film f
-    	INNER JOIN film_actor fa_penelope USING (film_id)
-    	INNER JOIN actor penelope USING (actor_id)
-    	WHERE penelope.first_name = 'PENELOPE' AND penelope.last_name = 'GUINESS'
+    	INNER JOIN film_actor USING (film_id)
+    	INNER JOIN actor a USING (actor_id)
+    	WHERE a.first_name = 'PENELOPE' AND a.last_name = 'GUINESS'
     );
     ```
 15. ```sql
