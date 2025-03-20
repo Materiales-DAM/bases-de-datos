@@ -230,4 +230,21 @@ layout:
     LIMIT 1; 
     ```
 16. ```sql
+    SELECT co.country, COUNT(customer_id) AS num_customer
+    FROM customer
+    INNER JOIN address USING(address_id)
+    INNER JOIN city USING(city_id)
+    INNER JOIN country co USING(country_id)
+    GROUP BY co.country
+    HAVING COUNT(customer_id) > (
+    	SELECT AVG(num_customer) 
+    	FROM (
+    		SELECT COUNT(customer_id) AS num_customer
+    		FROM customer
+    		INNER JOIN address USING(address_id)
+    		INNER JOIN city USING(city_id)
+    		INNER JOIN country co USING(country_id)
+    		GROUP BY co.country
+    	) AS num_customer_per_country	
+    ); 
     ```
