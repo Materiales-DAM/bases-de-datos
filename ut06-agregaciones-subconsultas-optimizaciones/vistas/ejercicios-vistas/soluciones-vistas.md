@@ -50,6 +50,12 @@ layout:
    GROUP BY f.film_id , a.actor_id; 
    ```
 6. ```sql
+   CREATE VIEW film_inventory AS
+   SELECT title, store_id, COUNT(*) AS total, COUNT(*) - COUNT(r.rental_id) AS available
+   FROM film f
+   INNER JOIN inventory i USING (film_id)
+   LEFT JOIN rental r ON r.inventory_id = i.inventory_id AND r.return_date IS NULL
+   GROUP BY i.store_id, f.film_id;
    ```
 7. ```sql
    ```
