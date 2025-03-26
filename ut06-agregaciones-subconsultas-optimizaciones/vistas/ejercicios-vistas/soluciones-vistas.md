@@ -58,10 +58,31 @@ layout:
    GROUP BY i.store_id, f.film_id;
    ```
 7. ```sql
+   CREATE VIEW vista_gasto_clientes AS
+   SELECT c.first_name, c.last_name, SUM(p.amount) AS total_gastado
+   FROM customer c
+   INNER JOIN payment p using (customer_id)
+   GROUP BY c.customer_id; 
    ```
 8. ```sql
+   CREATE MATERIALIZED VIEW titulo_idioma AS
+   SELECT f.title, l.name
+   FROM film f 
+   JOIN language l USING(language_id);
    ```
 9. ```sql
+   CREATE VIEW film_category_name AS
+   SELECT f.title, c.name
+   FROM film f
+   INNER JOIN film_category fc USING (film_id)
+   INNER JOIN category c USING (category_id); 
    ```
 10. ```sql
+    CREATE MATERIALIZED VIEW nameofactor_titleoffilm_rentaldate AS
+    SELECT a.first_name, a.last_name, f.title, r.rental_date
+    FROM actor a 
+    INNER JOIN film_actor fa ON a.actor_id = fa.actor_id
+    INNER JOIN film f ON fa.film_id = f.film_id 
+    INNER join inventory i ON f.film_id = i.film_id 
+    INNER JOIN rental r ON i.inventory_id = r.inventory_id;
     ```
