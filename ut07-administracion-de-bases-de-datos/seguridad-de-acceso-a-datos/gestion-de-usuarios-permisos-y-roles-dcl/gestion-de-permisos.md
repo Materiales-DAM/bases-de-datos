@@ -68,7 +68,7 @@ Especifica a qué usuario o rol se están otorgando o revocando los privilegios.
 El comando GRANT se utiliza para otorgar privilegios a un usuario en una base de datos, tabla o columna específica. La sintaxis básica del comando GRANT es la siguiente:
 
 ```sql
-GRANT privilegio1. privilegio2 ON base_de_datos.tabla1 TO <usuario>;
+GRANT privilegio1, privilegio2 ON base_de_datos.tabla1 TO <usuario>;
 ```
 
 Por ejemplo, si quisiera permitir al usuario employee que pueda leer los datos de la tabla actor de sakila, ejecutaría
