@@ -1,5 +1,5 @@
 ---
-cover: ../../../.gitbook/assets/cybersecurity.png
+cover: ../../.gitbook/assets/cybersecurity.png
 coverY: 0
 layout:
   cover:
@@ -21,9 +21,9 @@ layout:
 
 1. Crea un usuario llamado bob y el password Sandia4you
 2. Permite que bob haga las siguientes operaciones
-   1. Insertar datos en actor, film, actor\_film
-   2. Modificar datos en actor, film, actor\_film
-   3. Leer los datos de actor, film, actor\_film
+   1. Insertar datos en actor, film, film\_actor
+   2. Modificar datos en actor, film, film\_actor
+   3. Leer los datos de actor, film, film\_actor
 3. Crea un role llamado informes
 4. Dale al role informes permiso para leer todas las tablas de sakila
 5. Crea un role llamado sakila\_admin

@@ -30,7 +30,7 @@ Los privilegios son permisos que se otorgan a los usuarios para realizar operaci
 3. **UPDATE**: Permite al usuario modificar registros existentes en una tabla.
 4. **DELETE**: Permite al usuario eliminar registros de una tabla.
 5. **CREATE**: Permite al usuario crear nuevas tablas, vistas, índices u otros objetos en una base de datos.
-6. **DROP**: Permite al usuario eliminar tablas, vistas, índices u otros objetos de una base de datos.
+6. **DROP (no disponible en postgres)**: Permite al usuario eliminar tablas, vistas, índices u otros objetos de una base de datos.
 7. **ALTER**: Permite al usuario modificar la estructura de una tabla existente, como agregar, eliminar o modificar columnas.
 8. **GRANT OPTION**: Permite al usuario otorgar o revocar los privilegios que él mismo posee a otros usuarios.
 9. **REFERENCES**: Permite al usuario crear una clave externa que haga referencia a una tabla en otra base de datos.
