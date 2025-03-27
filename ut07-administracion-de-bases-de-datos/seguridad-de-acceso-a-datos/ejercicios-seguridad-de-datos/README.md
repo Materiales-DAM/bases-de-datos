@@ -1,5 +1,5 @@
 ---
-cover: ../../.gitbook/assets/cybersecurity.png
+cover: ../../../.gitbook/assets/cybersecurity.png
 coverY: 0
 layout:
   cover:
