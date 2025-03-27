@@ -93,11 +93,11 @@ En PostgreSQL, además de los permisos específicos que se dan sobre las tablas 
 -- Damos permiso para usar sakila
 GRANT USAGE ON SCHEMA sakila TO employee;
 
--- Damos permiso para leer todas las tablas de sakila
-GRANT SELECT ON ALL TABLES IN SCHEMA sakila TO employee;
-
 -- Damos permisos para usar todas las secuencias de autoincrementales
 GRANT USAGE, SELECT ON ALL SEQUENCES TO employee;
+
+-- Damos permiso para leer todas las tablas de sakila
+GRANT SELECT ON ALL TABLES IN SCHEMA sakila TO employee;
 ```
 {% endtab %}
 {% endtabs %}
