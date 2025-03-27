@@ -56,6 +56,12 @@ Es posible seleccionar todas las tablas de un schema usando la palabra reservada
 ```sql
 ON ALL TABLES IN SCHEMA sakila
 ```
+
+En Postgres también hay que dar permisos para acceder a las secuencias que van a generar los valores autoincrementales (serial),
+
+```sql
+ON ALL SEQUENCES IN SCHEMA sakila
+```
 {% endtab %}
 {% endtabs %}
 
@@ -89,6 +95,9 @@ GRANT USAGE ON SCHEMA sakila TO employee;
 
 -- Damos permiso para leer todas las tablas de sakila
 GRANT SELECT ON ALL TABLES IN SCHEMA sakila TO employee;
+
+-- Damos permisos para usar todas las secuencias de autoincrementales
+GRANT USAGE, SELECT ON ALL SEQUENCES TO employee;
 ```
 {% endtab %}
 {% endtabs %}
@@ -128,7 +137,12 @@ REVOKE SELECT ON sakila.actor FROM 'employee';
 
 {% tab title="PostgreSQL" %}
 ```sql
+-- Revocamos los privilegios sobre tablas
 REVOKE SELECT ON sakila.actor FROM employee;
+-- Revocamos los privilegios sobre secuencias
+REVOKE USAGE, SELECT ON ALL SEQUENCES FROM employee;
+-- Revocamos los privilegios sobre el esquema
+REVOKE USAGE ON SCHEMA sakila FROM employee;
 ```
 {% endtab %}
 {% endtabs %}
