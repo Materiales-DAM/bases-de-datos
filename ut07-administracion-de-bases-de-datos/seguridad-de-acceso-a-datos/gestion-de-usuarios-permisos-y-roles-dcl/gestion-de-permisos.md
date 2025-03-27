@@ -94,7 +94,7 @@ En PostgreSQL, además de los permisos específicos que se dan sobre las tablas 
 GRANT USAGE ON SCHEMA sakila TO employee;
 
 -- Damos permisos para usar todas las secuencias de autoincrementales
-GRANT USAGE, SELECT ON ALL SEQUENCES TO employee;
+GRANT USAGE, SELECT, UPDATE ON ALL SEQUENCES IN SCHEMA sakila TO employee;
 
 -- Damos permiso para leer todas las tablas de sakila
 GRANT SELECT ON ALL TABLES IN SCHEMA sakila TO employee;
@@ -140,7 +140,7 @@ REVOKE SELECT ON sakila.actor FROM 'employee';
 -- Revocamos los privilegios sobre tablas
 REVOKE SELECT ON sakila.actor FROM employee;
 -- Revocamos los privilegios sobre secuencias
-REVOKE USAGE, SELECT ON ALL SEQUENCES FROM employee;
+REVOKE USAGE, SELECT, UPDATE ON ALL SEQUENCES IN SCHEMA sakila FROM employee;
 -- Revocamos los privilegios sobre el esquema
 REVOKE USAGE ON SCHEMA sakila FROM employee;
 ```
