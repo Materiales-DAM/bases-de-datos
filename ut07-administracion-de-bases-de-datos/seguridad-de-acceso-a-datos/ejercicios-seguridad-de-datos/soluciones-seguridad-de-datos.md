@@ -40,43 +40,38 @@ layout:
    ```
 3. ```sql
    #MySQL
-
+   CREATE ROLE informes;
 
    -- Postgres
-
-
+   CREATE ROLE informes;
    ```
 4. ```sql
    #MySQL
-
+   GRANT SELECT ON sakila.* TO informes; 
 
    -- Postgres
-
-
+   GRANT SELECT ON ALL TABLES IN SCHEMA sakila TO informes; 
    ```
 5. ```sql
    #MySQL
-
+   CREATE ROLE sakila_admin;
 
    -- Postgres
-
-
+   CREATE ROLE sakila_admin;
    ```
 6. ```sql
    #MySQL
-
-
+   GRANT SELECT, INSERT, UPDATE, DELETE ON sakila.* TO sakila_admin;
    -- Postgres
-
-
+   GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA sakila TO sakila_admin;
    ```
 7. ```sql
    #MySQL
-
+   GRANT sakila_admin TO bob;
+   SET DEFAULT ROLE informes TO bob;
 
    -- Postgres
-
-
+   GRANT informes TO bob;
    ```
 8. ```sql
    #MySQL
