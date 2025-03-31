@@ -19,6 +19,8 @@ Un backup, o copia de seguridad, es una copia duplicada de los datos almacenados
 {% tab title="MySQL" %}
 En MySQL usaremos la utilidad mysqldump para realizar backups.&#x20;
 
+Para acceder al contendor de MySQL usaremos la ip **172.17.0.1** (ip de docker)
+
 ```bash
 mysqldump [-h host_mysql] -u tu_nombre_de_usuario -p nombre_de_tu_base_de_datos --schema nombre_schema  > archivo_de_backup.sql
 ```
@@ -47,15 +49,16 @@ Cuando se realiza una restauración, los datos almacenados en una copia de segur
 
 {% tabs %}
 {% tab title="MySQL" %}
-En MySQL usaremos la utilidad cliente `mysql` para restaurar copias de seguridad.&#x20;
+En MySQL usaremos la utilidad cliente `mysql` para restaurar copias de seguridad.\
+Primero creamos la base de datos y luego hacemos el restore&#x20;
 
-Primero creamos la base de datos y luego hacemos el restore
-
-```bash
+```sql
 mysql [-h host_postgres] -u tu_nombre_de_usuario -p -e 'CREATE DATABASE nombre_de_tu_base_de_datos;'
 
 mysql [-h host_postgres] -u tu_nombre_de_usuario -p nombre_de_tu_base_de_datos < archivo_de_backup.sql
 ```
+
+Para acceder al contendor de MySQL usaremos la ip 172.17.0.1 (ip de docker)
 {% endtab %}
 
 {% tab title="PostgreSQL" %}
@@ -69,6 +72,8 @@ psql [-h host_postgres] -U nombre_de_usuario -d nombre_de_base_de_datos -f archi
 ```
 {% endtab %}
 {% endtabs %}
+
+
 
 ## Planificación de tareas
 
@@ -87,3 +92,4 @@ La planificación de tareas en bases de datos como PostgreSQL y MySQL es crucial
 **Cron y scripts:** Puedes utilizar el programador de tareas del sistema operativo (como cron en sistemas Unix/Linux o Programador de tareas en Windows) para ejecutar scripts SQL que contengan las tareas que deseas automatizar. Por ejemplo, puedes escribir un script SQL que realice una copia de seguridad de la base de datos y luego programar la ejecución de ese script en el programador de tareas del sistema operativo.
 {% endtab %}
 {% endtabs %}
+
