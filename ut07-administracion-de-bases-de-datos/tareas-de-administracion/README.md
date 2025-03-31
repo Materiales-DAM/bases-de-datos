@@ -87,7 +87,3 @@ La planificación de tareas en bases de datos como PostgreSQL y MySQL es crucial
 **Cron y scripts:** Puedes utilizar el programador de tareas del sistema operativo (como cron en sistemas Unix/Linux o Programador de tareas en Windows) para ejecutar scripts SQL que contengan las tareas que deseas automatizar. Por ejemplo, puedes escribir un script SQL que realice una copia de seguridad de la base de datos y luego programar la ejecución de ese script en el programador de tareas del sistema operativo.
 {% endtab %}
 {% endtabs %}
-
-### Acceso a base de datos en contenedor
-
-Para acceder a la base de datos instalada en Docker el parámetro host se debe establecer a **172.17.0.1**
