@@ -67,7 +67,7 @@ layout:
    ```
 7. ```sql
    #MySQL
-   GRANT sakila_admin TO bob;
+   GRANT informes TO bob;
    SET DEFAULT ROLE informes TO bob;
 
    -- Postgres
