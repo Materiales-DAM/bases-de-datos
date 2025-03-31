@@ -83,11 +83,12 @@ layout:
    ```
 9. ```sql
    #MySQL
-
+   CREATE USER 'peppa'@'%' IDENTIFIED BY 'Sandia4you';
+   GRANT sakila_admin TO peppa; 
 
    -- Postgres
-
-
+   CREATE USER peppa WITH PASSWORD 'Sandia4you';
+   GRANT sakila_admin TO peppa; 
    ```
 10. ```sql
     #MySQL
@@ -99,18 +100,20 @@ layout:
     ```
 11. ```sql
     #MySQL
-
+    REVOKE informes FROM bob;
 
     -- Postgres
-
+    REVOKE informes FROM bob;
 
     ```
 12. ```sql
     #MySQL
-
+    DROP USER bob; 
 
     -- Postgres
-
-
+    REVOKE USAGE ON SCHEMA sakila FROM bob;
+    REVOKE USAGE, SELECT, UPDATE ON ALL SEQUENCES IN SCHEMA sakila FROM bob;
+    REVOKE INSERT,UPDATE,SELECT ON sakila.actor, sakila.film, sakila.film_actor FROM bob;
+    DROP USER bob; 
     ```
 
