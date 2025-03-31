@@ -20,7 +20,7 @@ Un backup, o copia de seguridad, es una copia duplicada de los datos almacenados
 En MySQL usaremos la utilidad mysqldump para realizar backups.&#x20;
 
 ```bash
-mysqldump [-h host_mysql] -u tu_nombre_de_usuario -p nombre_de_tu_base_de_datos > archivo_de_backup.sql
+mysqldump [-h host_mysql] -u tu_nombre_de_usuario -p nombre_de_tu_base_de_datos --schema nombre_schema  > archivo_de_backup.sql
 ```
 
 Si deseas hacer una copia de seguridad de todas las bases de datos a la vez, usa:
