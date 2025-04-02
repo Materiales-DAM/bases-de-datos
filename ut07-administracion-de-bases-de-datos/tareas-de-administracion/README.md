@@ -53,9 +53,9 @@ En MySQL usaremos la utilidad cliente `mysql` para restaurar copias de seguridad
 Primero creamos la base de datos y luego hacemos el restore&#x20;
 
 ```sql
-mysql [-h host_postgres] -u tu_nombre_de_usuario -p -e 'CREATE DATABASE nombre_de_tu_base_de_datos;'
+mysql [-h host_mysql] -u tu_nombre_de_usuario -p -e 'CREATE DATABASE nombre_de_tu_base_de_datos;'
 
-mysql [-h host_postgres] -u tu_nombre_de_usuario -p nombre_de_tu_base_de_datos < archivo_de_backup.sql
+mysql [-h host_mysql] -u tu_nombre_de_usuario -p nombre_de_tu_base_de_datos < archivo_de_backup.sql
 ```
 
 Para acceder al contendor de MySQL usaremos la ip 172.17.0.1 (ip de docker)
