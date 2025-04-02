@@ -36,7 +36,7 @@ mysqldump [-h host_mysql] -u tu_nombre_de_usuario -p --all-databases > todas_las
 En PostgreSQL usaremos la utilidad pg\_dump para realizar backups.&#x20;
 
 ```bash
-pg_dump [-h host_postgres] -U nombre_de_usuario -d nombre_de_base_de_datos -f archivo_de_backup.sql
+pg_dump [-h host_postgres] -U nombre_de_usuario -d nombre_de_base_de_datos --schema nombre_esquema -f archivo_de_backup.sql
 ```
 {% endtab %}
 {% endtabs %}

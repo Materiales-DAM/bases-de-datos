@@ -174,7 +174,8 @@
   * [Ejercicios seguridad de datos](ut07-administracion-de-bases-de-datos/seguridad-de-acceso-a-datos/ejercicios-seguridad-de-datos/README.md)
     * [Soluciones seguridad de datos](ut07-administracion-de-bases-de-datos/seguridad-de-acceso-a-datos/ejercicios-seguridad-de-datos/soluciones-seguridad-de-datos.md)
 * [Tareas de administración](ut07-administracion-de-bases-de-datos/tareas-de-administracion/README.md)
-  * [Ejercicios tareas de administración](ut07-administracion-de-bases-de-datos/tareas-de-administracion/ejercicios-tareas-de-administracion.md)
+  * [Ejercicios tareas de administración](ut07-administracion-de-bases-de-datos/tareas-de-administracion/ejercicios-tareas-de-administracion/README.md)
+    * [Soluciones tareas de administración](ut07-administracion-de-bases-de-datos/tareas-de-administracion/ejercicios-tareas-de-administracion/soluciones-tareas-de-administracion.md)
 * [Transacciones (TCL)](ut07-administracion-de-bases-de-datos/transacciones-tcl/README.md)
   * [Ejercicios transacciones](ut07-administracion-de-bases-de-datos/transacciones-tcl/ejercicios-transacciones.md)
 
