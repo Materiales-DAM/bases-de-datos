@@ -21,8 +21,6 @@ layout:
 
 Un procedimiento almacenado es una secuencia de instrucciones SQL que se almacenan en el servidor de la base de datos y pueden ser ejecutados en cualquier momento.
 
-## Definición de procedimientos almacenados
-
 {% tabs %}
 {% tab title="MySQL" %}
 La sintaxis básica para la creación de procedimientos almacenados en MySQL es la siguiente
@@ -65,7 +63,7 @@ CREATE [ OR REPLACE ] PROCEDURE
 {% endtab %}
 {% endtabs %}
 
-### Parámetros
+## Parámetros
 
 Los procedimientos almacenados pueden definir dos tipos de parámetros:
 
@@ -73,9 +71,7 @@ Los procedimientos almacenados pueden definir dos tipos de parámetros:
 * De salida (**OUT**): cuando se invoca el procedimiento no se pasa un valor, sino una referencia a una variable. Al finalizar la invocación, dicha variable contendrá un valor calculado durante la ejecución del procedimiento
 * De entrada/salida (**INOUT**): es una mezcla de las dos anteriores. Cuando se invoca el procedimiento se debe pasar una variable con un valor asignado. Durante la ejecución del procedimiento, dicho valor puede cambiar y se verá reflejado en la variable.
 
-### Ejemplo
-
-Si se desea crear un procedimiento almacenado que muestra las películas de una categoría dada:
+Por ejemplo, si se desea crear un procedimiento almacenado que muestra las películas de una categoría dada:
 
 {% tabs %}
 {% tab title="MySQL" %}
@@ -100,9 +96,10 @@ Veamos en detalle:
 {% endtab %}
 
 {% tab title="PostgreSQL" %}
-En PostgreSQL
+En PostgreSQL, debido a que dentro de la definición de un proceso almacenado hay varias sentencias, es necesario modificar el delimitador de sentencia durante su definición en un script, para así poder distinguir entre el final de una sentencia dentro del procedimiento almacenado y el final de la declaración del procedimiento almacenado.
 
-{% code lineNumbers="true" %}
+Normalmente el delimitador que se utiliza durante la declaración del procedimiento / función / trigger es `$$`
+
 ```plsql
 CREATE OR REPLACE PROCEDURE sakila.list_films(
 	IN category VARCHAR(25), 
@@ -117,7 +114,6 @@ BEGIN
 	  WHERE c.name = category ;
 END;$$
 ```
-{% endcode %}
 
 Veamos en detalle:
 
@@ -133,11 +129,50 @@ Este procedimiento:
 * Tiene un parámetro de salida llamado category\_films
 * Cuando se invoca, calcula el número de películas de la categoría y guarda el resultado en el parámetro de salida category\_films
 
-### DELIMITER
+### Conflicto de nombres
 
-Debido a que dentro de la definición de un proceso almacenado hay varias sentencias, es necesario modificar el delimitador de sentencia durante su definición en un script, para así poder distinguir entre el final de una sentencia dentro del procedimiento almacenado y el final de la declaración del procedimiento almacenado.
+Puede ocurrir que hayamos definido algún parámetro del procedimiento con el mismo nombre que una columna de alguna de las queries que se ejecutan dentro, en este caso tenemos un conflicto de nombre que se resuelve de la siguiente manera:
 
-Normalmente el delimitador que se utiliza durante la declaración del procedimiento / función / trigger es `$$`
+{% tabs %}
+{% tab title="MySQL" %}
+En MySQL se utiliza el nombre del parámetro tal cual y para las columnas se usa el prefijo de la tabla.
+
+```plsql
+CREATE PROCEDURE count_films(
+	IN actor_id INT, 
+	OUT actor_films INT UNSIGNED
+)
+BEGIN
+  SET actor_films = (SELECT COUNT(fa.film_id)
+	  FROM film_actor fa 
+	  WHERE fa.actor_id = actor_id);
+END;
+```
+{% endtab %}
+
+{% tab title="PostgreSQL" %}
+En PostgreSQL se utiliza el nombre del procedimiento como prefijo antes del parámetro para diferenciarlo de la columna de la tabla
+
+```plsql
+CREATE OR REPLACE PROCEDURE count_films(
+	IN actor_id INT, 
+	OUT actor_films INT
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+  	SELECT COUNT(fa.film_id) INTO actor_films
+	FROM film_actor fa 
+	WHERE fa.actor_id = count_films.actor_id;
+END;$$
+```
+
+Veamos en detalle:
+
+* El parámetro de salida category\_films se carga en la query usando INTO
+* Se debe cambiar el valor del delimiter  en la línea 6
+{% endtab %}
+{% endtabs %}
 
 <pre class="language-plsql"><code class="lang-plsql"><strong>-- Esta sentencia elimina el procedimiento si ya existía
 </strong><strong>DROP PROCEDURE IF EXISTS list_films;

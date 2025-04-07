@@ -27,8 +27,8 @@ layout:
    )
    BEGIN
      START TRANSACTION;
-     DELETE FROM film_actor fa WHERE fa.actor_id = @actor_id;
-     DELETE FROM actor a WHERE a.actor_id = @actor_id;
+     DELETE FROM film_actor fa WHERE fa.actor_id = actor_id;
+     DELETE FROM actor a WHERE a.actor_id = actor_id;
      COMMIT;
    END;
 
