@@ -183,8 +183,8 @@
 
 * [Introducción a PL/pgSQL](ut08-procedimientos-almacenados-funciones-y-triggers/introduccion-a-pl-pgsql.md)
 * [Procedimientos almacenados](ut08-procedimientos-almacenados-funciones-y-triggers/procedimientos-almacenados/README.md)
-  * [Ejercicios de procedimientos almacenados](ut08-procedimientos-almacenados-funciones-y-triggers/procedimientos-almacenados/ejercicios-de-procedimientos-almacenados/README.md)
-    * [Copy of Ejercicios de procedimientos almacenados](ut08-procedimientos-almacenados-funciones-y-triggers/procedimientos-almacenados/ejercicios-de-procedimientos-almacenados/copy-of-ejercicios-de-procedimientos-almacenados.md)
+  * [Ejercicios de procedimientos almacenados](ut08-procedimientos-almacenados-funciones-y-triggers/procedimientos-almacenados/ejercicios-de-procedimientos-almacenados.md)
+    * [Soluciones de procedimientos almacenados](ut08-procedimientos-almacenados-funciones-y-triggers/procedimientos-almacenados/ejercicios-de-procedimientos-almacenados/soluciones-de-procedimientos-almacenados.md)
 * [Funciones](ut08-procedimientos-almacenados-funciones-y-triggers/funciones.md)
 * [Estructuras de control PL/pgSQL](ut08-procedimientos-almacenados-funciones-y-triggers/estructuras-de-control-pl-pgsql.md)
 * [Triggers](ut08-procedimientos-almacenados-funciones-y-triggers/triggers.md)
