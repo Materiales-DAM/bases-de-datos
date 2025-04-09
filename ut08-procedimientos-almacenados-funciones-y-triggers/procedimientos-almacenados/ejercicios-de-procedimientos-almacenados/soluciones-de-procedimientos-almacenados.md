@@ -49,6 +49,106 @@ layout:
    CALL delete_actor(1);
    ```
 2. ```plsql
+   -- MySQL
+   DROP PROCEDURE IF EXISTS delete_films_older;
+   CREATE PROCEDURE delete_films_older(
+   	IN ryear int 
+   	)
+   BEGIN
+   	START TRANSACTION;
+   	DELETE 
+   	FROM payment  
+   	WHERE rental_id IN (
+   		SELECT r.rental_id
+   		FROM rental r
+   		INNER JOIN inventory i USING (inventory_id)
+   		INNER JOIN film f USING (film_id)
+   		WHERE f.release_year < ryear);
+   	
+    	DELETE 
+   	FROM rental 
+   	WHERE inventory_id IN (
+   		SELECT i.inventory_id
+   		FROM inventory i 
+   		INNER JOIN film f USING (film_id)
+   		WHERE f.release_year < ryear);
+   	
+   	DELETE 
+   	FROM inventory 
+   	WHERE film_id IN (
+   		SELECT f.film_id 
+   		FROM film f
+   		WHERE f.release_year < ryear);
+   	DELETE 
+   	FROM film_category 
+   	WHERE film_id IN (
+   		SELECT f.film_id 
+   		FROM film f
+   		WHERE f.release_year < ryear);
+   	DELETE 
+   	FROM film_actor 
+   	WHERE film_id IN (
+   		SELECT f.film_id 
+   		FROM film f
+   		WHERE f.release_year < ryear );
+   	DELETE 
+   	FROM film f
+   	WHERE f.release_year<ryear;
+   	
+   	COMMIT;
+   END;
+
+   CALL delete_films_older (2008);
+
+   -- Postgres
+   CREATE OR REPLACE PROCEDURE delete_films_older(
+   	IN ryear INT
+   )
+   LANGUAGE plpgsql
+   AS $$
+   BEGIN
+   	DELETE 
+   	FROM payment  
+   	WHERE rental_id IN (
+   		SELECT r.rental_id
+   		FROM rental r
+   		INNER JOIN inventory i USING (inventory_id)
+   		INNER JOIN film f USING (film_id)
+   		WHERE f.release_year < ryear);
+   	
+    	DELETE 
+   	FROM rental 
+   	WHERE inventory_id IN (
+   		SELECT i.inventory_id
+   		FROM inventory i 
+   		INNER JOIN film f USING (film_id)
+   		WHERE f.release_year < ryear);
+   	
+   	DELETE 
+   	FROM inventory 
+   	WHERE film_id IN (
+   		SELECT f.film_id 
+   		FROM film f
+   		WHERE f.release_year < ryear);
+   	DELETE 
+   	FROM film_category 
+   	WHERE film_id IN (
+   		SELECT f.film_id 
+   		FROM film f
+   		WHERE f.release_year < ryear);
+   	DELETE 
+   	FROM film_actor 
+   	WHERE film_id IN (
+   		SELECT f.film_id 
+   		FROM film f
+   		WHERE f.release_year < ryear );
+   	DELETE 
+   	FROM film f
+   	WHERE f.release_year<ryear;
+   	
+   END;$$
+
+   CALL delete_films_older (2008);
    ```
 3. ```plsql
    ```
