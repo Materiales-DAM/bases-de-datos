@@ -174,10 +174,11 @@ Veamos en detalle:
 {% endtab %}
 {% endtabs %}
 
-<pre class="language-plsql"><code class="lang-plsql"><strong>-- Esta sentencia elimina el procedimiento si ya existía
-</strong><strong>DROP PROCEDURE IF EXISTS list_films;
-</strong><strong>-- Empieza la declaración
-</strong>CREATE PROCEDURE list_films(
+```plsql
+-- Esta sentencia elimina el procedimiento si ya existía
+DROP PROCEDURE IF EXISTS list_films;
+-- Empieza la declaración
+CREATE PROCEDURE list_films(
 	IN category VARCHAR(50), 
 	OUT category_films INT
 )
@@ -188,7 +189,52 @@ BEGIN
 	  WHERE c.name = category);
 END
 
-</code></pre>
+```
+
+### Recuperar el Id generado por un INSERT
+
+En algunos procedimientos almacenados vamos a insertar filas en tablas cuyo identificador es un valor generado por la base de datos (AUTO\_INCREMENT o SERIAL) y es posible que dicho identificador sea necesario para los siguientes pasos del procedimiento. Para obtener el valor del identificador haremos lo siguiente:
+
+{% tabs %}
+{% tab title="MySQL" %}
+En MySQL se utiliza la función LAST\_INSERT\_ID() que devuelve el valor del último id generado
+
+```plsql
+CREATE PROCEDURE count_films(
+	IN actor_id INT, 
+	OUT actor_films INT UNSIGNED
+)
+BEGIN
+  SET actor_films = (SELECT COUNT(fa.film_id)
+	  FROM film_actor fa 
+	  WHERE fa.actor_id = actor_id);
+END;
+```
+{% endtab %}
+
+{% tab title="PostgreSQL" %}
+En PostgreSQL se utiliza el nombre del procedimiento como prefijo antes del parámetro para diferenciarlo de la columna de la tabla
+
+```plsql
+CREATE OR REPLACE PROCEDURE count_films(
+	IN actor_id INT, 
+	OUT actor_films INT
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+  	SELECT COUNT(fa.film_id) INTO actor_films
+	FROM film_actor fa 
+	WHERE fa.actor_id = count_films.actor_id;
+END;$$
+```
+
+Veamos en detalle:
+
+* El parámetro de salida category\_films se carga en la query usando INTO
+* Se debe cambiar el valor del delimiter  en la línea 6
+{% endtab %}
+{% endtabs %}
 
 ## Invocación de un procedimiento almacenado
 
