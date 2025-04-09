@@ -197,36 +197,53 @@ En algunos procedimientos almacenados vamos a insertar filas en tablas cuyo iden
 
 {% tabs %}
 {% tab title="MySQL" %}
-En MySQL se utiliza la función LAST\_INSERT\_ID() que devuelve el valor del último id generado
+En MySQL se recupera utilizando la función LAST\_INSERT\_ID() que devuelve el valor del último id generado. Este valor se debe almacenar en una variable que ha debido ser declarada previamente con un sentencia DECLARE.
 
 ```plsql
-CREATE PROCEDURE count_films(
-	IN actor_id INT, 
-	OUT actor_films INT UNSIGNED
+CREATE PROCEDURE add_passenger_with_luggage (
+    IN p_name VARCHAR(100),
+    IN p_luggage_description VARCHAR(200)
 )
 BEGIN
-  SET actor_films = (SELECT COUNT(fa.film_id)
-	  FROM film_actor fa 
-	  WHERE fa.actor_id = actor_id);
+    DECLARE new_passenger_id INT;
+
+    -- Insert passenger
+    INSERT INTO passengers (name)
+    VALUES (p_name);
+
+    -- Get the last inserted ID
+    SET new_passenger_id = LAST_INSERT_ID();
+
+    -- Insert luggage for the passenger
+    INSERT INTO luggage (passenger_id, description)
+    VALUES (new_passenger_id, p_luggage_description);
 END;
 ```
 {% endtab %}
 
 {% tab title="PostgreSQL" %}
-En PostgreSQL se utiliza el nombre del procedimiento como prefijo antes del parámetro para diferenciarlo de la columna de la tabla
+En PostgreSQL se utiliza la cláusula RETURNING para almacenar el id generado en una variable. La variable debe haberse declarado previamente en la sección DECLARE, antes del BEGIN
 
 ```plsql
-CREATE OR REPLACE PROCEDURE count_films(
-	IN actor_id INT, 
-	OUT actor_films INT
+CREATE OR REPLACE PROCEDURE add_passenger_with_luggage(
+    p_name VARCHAR,
+    p_luggage_description VARCHAR
 )
 LANGUAGE plpgsql
 AS $$
+DECLARE
+    new_passenger_id INT;
 BEGIN
-  	SELECT COUNT(fa.film_id) INTO actor_films
-	FROM film_actor fa 
-	WHERE fa.actor_id = count_films.actor_id;
-END;$$
+    -- Insert passenger
+    INSERT INTO passengers (name)
+    VALUES (p_name)
+    RETURNING id INTO new_passenger_id;
+
+    -- Insert luggage for the passenger
+    INSERT INTO luggage (passenger_id, description)
+    VALUES (new_passenger_id, p_luggage_description);
+END;
+$$;
 ```
 
 Veamos en detalle:
