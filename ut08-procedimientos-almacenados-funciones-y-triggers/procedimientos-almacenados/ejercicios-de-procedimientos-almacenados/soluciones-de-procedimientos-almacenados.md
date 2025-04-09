@@ -151,6 +151,47 @@ layout:
    CALL delete_films_older (2008);
    ```
 3. ```plsql
+   -- MySQL
+   DROP PROCEDURE IF EXISTS store_move;
+   CREATE PROCEDURE store_move(
+   	IN original_store_id int,
+   	IN destination_store_id int
+   	)
+   BEGIN
+   	START TRANSACTION;
+   	UPDATE inventory  
+   	SET store_id = store_move.destination_store_id
+   	WHERE store_id = store_move.original_store_id;
+
+   	UPDATE staff 
+   	SET store_id = store_move.destination_store_id
+   	WHERE store_id = store_move.original_store_id;	
+   	COMMIT;	
+   END;
+   	
+   CALL store_move(2, 1); 
+
+
+   -- PostgreSQL
+
+   DROP PROCEDURE IF EXISTS  store_move;
+   CREATE OR REPLACE PROCEDURE store_move(
+   	IN original_store_id int,
+   	IN destination_store_id int
+   	)
+   	LANGUAGE plpgsql
+   	AS $$
+   	BEGIN
+   		UPDATE inventory  
+   		SET store_id = store_move.destination_store_id
+   		WHERE store_id = store_move.original_store_id;
+
+   		UPDATE staff 
+   		SET store_id = store_move.destination_store_id
+   		WHERE store_id = store_move.original_store_id;		
+   	END;$$
+   	
+   CALL store_move(2, 1); 
    ```
 4. ```plsql
    ```
