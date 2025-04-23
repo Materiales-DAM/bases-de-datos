@@ -194,6 +194,66 @@ layout:
    CALL store_move(2, 1); 
    ```
 4. ```plsql
+   -- MySQL
+   DROP PROCEDURE IF EXISTS duplicate_film;
+   CREATE PROCEDURE duplicate_film(
+   	IN filmid int
+   	)
+   BEGIN
+   	DECLARE new_film_id INT;
+   	
+   	START TRANSACTION;
+
+   	INSERT INTO film(title, description,release_year,language_id,original_language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,last_update)
+   	SELECT CONCAT('Copia de ', title), description,release_year,language_id,original_language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,last_update
+   	FROM film
+   	WHERE film_id = filmid;
+
+   	SET new_film_id = LAST_INSERT_ID();
+
+   	INSERT INTO film_actor(film_id, actor_id)
+   	SELECT new_film_id, actor_id
+   	FROM film_actor
+   	WHERE film_id = filmid;
+   	
+   	INSERT INTO film_category(film_id, category_id)
+   	SELECT new_film_id, category_id
+   	FROM film_category
+   	WHERE film_id = filmid;
+
+   	COMMIT;	
+   END;
+
+   -- PostgreSQL
+   DROP PROCEDURE IF EXISTS  duplicate_film;
+   CREATE OR REPLACE PROCEDURE duplicate_film(
+   	IN filmid int
+   	)
+   LANGUAGE plpgsql
+   AS $$
+   DECLARE
+       new_film_id INT;
+   BEGIN
+   	
+   	INSERT INTO film(title, description,release_year,language_id,original_language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,last_update)
+   	SELECT CONCAT('Copia de ', title), description,release_year,language_id,original_language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,last_update
+   	FROM film
+   	WHERE film_id = filmid
+   	RETURNING film_id INTO new_film_id;
+
+
+   	INSERT INTO film_actor(film_id, actor_id)
+   	SELECT new_film_id, actor_id
+   	FROM film_actor
+   	WHERE film_id = filmid;
+   	
+   	INSERT INTO film_category(film_id, category_id)
+   	SELECT new_film_id, category_id
+   	FROM film_category
+   	WHERE film_id = filmid;
+   END;$$
+
+   CALL duplicate_film(1);
    ```
 5. ```plsql
    ```
