@@ -256,4 +256,74 @@ layout:
    CALL duplicate_film(1);
    ```
 5. ```plsql
+   -- MySQL
+   CREATE PROCEDURE delete_store(IN storeid int)
+   BEGIN
+   	START TRANSACTION;
+   	  
+   	SET FOREIGN_KEY_CHECKS=0;
+   	
+   	DELETE  FROM payment
+   	WHERE rental_id IN(SELECT rental_id
+                   FROM rental
+   	        INNER JOIN inventory USING (inventory_id)
+   		INNER JOIN store st USING(store_id)
+   		WHERE st.store_id = storeid);
+
+   	DELETE  FROM rental 
+   	WHERE inventory_id IN (SELECT inventory_id
+   		FROM inventory inv
+   		INNER JOIN store st USING(store_id)
+   		WHERE st.store_id = storeid);
+
+   	DELETE  FROM staff
+   	WHERE store_id = storeid;
+
+   	DELETE  FROM customer
+   	WHERE store_id = storeid;
+
+   	DELETE  FROM inventory
+   	WHERE store_id = storeid;
+
+   	DELETE  FROM store
+   	WHERE store_id = storeid;
+
+   	SET FOREIGN_KEY_CHECKS=1;
+   	COMMIT; 
+   END;
+
+   -- Postgres
+   CREATE OR REPLACE PROCEDURE delete_store(IN storeid int)
+   LANGUAGE plpgsql
+   AS $$
+   BEGIN
+   	SET session_replication_role = 'replica';  
+
+   	DELETE  FROM payment
+   	WHERE rental_id IN(SELECT rental_id
+                   FROM rental
+   	        INNER JOIN inventory USING (inventory_id)
+   		INNER JOIN store st USING(store_id)
+   		WHERE st.store_id = storeid);
+
+   	DELETE  FROM rental 
+   	WHERE inventory_id IN (SELECT inventory_id
+   		FROM inventory inv
+   		INNER JOIN store st USING(store_id)
+   		WHERE st.store_id = storeid);
+
+   	DELETE  FROM staff
+   	WHERE store_id = storeid;
+
+   	DELETE  FROM customer
+   	WHERE store_id = storeid;
+
+   	DELETE  FROM inventory
+   	WHERE store_id = storeid;
+
+   	DELETE  FROM store
+   	WHERE store_id = storeid;
+
+   	SET session_replication_role = 'origin'; 
+   END;$$ 
    ```
