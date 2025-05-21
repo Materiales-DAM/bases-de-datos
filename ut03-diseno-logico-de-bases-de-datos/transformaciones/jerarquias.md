@@ -76,12 +76,12 @@ Empleado(  1,   'Bob',      true,         true,       false,   'Cirujano', 'Tard
 Empleado(  2, 'Peppa',      true,        false,        true,    'Cirujano',   null,  'ATS')
 ```
 
-## Jerarquías exclusivas y totales con subtipos muy especializados
+## Jerarquías exclusivas y totales con subtipos totalmente especializados
 
 Aplicaremos la siguiente estrategia cuando se cumplan todos los siguientes preceptos:
 
 * La jerarquía sea total y exclusiva.
-* Los atributos de los subtipos son muy diferentes entre sí y/o las **interrelaciones son diferentes entre los distintos subtipos**.
+* Los atributos de los subtipos son muy diferentes entre sí y/o las **interrelaciones son diferentes entre los distintos subtipos**. No hay relaciones comunes (las salen de la entidad padre)
 
 En este caso, vamos a eliminar la entidad padre e incorporar los atributos y relaciones de la misma  a los subtipos. Para poder implementar las restricciones semánticas, será necesario programar CHECKS y TRIGGERS.
 
